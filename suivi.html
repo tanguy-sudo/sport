@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#17251f">
+<title>Suivi — J80 · Programme sportif</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="hero compact"><div class="wrap"><div class="eyebrow">J80 · Programme sportif · 80 jours</div><h1>Suivi hebdomadaire</h1><p>Coche les séances et note ta récupération. Les données sont enregistrées localement dans ce navigateur.</p></div></header>
+<nav><div class="navinner"><a href="index.html">Accueil</a><a href="planning.html">Planning</a><a href="seances.html">Séances</a><a href="progression.html">Progression</a><a href="nutrition.html">Nutrition</a><a href="recuperation.html">Récupération</a><a href="suivi.html" class="active">Suivi</a></div></nav>
+<main>
+<section id="tracker">
+  
+  <div class="tracker">
+    <div class="card">
+      <div class="field"><label class="field-label" for="week">Semaine du programme</label>
+        <select id="week"><option value="1">Semaine 1 — J1 à J7</option><option value="2">Semaine 2 — J8 à J14</option><option value="3-5">Semaines 3 à 5 — progression</option><option value="6-8">Semaines 6 à 8 — conditionnement</option><option value="9-11">Semaines 9 à 11 — consolidation</option><option value="12">Derniers jours — bilan final</option></select>
+      </div>
+      <h3>Séances réalisées</h3>
+      <div class="checklist" id="workouts">
+        <label class="checkitem"><input type="checkbox" data-workout="a"><span>Séance A — Haut du corps</span></label>
+        <label class="checkitem"><input type="checkbox" data-workout="b"><span>Séance B — Cardio endurance</span></label>
+        <label class="checkitem"><input type="checkbox" data-workout="c"><span>Séance C — Bas du corps</span></label>
+        <label class="checkitem"><input type="checkbox" data-workout="d"><span>Séance D — Cardio et circuit</span></label>
+      </div>
+      <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+      <p id="workoutCount" class="muted small">0 séance sur 4 cochée</p>
+      <div class="actions"><button class="btn secondary" id="resetChecks" type="button">Réinitialiser les cases</button></div>
+    </div>
+    <div class="card">
+      <div class="field"><label class="field-label" for="sleep">Sommeil</label><select id="sleep"><option value="bon">Bon et récupérateur</option><option value="variable">Variable</option><option value="insuffisant">Insuffisant ou peu récupérateur</option></select></div>
+      <div class="field"><label class="field-label" for="energy">Énergie générale</label><select id="energy"><option value="bonne">Bonne</option><option value="variable">Variable</option><option value="basse">Basse ou fatigue persistante</option></select></div>
+      <div class="field"><label class="field-label" for="progression">Évolution de l’entraînement</label><select id="progression"><option value="progres">Je maîtrise mieux les exercices ou je progresse</option><option value="stable">Mes performances sont stables</option><option value="baisse">Mes performances baissent</option></select></div>
+      <div class="field"><label class="field-label" for="notes">Notes de la semaine</label><textarea id="notes" placeholder="Ex. : bonne énergie, difficulté sur le squat, séance cardio agréable…"></textarea></div>
+      <div class="actions"><button class="btn" id="copyReport" type="button">Copier le bilan</button><button class="btn secondary" id="saveReport" type="button">Enregistrer ce bilan</button></div>
+      <p id="feedback" class="muted small" aria-live="polite"></p>
+    </div>
+  </div>
+  <div class="card" style="margin-top:16px"><h3>Comment interpréter le bilan</h3><ul><li><strong>Bonne récupération et progression :</strong> continue, et augmente les charges uniquement quand les critères techniques sont remplis.</li><li><strong>Performances stables :</strong> la régularité et la qualité d’exécution sont déjà des progrès.</li><li><strong>Fatigue persistante ou baisse des performances :</strong> réduis temporairement le volume, privilégie le sommeil et reporte les efforts intenses.</li><li><strong>Semaine chargée :</strong> trois séances bien réalisées et une récupération suffisante valent mieux que quatre séances forcées.</li></ul></div>
+  <div class="card" style="margin-top:16px"><h3>Historique des bilans</h3><div id="history" class="muted small">Aucun bilan enregistré pour le moment.</div><div class="actions"><button class="btn secondary" id="exportHistory" type="button">Exporter l’historique (.json)</button><button class="btn secondary" id="clearHistory" type="button">Effacer l’historique</button></div></div>
+</section>
+<div class="pager"><a href="recuperation.html">← Récupération</a><span></span></div>
+</main>
+<footer><p>Programme personnel inspiré d’une approche de défi sur 80 jours. Il s’agit d’un guide général à adapter à ton état de forme, à ton matériel et à tes éventuelles contraintes médicales. Les données du suivi restent dans le navigateur utilisé pour cette page.</p></footer>
+<script src="js/suivi.js"></script>
+</body>
+</html>
