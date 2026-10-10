@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#17251f">
+<title>80 jours — J80 · Programme sportif</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/theme.js"></script>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="J80">
+<script src="js/pwa.js" defer></script>
+</head>
+<body>
+<header class="hero compact"><div class="wrap"><div class="eyebrow">J80 · Programme sportif · 80 jours</div><h1>Suivi jour par jour</h1><p>Valide chaque jour du défi et garde le cap, de J1 à J80.</p></div></header>
+<nav><div class="navinner"><a href="index.html">Accueil</a><a href="planning.html">Planning</a><a href="seances.html">Séances</a><a href="progression.html">Progression</a><a href="nutrition.html">Nutrition</a><a href="recuperation.html">Récupération</a><a href="suivi.html">Bilan hebdo</a><a href="jours.html" class="active">80 jours</a><a href="charges.html">Charges</a><button class="theme-toggle" id="themeToggle" type="button" aria-label="Changer de thème">🌙</button></div></nav>
+<main>
+<section><div class="card">
+  <div class="field"><label class="field-label" for="start">Date de départ (J1)</label><input type="date" id="start"></div>
+  <p id="status" aria-live="polite"></p>
+  <div class="progress-wrap"><div class="progress-bar" id="dayBar"></div></div>
+  <p id="dayCount" class="muted small"></p>
+  <div class="actions"><button class="btn" id="checkToday" type="button">Valider aujourd’hui</button><button class="btn secondary" id="resetDays" type="button">Tout décocher</button></div>
+</div></section>
+<section>
+  <div class="section-head"><h2>Les 80 jours</h2><p class="lead">Touche un jour pour le valider : séance faite ou repos respecté. La lettre indique la séance prévue par ton planning type.</p></div>
+  <div class="daygrid" id="dayGrid"></div>
+</section>
+<section><div class="card"><h3>Sauvegarde des données</h3><p class="muted small">Tes données (jours validés, charges, bilans) restent dans ce navigateur. Exporte-les pour les sauvegarder ou les transférer vers un autre appareil.</p><div class="actions"><button class="btn secondary" id="exportAll" type="button">Exporter (.json)</button><button class="btn secondary" id="importAll" type="button">Importer…</button><input type="file" id="importFile" accept="application/json,.json" hidden></div><p id="backupFeedback" class="muted small" aria-live="polite"></p></div></section>
+
+<div class="pager"><a href="suivi.html">← Bilan hebdo</a><a href="charges.html">Charges →</a></div>
+</main>
+<footer><p>Programme personnel inspiré d’une approche de défi sur 80 jours. Il s’agit d’un guide général à adapter à ton état de forme, à ton matériel et à tes éventuelles contraintes médicales. Les données du suivi restent dans le navigateur utilisé pour cette page.</p></footer>
+<script src="js/store.js"></script><script src="js/jours.js"></script>
+</body>
+</html>
