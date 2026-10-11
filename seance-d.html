@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#17251f">
+<title>Séance D — J80 · Programme sportif</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/theme.js"></script>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="J80">
+<script src="js/pwa.js" defer></script>
+</head>
+<body>
+<header class="hero compact"><div class="wrap"><div class="eyebrow">Séance D · 45–55 min</div><h1>Cardio + circuit</h1><p>Conditionnement · Effort contrôlé</p></div></header>
+<nav><div class="navinner"><a href="index.html">Accueil</a><a href="planning.html">Planning</a><a href="seances.html" class="active">Séances</a><a href="progression.html">Progression</a><a href="nutrition.html">Nutrition</a><a href="recuperation.html">Récupération</a><a href="suivi.html">Bilan hebdo</a><a href="jours.html">80 jours</a><a href="charges.html">Charges</a><button class="theme-toggle" id="themeToggle" type="button" aria-label="Changer de thème">🌙</button></div></nav>
+<main>
+<section><div class="card">
+  <p class="lead">Cardio par intervalles (5 + 4×4 + 5 min), puis circuit de 3 tours</p>
+  <div class="actions"><button class="btn" id="startLive" type="button">▶ Démarrer la séance</button><button class="btn secondary" id="resumeLive" type="button" hidden>↻ Reprendre la séance en cours</button></div>
+  <p class="muted small">Le mode séance affiche une étape à la fois en grand, avec chronomètres, garde l’écran allumé, enregistre tes charges et valide le jour dans ton suivi.</p>
+</div></section>
+<section><article class="card session">
+      <div class="session-top"><span class="eyebrow" style="color:#2d6a4f">Séance D · 45–55 min</span><h3>Cardio + circuit</h3><span class="tag">Conditionnement</span><span class="tag">Effort contrôlé</span></div>
+      <div class="session-body">
+        <h4>Bloc cardio · 25–30 min</h4>
+        <ul><li>5 min faciles.</li><li>Alterner 2 min soutenues et 2 min faciles, pendant 16–20 min.</li><li>Terminer par 4–5 min faciles.</li></ul>
+        <p>Sur les intervalles soutenus, vise un effort de 6–7/10 : tu peux encore dire de courtes phrases. Le vélo ou l’elliptique limite les impacts si tu cours déjà.</p>
+        <h4>Circuit complémentaire · 10–12 min</h4>
+        <table><thead><tr><th>Exercice</th><th>Répétitions</th></tr></thead><tbody>
+          <tr><td>Squats au poids du corps</td><td>12</td></tr>
+          <tr><td>Pompes adaptées</td><td>8–12</td></tr>
+          <tr><td>Rowing avec élastique si disponible</td><td>12</td></tr>
+          <tr><td>Bird-dog</td><td>8 / côté</td></tr>
+        </tbody></table>
+        <p>Effectue 2–3 tours, avec 30–60 s de repos si nécessaire.</p>
+        <div class="note"><strong>Option fatigue :</strong> remplace les intervalles par 25–35 min de cardio facile et supprime le circuit.</div>
+      </div>
+    </article></section>
+<div class="live" id="live" hidden role="dialog" aria-modal="true" aria-label="Séance en cours">
+  <div class="live-top"><button class="btn secondary" id="liveQuit" type="button">✕ Quitter</button><div><strong id="liveStep"></strong><div class="muted small" id="liveElapsed"></div></div><button class="btn secondary" id="liveSound" type="button" aria-label="Son et vibration">🔔</button></div>
+  <div class="live-bar"><div id="liveProg"></div></div>
+  <div class="live-main" id="liveMain"></div>
+  <div class="live-bottom"><button class="btn" id="livePrimary" type="button"></button><div class="live-row"><button class="btn secondary" id="liveBack" type="button">← Précédent</button><button class="btn secondary" id="liveAlt" type="button"></button></div></div>
+</div>
+<script type="application/json" id="sessionData">{"id": "d", "letter": "D", "title": "Cardio + circuit", "duration": "45–55 min", "blocks": [{"title": "Échauffement", "sec": 300, "detail": "5 min faciles"}, {"title": "Effort soutenu 1/4", "sec": 120, "detail": "RPE 6–7/10 : tu peux encore dire de courtes phrases"}, {"title": "Récupération 1/4", "sec": 120, "detail": "Allure facile"}, {"title": "Effort soutenu 2/4", "sec": 120, "detail": "RPE 6–7/10 : tu peux encore dire de courtes phrases"}, {"title": "Récupération 2/4", "sec": 120, "detail": "Allure facile"}, {"title": "Effort soutenu 3/4", "sec": 120, "detail": "RPE 6–7/10 : tu peux encore dire de courtes phrases"}, {"title": "Récupération 3/4", "sec": 120, "detail": "Allure facile"}, {"title": "Effort soutenu 4/4", "sec": 120, "detail": "RPE 6–7/10 : tu peux encore dire de courtes phrases"}, {"title": "Récupération 4/4", "sec": 120, "detail": "Allure facile"}, {"title": "Retour au calme", "sec": 300, "detail": "4–5 min faciles"}], "circuit": {"rounds": 3, "exercises": [{"name": "Squats au poids du corps", "reps": "12"}, {"name": "Pompes adaptées", "reps": "8–12"}, {"name": "Rowing avec élastique si disponible", "reps": "12"}, {"name": "Bird-dog", "reps": "8 / côté"}]}}</script>
+<div class="pager"><a href="seance-c.html">← Séance C</a><a href="seances.html">Toutes les séances</a><span></span></div>
+</main>
+<footer><p>Programme personnel inspiré d’une approche de défi sur 80 jours. Il s’agit d’un guide général à adapter à ton état de forme, à ton matériel et à tes éventuelles contraintes médicales. Les données du suivi restent dans le navigateur utilisé pour cette page.</p></footer>
+<script src="js/store.js"></script><script src="js/live.js"></script>
+</body>
+</html>

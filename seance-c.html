@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#17251f">
+<title>Séance C — J80 · Programme sportif</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/theme.js"></script>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="J80">
+<script src="js/pwa.js" defer></script>
+</head>
+<body>
+<header class="hero compact"><div class="wrap"><div class="eyebrow">Séance C · 50–60 min</div><h1>Bas du corps</h1><p>Force · Jambes + tronc</p></div></header>
+<nav><div class="navinner"><a href="index.html">Accueil</a><a href="planning.html">Planning</a><a href="seances.html" class="active">Séances</a><a href="progression.html">Progression</a><a href="nutrition.html">Nutrition</a><a href="recuperation.html">Récupération</a><a href="suivi.html">Bilan hebdo</a><a href="jours.html">80 jours</a><a href="charges.html">Charges</a><button class="theme-toggle" id="themeToggle" type="button" aria-label="Changer de thème">🌙</button></div></nav>
+<main>
+<section><div class="card">
+  <p class="lead">6 exercices · 14 séries · repos chronométrés</p>
+  <div class="actions"><button class="btn" id="startLive" type="button">▶ Démarrer la séance</button><button class="btn secondary" id="resumeLive" type="button" hidden>↻ Reprendre la séance en cours</button></div>
+  <p class="muted small">Le mode séance affiche une étape à la fois en grand, avec chronomètres, garde l’écran allumé, enregistre tes charges et valide le jour dans ton suivi.</p>
+</div></section>
+<section><article class="card session">
+      <div class="session-top"><span class="eyebrow" style="color:#2d6a4f">Séance C · 50–60 min</span><h3>Bas du corps</h3><span class="tag">Force</span><span class="tag">Jambes + tronc</span></div>
+      <div class="session-body">
+        <p><strong>Échauffement :</strong> 6–8 min de vélo, mobilité des chevilles et hanches, puis quelques répétitions à vide.</p>
+        <table><thead><tr><th>Exercice</th><th>Séries × reps</th><th>Repos</th></tr></thead><tbody>
+          <tr><td>Presse à cuisses ou squat maîtrisé</td><td>3 × 8–10</td><td>120 s</td></tr>
+          <tr><td>Soulevé de terre roumain avec haltères</td><td>3 × 8–10</td><td>120 s</td></tr>
+          <tr><td>Fentes arrière</td><td>2 × 8–10 / jambe</td><td>90 s</td></tr>
+          <tr><td>Leg curl</td><td>2 × 10–15</td><td>75 s</td></tr>
+          <tr><td>Mollets à la machine</td><td>2 × 12–15</td><td>60 s</td></tr>
+          <tr><td>Dead bug</td><td>2 × 8–10 / côté</td><td>45–60 s</td></tr>
+        </tbody></table>
+        <p><strong>Intensité :</strong> garde 2–3 répétitions en réserve et privilégie la maîtrise du mouvement.</p>
+        <div class="note"><strong>À la maison :</strong> squats au poids du corps, fentes arrière, ponts fessiers et dead bug. Utilise des haltères uniquement si tu maîtrises les mouvements.</div>
+      </div>
+    </article></section>
+<div class="live" id="live" hidden role="dialog" aria-modal="true" aria-label="Séance en cours">
+  <div class="live-top"><button class="btn secondary" id="liveQuit" type="button">✕ Quitter</button><div><strong id="liveStep"></strong><div class="muted small" id="liveElapsed"></div></div><button class="btn secondary" id="liveSound" type="button" aria-label="Son et vibration">🔔</button></div>
+  <div class="live-bar"><div id="liveProg"></div></div>
+  <div class="live-main" id="liveMain"></div>
+  <div class="live-bottom"><button class="btn" id="livePrimary" type="button"></button><div class="live-row"><button class="btn secondary" id="liveBack" type="button">← Précédent</button><button class="btn secondary" id="liveAlt" type="button"></button></div></div>
+</div>
+<script type="application/json" id="sessionData">{"id": "c", "letter": "C", "title": "Bas du corps", "duration": "50–60 min", "exercises": [{"name": "Presse à cuisses ou squat maîtrisé", "sets": 3, "reps": "8–10", "rest": 120}, {"name": "Soulevé de terre roumain avec haltères", "sets": 3, "reps": "8–10", "rest": 120}, {"name": "Fentes arrière", "sets": 2, "reps": "8–10 / jambe", "rest": 90}, {"name": "Leg curl", "sets": 2, "reps": "10–15", "rest": 75}, {"name": "Mollets à la machine", "sets": 2, "reps": "12–15", "rest": 60}, {"name": "Dead bug", "sets": 2, "reps": "8–10 / côté", "rest": 60}], "warmup": "6–8 min de vélo, mobilité des chevilles et hanches, puis quelques répétitions à vide."}</script>
+<div class="pager"><a href="seance-b.html">← Séance B</a><a href="seances.html">Toutes les séances</a><a href="seance-d.html">Séance D →</a></div>
+</main>
+<footer><p>Programme personnel inspiré d’une approche de défi sur 80 jours. Il s’agit d’un guide général à adapter à ton état de forme, à ton matériel et à tes éventuelles contraintes médicales. Les données du suivi restent dans le navigateur utilisé pour cette page.</p></footer>
+<script src="js/store.js"></script><script src="js/live.js"></script>
+</body>
+</html>

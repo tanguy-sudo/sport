@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#17251f">
+<title>Séance B — J80 · Programme sportif</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/theme.js"></script>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="J80">
+<script src="js/pwa.js" defer></script>
+</head>
+<body>
+<header class="hero compact"><div class="wrap"><div class="eyebrow">Séance B · 45–50 min</div><h1>Cardio endurance</h1><p>Allure modérée · Aérobie</p></div></header>
+<nav><div class="navinner"><a href="index.html">Accueil</a><a href="planning.html">Planning</a><a href="seances.html" class="active">Séances</a><a href="progression.html">Progression</a><a href="nutrition.html">Nutrition</a><a href="recuperation.html">Récupération</a><a href="suivi.html">Bilan hebdo</a><a href="jours.html">80 jours</a><a href="charges.html">Charges</a><button class="theme-toggle" id="themeToggle" type="button" aria-label="Changer de thème">🌙</button></div></nav>
+<main>
+<section><div class="card">
+  <p class="lead">Cardio en 3 blocs chronométrés : 5 + 30 + 5 min</p>
+  <div class="actions"><button class="btn" id="startLive" type="button">▶ Démarrer la séance</button><button class="btn secondary" id="resumeLive" type="button" hidden>↻ Reprendre la séance en cours</button></div>
+  <p class="muted small">Le mode séance affiche une étape à la fois en grand, avec chronomètres, garde l’écran allumé, enregistre tes charges et valide le jour dans ton suivi.</p>
+</div></section>
+<section><article class="card session">
+      <div class="session-top"><span class="eyebrow" style="color:#2d6a4f">Séance B · 45–50 min</span><h3>Cardio endurance</h3><span class="tag">Allure modérée</span><span class="tag">Aérobie</span></div>
+      <div class="session-body">
+        <p>Choisis le tapis incliné, le vélo, l’elliptique ou un footing facile si tu le tolères bien.</p>
+        <table><thead><tr><th>Bloc</th><th>Durée</th><th>Intensité</th></tr></thead><tbody>
+          <tr><td>Échauffement progressif</td><td>5 min</td><td>Facile</td></tr>
+          <tr><td>Effort régulier</td><td>30–35 min</td><td>RPE 4–5/10</td></tr>
+          <tr><td>Retour au calme</td><td>5 min</td><td>Très facile</td></tr>
+        </tbody></table>
+        <p><strong>Repère :</strong> tu dois pouvoir parler en phrases complètes. Augmente d’abord la durée, puis l’allure si tu récupères bien.</p>
+        <div class="note"><strong>À la maison ou dehors :</strong> marche active, randonnée facile ou footing conversationnel. Tu n’es pas obligé de courir.</div>
+      </div>
+    </article></section>
+<div class="live" id="live" hidden role="dialog" aria-modal="true" aria-label="Séance en cours">
+  <div class="live-top"><button class="btn secondary" id="liveQuit" type="button">✕ Quitter</button><div><strong id="liveStep"></strong><div class="muted small" id="liveElapsed"></div></div><button class="btn secondary" id="liveSound" type="button" aria-label="Son et vibration">🔔</button></div>
+  <div class="live-bar"><div id="liveProg"></div></div>
+  <div class="live-main" id="liveMain"></div>
+  <div class="live-bottom"><button class="btn" id="livePrimary" type="button"></button><div class="live-row"><button class="btn secondary" id="liveBack" type="button">← Précédent</button><button class="btn secondary" id="liveAlt" type="button"></button></div></div>
+</div>
+<script type="application/json" id="sessionData">{"id": "b", "letter": "B", "title": "Cardio endurance", "duration": "45–50 min", "blocks": [{"title": "Échauffement progressif", "sec": 300, "detail": "Allure facile"}, {"title": "Effort régulier", "sec": 1800, "detail": "RPE 4–5/10 · tu dois pouvoir parler en phrases complètes. Prolonge de quelques minutes si tu te sens bien."}, {"title": "Retour au calme", "sec": 300, "detail": "Très facile"}]}</script>
+<div class="pager"><a href="seance-a.html">← Séance A</a><a href="seances.html">Toutes les séances</a><a href="seance-c.html">Séance C →</a></div>
+</main>
+<footer><p>Programme personnel inspiré d’une approche de défi sur 80 jours. Il s’agit d’un guide général à adapter à ton état de forme, à ton matériel et à tes éventuelles contraintes médicales. Les données du suivi restent dans le navigateur utilisé pour cette page.</p></footer>
+<script src="js/store.js"></script><script src="js/live.js"></script>
+</body>
+</html>

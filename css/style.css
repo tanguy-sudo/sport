@@ -128,3 +128,35 @@ input[type="number"], input[type="date"] { width:100%; border:1px solid var(--in
 .update-banner { position:fixed; left:12px; right:12px; bottom:calc(12px + env(safe-area-inset-bottom, 0px)); z-index:50; display:flex; justify-content:space-between; align-items:center; gap:12px; background:var(--paper); color:var(--ink); border:1px solid var(--accent); border-radius:14px; padding:12px 14px; box-shadow:var(--shadow); max-width:520px; margin:auto; }
 @media(max-width:800px) { .daygrid { grid-template-columns:repeat(8,minmax(0,1fr)); } .formgrid { grid-template-columns:1fr 1fr; } .formgrid .field:first-child { grid-column:1 / -1; } }
 @media print { .update-banner { display:none !important; } }
+a.btn { display:inline-block; text-decoration:none; text-align:center; }
+body.live-open { overflow:hidden; }
+.live { position:fixed; inset:0; z-index:60; display:flex; flex-direction:column; background:var(--bg); color:var(--ink); padding-top:env(safe-area-inset-top, 0px); padding-bottom:env(safe-area-inset-bottom, 0px); }
+.live[hidden] { display:none; }
+.live-top { display:flex; justify-content:space-between; align-items:center; gap:10px; padding:10px 14px; border-bottom:1px solid var(--line); text-align:center; }
+.live-top .btn { padding:9px 12px; font-size:.9rem; }
+.live-bar { height:6px; background:var(--track); }
+.live-bar > div { height:100%; width:0; background:var(--accent); transition:width .3s; }
+.live-main { flex:1; overflow-y:auto; display:flex; flex-direction:column; justify-content:center; gap:14px; width:100%; max-width:640px; margin:0 auto; padding:20px 18px; text-align:center; }
+.live-label { color:var(--accent); font-weight:800; letter-spacing:.08em; text-transform:uppercase; font-size:.9rem; }
+.live-title { margin:0; font-size:clamp(1.7rem, 7vw, 2.4rem); line-height:1.15; }
+.live-target { font-size:1.2rem; margin:0; }
+.live-next { color:var(--muted); }
+.live-clock { font-size:clamp(4rem, 22vw, 7rem); font-weight:800; line-height:1; font-variant-numeric:tabular-nums; }
+.live-clock.rest { color:var(--gold); }
+.live-inputs { display:grid; grid-template-columns:1fr 1fr; gap:12px; text-align:left; }
+.live-inputs input { font-size:1.4rem; text-align:center; padding:14px 10px; }
+.live-bottom { display:grid; gap:10px; width:100%; max-width:640px; margin:0 auto; padding:12px 16px 16px; border-top:1px solid var(--line); }
+.live-bottom[hidden], .live-row[hidden] { display:none; }
+.live-bottom .btn { width:100%; min-height:56px; font-size:1.1rem; }
+.live-row { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.live-row .btn { min-height:48px; font-size:1rem; }
+.live-row .btn:disabled { opacity:.45; }
+@media print { .live { display:none !important; } }
+/* iOS : pas de zoom automatique à la mise au point (champs >= 16px), zones tactiles >= 44px, pas de double-tap zoom */
+input, select, textarea { font-size: 16px; }
+select, input[type="date"], input[type="number"], input[type="text"] { min-height: 44px; }
+button, a, select, input, .daycell { touch-action: manipulation; }
+nav a { display: inline-flex; align-items: center; min-height: 44px; }
+.theme-toggle { min-height: 44px; min-width: 44px; }
+.loadrow .btn { min-height: 44px; }
+@media(max-width:520px) { .daygrid { grid-template-columns: repeat(7, minmax(0, 1fr)); } }

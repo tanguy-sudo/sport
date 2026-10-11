@@ -1,5 +1,5 @@
 // Incrémente VERSION à chaque mise à jour du site pour que les appareils récupèrent les nouveaux fichiers.
-const VERSION = 'j80-v1';
+const VERSION = 'j80-v3';
 const ASSETS = [
   "./",
   "index.html",
@@ -11,6 +11,11 @@ const ASSETS = [
   "suivi.html",
   "jours.html",
   "charges.html",
+  "seance-a.html",
+  "seance-b.html",
+  "seance-c.html",
+  "seance-d.html",
+  "js/live.js",
   "css/style.css",
   "js/theme.js",
   "js/pwa.js",

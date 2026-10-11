@@ -10,12 +10,18 @@
   function save(d) {
     try { localStorage.setItem(KEY, JSON.stringify(d)); return true; } catch (_) { return false; }
   }
-  function exportAll() {
+  async function exportAll() {
     let weekly = [];
     try { weekly = JSON.parse(localStorage.getItem(WK) || '[]'); } catch (_) {}
-    const blob = new Blob([JSON.stringify({ version: 2, ...load(), weekly }, null, 2)], { type: 'application/json' });
-    const url = URL.createObjectURL(blob), a = document.createElement('a');
-    a.href = url; a.download = 'j80-sauvegarde.json'; a.click(); URL.revokeObjectURL(url);
+    const json = JSON.stringify({ version: 2, ...load(), weekly }, null, 2);
+    // iPhone / iPad : la feuille de partage permet « Enregistrer dans Fichiers » (le téléchargement direct est peu fiable en mode app).
+    try {
+      const file = new File([json], 'j80-sauvegarde.json', { type: 'application/json' });
+      if (navigator.canShare && navigator.canShare({ files: [file] })) { await navigator.share({ files: [file], title: 'Sauvegarde J80' }); return; }
+    } catch (e) { if (e && e.name === 'AbortError') return; }
+    const url = URL.createObjectURL(new Blob([json], { type: 'application/json' })), a = document.createElement('a');
+    a.href = url; a.download = 'j80-sauvegarde.json'; document.body.append(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 4000);
   }
   function clean(raw) {
     if (!raw || typeof raw !== 'object') throw new Error('format');
@@ -40,7 +46,12 @@
     r.readAsText(file);
   }
   const iso = (dt) => `${dt.getFullYear()}-${String(dt.getMonth() + 1).padStart(2, '0')}-${String(dt.getDate()).padStart(2, '0')}`;
-  window.J80Store = { load, save, iso };
+  const todayNum = (d) => {
+    if (!d.startDate) return null;
+    const [y, m, dd] = d.startDate.split('-').map(Number), t = new Date();
+    return Math.round((Date.UTC(t.getFullYear(), t.getMonth(), t.getDate()) - Date.UTC(y, m - 1, dd)) / 864e5) + 1;
+  };
+  window.J80Store = { load, save, iso, todayNum };
   document.addEventListener('DOMContentLoaded', () => {
     const $ = (id) => document.getElementById(id), fb = $('backupFeedback');
     if (!$('exportAll')) return;
