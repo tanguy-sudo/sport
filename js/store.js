@@ -1,10 +1,10 @@
 (() => {
-  const KEY = 'j80-data-v2', WK = 'j80-program-tracker-v1';
+  const KEY = 'j80-data-v2', WK = 'j80-program-tracker-v1', EXP = 'j80-last-export', REMIND_DAYS = 30;
   const def = () => ({ startDate: '', days: {}, loads: [] });
   const DATE = /^\d{4}-\d{2}-\d{2}$/;
   const num = (v, a, b) => Number.isFinite(v) && v >= a && v <= b;
   function load() {
-    try { return Object.assign(def(), JSON.parse(localStorage.getItem(KEY) || 'null') || {}); }
+    try { return clean(JSON.parse(localStorage.getItem(KEY) || 'null') || {}).d; }
     catch (_) { return def(); }
   }
   function save(d) {
@@ -14,6 +14,7 @@
     let weekly = [];
     try { weekly = JSON.parse(localStorage.getItem(WK) || '[]'); } catch (_) {}
     const json = JSON.stringify({ version: 2, ...load(), weekly }, null, 2);
+    try { localStorage.setItem(EXP, String(Date.now())); } catch (_) {}
     // iPhone / iPad : la feuille de partage permet « Enregistrer dans Fichiers » (le téléchargement direct est peu fiable en mode app).
     try {
       const file = new File([json], 'j80-sauvegarde.json', { type: 'application/json' });
@@ -51,10 +52,17 @@
     const [y, m, dd] = d.startDate.split('-').map(Number), t = new Date();
     return Math.round((Date.UTC(t.getFullYear(), t.getMonth(), t.getDate()) - Date.UTC(y, m - 1, dd)) / 864e5) + 1;
   };
-  window.J80Store = { load, save, iso, todayNum };
+  window.J80Store = { load, save, iso, todayNum, clean };
+  function backupDue() {
+    const d = load();
+    if (!d.loads.length && !Object.keys(d.days).length) return false;
+    let last = 0; try { last = +localStorage.getItem(EXP) || 0; } catch (_) {}
+    return Date.now() - last > REMIND_DAYS * 864e5;
+  }
   document.addEventListener('DOMContentLoaded', () => {
     const $ = (id) => document.getElementById(id), fb = $('backupFeedback');
     if (!$('exportAll')) return;
+    if (backupDue()) fb.textContent = 'Pense à exporter une sauvegarde : aucune depuis plus de 30 jours.';
     $('exportAll').addEventListener('click', exportAll);
     $('importAll').addEventListener('click', () => $('importFile').click());
     $('importFile').addEventListener('change', (e) => {

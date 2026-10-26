@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#17251f">
 <title>Bilan hebdo — J80 · Programme sportif</title>
 <link rel="stylesheet" href="css/style.css">
@@ -12,12 +12,12 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="J80">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <script src="js/pwa.js" defer></script>
 </head>
-<body>
-<header class="hero compact"><div class="wrap"><div class="eyebrow">J80 · Programme sportif · 80 jours</div><h1>Suivi hebdomadaire</h1><p>Coche les séances et note ta récupération. Les données sont enregistrées localement dans ce navigateur.</p></div></header>
-<nav><div class="navinner"><a href="index.html">Accueil</a><a href="planning.html">Planning</a><a href="seances.html">Séances</a><a href="progression.html">Progression</a><a href="nutrition.html">Nutrition</a><a href="recuperation.html">Récupération</a><a href="suivi.html" class="active">Bilan hebdo</a><a href="jours.html">80 jours</a><a href="charges.html">Charges</a><button class="theme-toggle" id="themeToggle" type="button" aria-label="Changer de thème">🌙</button></div></nav>
-<main>
+<body data-page="suivi">
+<script src="js/layout.js"></script>
+<main id="main">
 <section id="tracker">
   
   <div class="tracker">
@@ -48,9 +48,7 @@
   <div class="card" style="margin-top:16px"><h3>Comment interpréter le bilan</h3><ul><li><strong>Bonne récupération et progression :</strong> continue, et augmente les charges uniquement quand les critères techniques sont remplis.</li><li><strong>Performances stables :</strong> la régularité et la qualité d’exécution sont déjà des progrès.</li><li><strong>Fatigue persistante ou baisse des performances :</strong> réduis temporairement le volume, privilégie le sommeil et reporte les efforts intenses.</li><li><strong>Semaine chargée :</strong> trois séances bien réalisées et une récupération suffisante valent mieux que quatre séances forcées.</li></ul></div>
   <div class="card" style="margin-top:16px"><h3>Historique des bilans</h3><div id="history" class="muted small">Aucun bilan enregistré pour le moment.</div><div class="actions"><button class="btn secondary" id="exportHistory" type="button">Exporter l’historique (.json)</button><button class="btn secondary" id="clearHistory" type="button">Effacer l’historique</button></div></div>
 </section>
-<div class="pager"><a href="recuperation.html">← Récupération</a><a href="jours.html">80 jours →</a></div>
 </main>
-<footer><p>Programme personnel inspiré d’une approche de défi sur 80 jours. Il s’agit d’un guide général à adapter à ton état de forme, à ton matériel et à tes éventuelles contraintes médicales. Les données du suivi restent dans le navigateur utilisé pour cette page.</p></footer>
 <script src="js/suivi.js"></script>
 </body>
 </html>

@@ -1,26 +1,18 @@
 (() => {
-  const $ = (id) => document.getElementById(id), S = J80Store;
-  const D = JSON.parse($('sessionData').textContent);
+  const $ = (id) => document.getElementById(id), S = J80Store, C = J80LiveCore;
+  const D = window.J80Session;
   const KEY = 'j80-live-' + D.id, SND = 'j80-sound';
-  const first = (s) => { const m = String(s).match(/\d+/); return m ? +m[0] : ''; };
-  const fmt = (sec) => { sec = Math.max(0, sec); return `${Math.floor(sec / 60)}:${String(sec % 60).padStart(2, '0')}`; };
+  const { first, fmt } = C;
   const el = (tag, text, cls) => { const e = document.createElement(tag); if (text !== undefined) e.textContent = text; if (cls) e.className = cls; return e; };
   const soundOn = () => { try { return localStorage.getItem(SND) !== '0'; } catch (_) { return true; } };
 
-  function build() {
-    const st = [];
-    if (D.warmup) st.push({ k: 'info', title: 'Échauffement', text: D.warmup });
-    (D.blocks || []).forEach(b => st.push({ k: 'timer', title: b.title, sec: b.sec, detail: b.detail || '' }));
-    (D.exercises || []).forEach(e => { for (let i = 1; i <= e.sets; i++) st.push({ k: 'set', ex: e.name, i, n: e.sets, reps: e.reps, rest: e.rest, log: true }); });
-    if (D.circuit) for (let t = 1; t <= D.circuit.rounds; t++) D.circuit.exercises.forEach((e, j, a) => st.push({ k: 'set', ex: e.name, sub: `Tour ${t} / ${D.circuit.rounds}`, reps: e.reps, rest: j === a.length - 1 ? 60 : 30, log: false }));
-    return st;
-  }
-  const steps = build();
-  let st = null, finished = false, act = {}, lastBeep = -1, wl = null, ac = null;
+  const steps = C.buildSteps(D);
+  let st = null, finished = false, act = {}, lastBeep = -1, wl = null, ac = null, opener = null;
 
   const save = () => { try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (_) {} };
   const clear = () => { try { localStorage.removeItem(KEY); } catch (_) {} };
-  const fresh = () => ({ idx: 0, phase: 'work', end: 0, started: Date.now(), vals: {}, logged: {} });
+  // Annonce vocale (lecteurs d'écran) : région aria-live masquée visuellement.
+  const announce = (msg) => { $('liveAnnounce').textContent = ''; setTimeout(() => { $('liveAnnounce').textContent = msg; }, 50); };
 
   function beep(freq, ms) {
     if (!soundOn()) return;
@@ -41,41 +33,30 @@
   };
   function logExercise(s) {
     if (!s.log || s.i !== s.n || st.logged[s.ex]) return;
-    const v = st.vals[s.ex] || {}, kg = parseFloat(String(v.kg == null ? '' : v.kg).replace(',', '.'));
-    if (!(kg >= 0 && kg <= 1000)) return;
+    const v = st.vals[s.ex] || {}, kg = C.parseKg(v.kg);
+    if (!C.validKg(kg)) return;
     const reps = parseInt(v.reps, 10) || first(s.reps) || 1, d = S.load();
     d.loads.push({ id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), ex: s.ex, date: S.iso(new Date()), kg, sets: s.n, reps, note: 'Séance ' + D.letter });
     S.save(d); st.logged[s.ex] = 1;
   }
 
-  function go(idx, phase, end) { st.idx = idx; st.phase = phase; st.end = end || 0; lastBeep = -1; save(); render(); }
-  function next(base) {
-    const i = st.idx + 1;
-    if (i >= steps.length) return finish(false);
-    const n = steps[i];
-    go(i, 'work', n.k === 'timer' ? (base || Date.now()) + n.sec * 1000 : 0);
+  // Applique le résultat d'une transition de live-core.
+  function apply(r) {
+    if (r.log) logExercise(r.log);
+    if (r.finish) return finish(r.finish.natural);
+    st = r.st || r; lastBeep = -1; save(); render();
   }
-  function advance(base) {
-    const s = steps[st.idx];
-    if (st.phase === 'work' && s.k === 'set') {
-      logExercise(s);
-      if (st.idx === steps.length - 1) return finish(true);
-      return go(st.idx, 'rest', Date.now() + s.rest * 1000);
-    }
-    next(base);
-  }
-  function back() {
-    if (st.phase === 'rest') return go(st.idx, 'work', 0);
-    if (st.idx === 0) return;
-    const p = steps[st.idx - 1];
-    go(st.idx - 1, 'work', p.k === 'timer' ? Date.now() + p.sec * 1000 : 0);
-  }
+  const go = (r) => apply(r);
 
   function tick() {
     if (finished || $('live').hidden) return;
-    let guard = 0;
-    while (!finished && st.end && Date.now() >= st.end && guard++ < 60) { const e = st.end; if (guard === 1) alarm(); advance(e); }
-    if (finished) return;
+    const r = C.catchUp(steps, st, Date.now());
+    if (r.fired) {
+      alarm(); st = r.st;
+      r.logs.forEach(logExercise);
+      if (r.finish) return finish(r.finish.natural);
+      lastBeep = -1; save(); render();
+    }
     $('liveElapsed').textContent = `Durée ${fmt(Math.floor((Date.now() - st.started) / 1000))}`;
     const c = $('liveClock');
     if (c && st.end) {
@@ -87,29 +68,30 @@
 
   const label = (s) => s.k === 'set' ? s.ex + (s.i ? ` · série ${s.i}/${s.n}` : ` · ${s.sub.toLowerCase()}`) : s.title;
   const target = (r) => 'Objectif : ' + String(r).replace(/^(\d+(?:[–-]\d+)?)/, '$1 reps');
+  let shown = '';
 
   function render() {
     const s = steps[st.idx], main = $('liveMain'), P = $('livePrimary'), A = $('liveAlt');
     main.textContent = ''; $('liveBack').hidden = false; $('liveBack').parentElement.hidden = false;
     $('liveStep').textContent = `Étape ${st.idx + 1} / ${steps.length}`;
     $('liveProg').style.width = `${st.idx / steps.length * 100}%`;
-    const finishAlt = () => { if (confirm('Terminer la séance maintenant ?')) finish(false); };
+    const finishAlt = () => { if (confirm('Terminer la séance maintenant ?')) go({ finish: { natural: false } }); };
     $('liveBack').disabled = st.idx === 0 && st.phase === 'work';
     if (st.phase === 'rest') {
       const n = steps[st.idx + 1];
       main.append(el('div', 'Repos', 'live-label'), el('div', fmt(s.rest), 'live-clock rest'), el('div', n ? 'À suivre : ' + label(n) : '', 'live-next'));
       main.querySelector('.live-clock').id = 'liveClock';
-      P.textContent = 'Passer le repos'; act.primary = () => next(); 
+      P.textContent = 'Passer le repos'; act.primary = () => go(C.next(steps, st, Date.now()));
       A.textContent = '+15 s'; act.alt = () => { st.end += 15000; save(); tick(); };
     } else if (s.k === 'timer') {
       main.append(el('div', 'Bloc chronométré', 'live-label'), el('h2', s.title, 'live-title'), el('div', fmt(s.sec), 'live-clock'), el('div', s.detail, 'live-target'));
       main.querySelector('.live-clock').id = 'liveClock';
       const n = steps[st.idx + 1]; if (n) main.append(el('div', 'À suivre : ' + label(n), 'live-next'));
-      P.textContent = 'Bloc suivant →'; act.primary = () => advance();
+      P.textContent = 'Bloc suivant →'; act.primary = () => go(C.advance(steps, st, Date.now()));
       A.textContent = '+30 s'; act.alt = () => { st.end += 30000; save(); tick(); };
     } else if (s.k === 'info') {
       main.append(el('div', 'Avant de commencer', 'live-label'), el('h2', s.title, 'live-title'), el('p', s.text, 'live-target'));
-      P.textContent = 'C’est parti →'; act.primary = () => advance();
+      P.textContent = 'C’est parti →'; act.primary = () => go(C.advance(steps, st, Date.now()));
       A.textContent = 'Terminer'; act.alt = finishAlt;
     } else {
       const last = st.idx === steps.length - 1;
@@ -127,14 +109,22 @@
         });
         main.append(grid);
       }
-      P.textContent = last ? 'Terminer la séance ✓' : 'Série faite ✓'; act.primary = () => advance();
+      P.textContent = last ? 'Terminer la séance ✓' : 'Série faite ✓'; act.primary = () => go(C.advance(steps, st, Date.now()));
       A.textContent = 'Terminer'; act.alt = finishAlt;
     }
+    // Accessibilité : annonce et focus uniquement lors d'un vrai changement d'étape.
+    const key = `${st.idx}:${st.phase}`;
+    if (key !== shown) {
+      shown = key;
+      announce(st.phase === 'rest' ? `Repos ${s.rest} secondes. ${n_(steps[st.idx + 1])}` : `Étape ${st.idx + 1} sur ${steps.length} : ${label(s)}`);
+      main.focus({ preventScroll: true });
+    }
   }
+  const n_ = (n) => (n ? 'À suivre : ' + label(n) : '');
 
   function finish(natural) {
     finished = true; clear(); unlock();
-    const sets = steps.filter((x, i) => x.k === 'set' && (i < st.idx || (i === st.idx && (st.phase === 'rest' || natural)))).length;
+    const sets = C.countSets(steps, st, natural);
     const mins = Math.max(1, Math.round((Date.now() - st.started) / 60000));
     const d = S.load(), n = S.todayNum(d); let msg = '';
     if (n >= 1 && n <= 80) { d.days[n] = true; S.save(d); msg = `Jour ${n} validé automatiquement.`; }
@@ -146,33 +136,55 @@
     $('liveProg').style.width = '100%'; $('liveStep').textContent = 'Terminée';
     $('livePrimary').textContent = 'Fermer'; act.primary = () => location.reload();
     $('liveBack').parentElement.hidden = true;
+    announce(`Séance terminée en ${mins} minutes. ${msg}`);
+    main.focus({ preventScroll: true });
     if (soundOn()) { beep(660, 150); setTimeout(() => beep(880, 300), 200); }
   }
 
+  // Le reste de la page est rendu inerte (clavier et lecteurs d'écran) tant que la séance est ouverte.
+  const background = () => {
+    const out = []; let n = $('live');
+    while (n && n !== document.body) { [...n.parentElement.children].forEach((c) => { if (c !== n && c.tagName !== 'SCRIPT') out.push(c); }); n = n.parentElement; }
+    return out;
+  };
   function open(state) {
+    opener = document.activeElement; shown = '';
     st = state; finished = false;
     try { ac = ac || new (window.AudioContext || window.webkitAudioContext)(); if (ac.resume) ac.resume(); } catch (_) {}
     $('live').hidden = false; document.body.classList.add('live-open'); lock();
+    background().forEach((e) => { e.inert = true; });
     if (!st.end && steps[st.idx].k === 'timer' && st.phase === 'work') st.end = Date.now() + steps[st.idx].sec * 1000;
     save(); render(); tick();
   }
-  function close() { $('live').hidden = true; document.body.classList.remove('live-open'); unlock(); }
+  function close() {
+    $('live').hidden = true; document.body.classList.remove('live-open'); unlock();
+    background().forEach((e) => { e.inert = false; });
+    if (opener && opener.isConnected) opener.focus();
+  }
+
+  const main = $('liveMain'); main.tabIndex = -1;
+  $('liveStep').setAttribute('aria-hidden', 'true');
+  const ann = el('div', undefined, 'sr-only'); ann.id = 'liveAnnounce'; ann.setAttribute('aria-live', 'polite'); ann.setAttribute('role', 'status');
+  $('live').append(ann);
 
   $('startLive').addEventListener('click', () => {
     if (localStorage.getItem(KEY) && !confirm('Une séance est en cours. La recommencer à zéro ?')) return;
-    open(fresh());
+    open(C.fresh(Date.now()));
   });
-  $('resumeLive').addEventListener('click', () => { try { open(JSON.parse(localStorage.getItem(KEY))); } catch (_) { open(fresh()); } });
+  $('resumeLive').addEventListener('click', () => { try { open(JSON.parse(localStorage.getItem(KEY))); } catch (_) { open(C.fresh(Date.now())); } });
   $('livePrimary').addEventListener('click', () => act.primary && act.primary());
   $('liveAlt').addEventListener('click', () => act.alt && act.alt());
-  $('liveBack').addEventListener('click', back);
+  $('liveBack').addEventListener('click', () => go(C.back(steps, st, Date.now())));
   $('liveQuit').addEventListener('click', () => {
     if (finished) return location.reload();
     if (confirm('Quitter la séance ? Ta progression est conservée : tu pourras la reprendre.')) { close(); $('resumeLive').hidden = false; }
   });
-  $('liveSound').addEventListener('click', () => { try { localStorage.setItem(SND, soundOn() ? '0' : '1'); } catch (_) {} $('liveSound').textContent = soundOn() ? '🔔' : '🔕'; });
-  $('liveSound').textContent = soundOn() ? '🔔' : '🔕';
+  $('liveQuit').setAttribute('aria-label', 'Quitter la séance');
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !$('live').hidden) $('liveQuit').click(); });
+  const paintSound = () => { $('liveSound').textContent = soundOn() ? '🔔' : '🔕'; $('liveSound').setAttribute('aria-pressed', soundOn() ? 'true' : 'false'); };
+  $('liveSound').addEventListener('click', () => { try { localStorage.setItem(SND, soundOn() ? '0' : '1'); } catch (_) {} paintSound(); });
+  paintSound();
   document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible' && !$('live').hidden) { lock(); tick(); } });
   setInterval(tick, 250);
-  try { const sv = JSON.parse(localStorage.getItem(KEY) || 'null'); if (sv && sv.idx < steps.length && Date.now() - sv.started < 6 * 36e5) $('resumeLive').hidden = false; else clear(); } catch (_) {}
+  try { const sv = JSON.parse(localStorage.getItem(KEY) || 'null'); if (C.isResumable(sv, steps, Date.now())) $('resumeLive').hidden = false; else clear(); } catch (_) {}
 })();

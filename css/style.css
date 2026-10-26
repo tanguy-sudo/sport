@@ -160,3 +160,24 @@ nav a { display: inline-flex; align-items: center; min-height: 44px; }
 .theme-toggle { min-height: 44px; min-width: 44px; }
 .loadrow .btn { min-height: 44px; }
 @media(max-width:520px) { .daygrid { grid-template-columns: repeat(7, minmax(0, 1fr)); } }
+
+/* Accessibilité */
+:focus-visible { outline: 3px solid var(--gold-text); outline-offset: 2px; }
+.skip { position: absolute; left: 8px; top: -60px; z-index: 100; background: var(--accent); color: var(--on-accent); padding: 10px 14px; border-radius: 10px; font-weight: 700; }
+.skip:focus { top: 8px; }
+:root { --gold-text: #8a5a12; }
+:root[data-theme="dark"] { --gold-text: #d9a14a; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --gold-text: #d9a14a; } }
+.live-clock.rest { color: var(--gold-text); }
+
+.formgrid.two { grid-template-columns: 2fr 1fr; }
+@media (max-width: 800px) { .formgrid.two { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; animation: none !important; } }.sr-only { position:absolute; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0; }
+
+/* Web app iOS (barre d'état translucide) : le contenu passe sous l'encoche, on décale avec les zones sûres. */
+@media screen {
+  .hero { padding-top: calc(56px + env(safe-area-inset-top, 0px)); }
+  .hero.compact { padding-top: calc(38px + env(safe-area-inset-top, 0px)); }
+  .hero, footer { padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+  main, .navinner { padding-left: max(18px, env(safe-area-inset-left, 0px)); padding-right: max(18px, env(safe-area-inset-right, 0px)); }
+}

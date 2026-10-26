@@ -1,0 +1,218 @@
+{
+ "planning": {
+  "week": [
+   {
+    "day": "Lundi",
+    "kind": "work",
+    "label": "Séance A",
+    "detail": "Haut du corps · force",
+    "session": "a"
+   },
+   {
+    "day": "Mardi",
+    "kind": "work",
+    "label": "Séance B",
+    "detail": "Cardio endurance",
+    "session": "b"
+   },
+   {
+    "day": "Mercredi",
+    "kind": "rest",
+    "label": "Récupération",
+    "detail": "Marche ou mobilité",
+    "session": null
+   },
+   {
+    "day": "Jeudi",
+    "kind": "work",
+    "label": "Séance C",
+    "detail": "Bas du corps · force",
+    "session": "c"
+   },
+   {
+    "day": "Vendredi",
+    "kind": "rest",
+    "label": "Repos",
+    "detail": "Récupération",
+    "session": null
+   },
+   {
+    "day": "Samedi",
+    "kind": "work",
+    "label": "Séance D",
+    "detail": "Cardio + circuit",
+    "session": "d"
+   },
+   {
+    "day": "Dimanche",
+    "kind": "rest",
+    "label": "Repos",
+    "detail": "Préparer la semaine",
+    "session": null
+   }
+  ],
+  "note": "Si tu fais déjà de l’escalade, du CrossFit ou une autre activité intense, compte-la dans ta charge hebdomadaire et adapte les séances en conséquence."
+ },
+ "progression": {
+  "head": [
+   "Période",
+   "Musculation",
+   "Cardio",
+   "Priorité"
+  ],
+  "rows": [
+   [
+    "J1–14",
+    "2–3 séries, charges maîtrisées",
+    "Allure confortable, intervalles modérés",
+    "Technique et rythme"
+   ],
+   [
+    "J15–28",
+    "Augmenter les répétitions progressivement",
+    "Stabiliser la durée",
+    "Régularité"
+   ],
+   [
+    "J29–35",
+    "Maintenir, alléger si fatigue",
+    "Réduire les intervalles si besoin",
+    "Récupération"
+   ],
+   [
+    "J36–49",
+    "Ajouter un peu de charge si les séries sont propres",
+    "Allonger légèrement les efforts soutenus",
+    "Progression contrôlée"
+   ],
+   [
+    "J50–60",
+    "Consolider les performances",
+    "Une séance dynamique au maximum",
+    "Équilibre"
+   ],
+   [
+    "J61–73",
+    "Maintenir sans forcer les records",
+    "Cardio régulier et maîtrisé",
+    "Consolidation"
+   ],
+   [
+    "J74–80",
+    "Réduire le volume si nécessaire",
+    "Séances faciles à modérées",
+    "Bilan final"
+   ]
+  ],
+  "ruleTitle": "La règle de progression",
+  "rule": [
+   "Pour un exercice en 3 × 8–10, commence avec une charge qui permet 8 répétitions propres.",
+   "Progresse peu à peu jusqu’à 10 répétitions sur les trois séries.",
+   "Quand les trois séries de 10 sont maîtrisées, augmente légèrement la charge à une séance ultérieure.",
+   "Repars autour de 8 répétitions et recommence."
+  ],
+  "note": "N’augmente pas la charge si ta technique se dégrade, si tu ressens une douleur ou si tu n’as pas récupéré."
+ },
+ "nutrition": {
+  "groups": [
+   {
+    "icon": "🥚",
+    "title": "Protéines",
+    "text": "Œufs, poisson, poulet, tofu, lentilles, pois chiches ou yaourt nature. Varie les sources."
+   },
+   {
+    "icon": "🍚",
+    "title": "Féculents",
+    "text": "Riz, pâtes, pommes de terre, pain complet, semoule ou avoine pour fournir de l’énergie."
+   },
+   {
+    "icon": "🥦",
+    "title": "Fruits et légumes",
+    "text": "Pour les fibres, les vitamines et la diversité. Choisis les variétés que tu apprécies."
+   },
+   {
+    "icon": "🥑",
+    "title": "Matières grasses",
+    "text": "Huile d’olive ou de colza, noix, amandes et autres sources de lipides variées."
+   }
+  ],
+  "mealsTitle": "Exemple de journée alimentaire",
+  "meals": [
+   {
+    "icon": "🥣",
+    "title": "Petit-déjeuner",
+    "text": "Flocons d’avoine, lait ou yaourt, banane et quelques noix."
+   },
+   {
+    "icon": "🍗",
+    "title": "Déjeuner",
+    "text": "Poulet ou tofu, riz, légumes et huile d’olive. Fruit en dessert si envie."
+   },
+   {
+    "icon": "🍎",
+    "title": "Collation facultative",
+    "text": "Yaourt, fruit et quelques amandes, par exemple avant l’entraînement si tu as faim."
+   },
+   {
+    "icon": "🐟",
+    "title": "Dîner",
+    "text": "Poisson, pommes de terre et légumes, avec un assaisonnement que tu apprécies."
+   }
+  ],
+  "habitsTitle": "Habitudes faciles à tenir",
+  "habits": [
+   "Boire régulièrement dans la journée et pendant les séances.",
+   "Manger suffisamment avant et après les entraînements.",
+   "Garder une alimentation flexible : les repas conviviaux et les aliments plaisir ont leur place.",
+   "Préparer à l’avance quelques bases : féculents, légumes et sources de protéines.",
+   "Éviter les restrictions importantes, les repas sautés volontairement et les solutions miracles."
+  ],
+  "note": "Si tu es encore en croissance, privilégie une alimentation suffisante et la récupération plutôt qu’un objectif chiffré de perte de poids. Un médecin ou un diététicien peut aider à vérifier qu’un objectif de poids est approprié."
+ },
+ "recuperation": {
+  "cards": [
+   {
+    "title": "🌙 Sommeil",
+    "text": "Vise généralement 8 à 10 heures si tu es adolescent. Un sommeil suffisant aide la récupération, la technique et les performances."
+   },
+   {
+    "title": "🚶 Activité quotidienne",
+    "text": "La marche, les déplacements et les activités de loisir comptent aussi. Ne cherche pas à compenser un repas par du sport supplémentaire."
+   },
+   {
+    "title": "❤️ Gestion de la fatigue",
+    "text": "Si tes performances baissent plusieurs séances de suite ou que tu es inhabituellement fatigué, réduis le volume et privilégie les séances faciles."
+   },
+   {
+    "title": "🛡️ Sécurité",
+    "text": "Une douleur aiguë, des vertiges ou un malaise ne sont pas des signes de progression. Arrête la séance et demande conseil à un professionnel de santé selon la situation."
+   }
+  ]
+ },
+ "phases": [
+  {
+   "from": 1,
+   "to": 14,
+   "title": "Reprise structurée",
+   "text": "Calibrer les charges, revoir la technique et stabiliser le rythme. Garde 3 à 4 répétitions en réserve si nécessaire."
+  },
+  {
+   "from": 15,
+   "to": 35,
+   "title": "Progression",
+   "text": "Ajouter des répétitions puis un peu de charge lorsque toutes les séries sont propres. Installer une routine cardio régulière."
+  },
+  {
+   "from": 36,
+   "to": 60,
+   "title": "Conditionnement",
+   "text": "Conserver la force et développer le cardio. Une seule séance vraiment dynamique par semaine suffit souvent."
+  },
+  {
+   "from": 61,
+   "to": 80,
+   "title": "Consolidation",
+   "text": "Maintenir les acquis, réduire le volume si besoin et terminer par un bilan de forme et de récupération, sans test maximal."
+  }
+ ]
+}

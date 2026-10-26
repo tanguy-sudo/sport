@@ -1,42 +1,59 @@
-// Incrémente VERSION à chaque mise à jour du site pour que les appareils récupèrent les nouveaux fichiers.
-const VERSION = 'j80-v3';
+// Généré par "npm run build" (scripts/build-sw.js) : ne pas éditer entre les marqueurs.
+// @generated-start
+const VERSION = 'j80-650c6de0';
 const ASSETS = [
   "./",
-  "index.html",
-  "planning.html",
-  "seances.html",
-  "progression.html",
-  "nutrition.html",
-  "recuperation.html",
-  "suivi.html",
-  "jours.html",
   "charges.html",
-  "seance-a.html",
-  "seance-b.html",
-  "seance-c.html",
-  "seance-d.html",
-  "js/live.js",
   "css/style.css",
-  "js/theme.js",
-  "js/pwa.js",
-  "js/suivi.js",
-  "js/store.js",
-  "js/jours.js",
-  "js/charges.js",
-  "manifest.webmanifest",
+  "data/content.json",
+  "data/sessions.json",
   "icons/icon-180.png",
   "icons/icon-192.png",
   "icons/icon-512.png",
-  "icons/icon-maskable-512.png"
+  "icons/icon-maskable-512.png",
+  "index.html",
+  "jours.html",
+  "js/charges.js",
+  "js/content.js",
+  "js/data.js",
+  "js/jours.js",
+  "js/layout.js",
+  "js/live-core.js",
+  "js/live.js",
+  "js/loads-core.js",
+  "js/plan.js",
+  "js/pwa.js",
+  "js/seance.js",
+  "js/store.js",
+  "js/suivi.js",
+  "js/theme.js",
+  "js/today.js",
+  "manifest.webmanifest",
+  "nutrition.html",
+  "planning.html",
+  "progression.html",
+  "recuperation.html",
+  "seance.html",
+  "seances.html",
+  "suivi.html"
 ];
+// @generated-end
 self.addEventListener('install', (e) => { e.waitUntil(caches.open(VERSION).then((c) => c.addAll(ASSETS))); });
 self.addEventListener('activate', (e) => {
   e.waitUntil(caches.keys().then((ks) => Promise.all(ks.filter((k) => k !== VERSION).map((k) => caches.delete(k)))));
 });
 self.addEventListener('message', (e) => { if (e.data === 'SKIP_WAITING') self.skipWaiting(); });
+
+// Stale-while-revalidate : réponse immédiate depuis le cache, puis rafraîchissement en arrière-plan
+// (la version suivante de la page est à jour). Les paramètres de requête (?s=a) sont ignorés pour le cache.
 self.addEventListener('fetch', (e) => {
-  const req = e.request;
-  if (req.method !== 'GET' || new URL(req.url).origin !== self.location.origin) return;
-  e.respondWith(caches.match(req, { ignoreSearch: true }).then((hit) =>
-    hit || fetch(req).catch(() => (req.mode === 'navigate' ? caches.match('index.html') : Response.error()))));
+  const req = e.request, url = new URL(req.url);
+  if (req.method !== 'GET' || url.origin !== self.location.origin) return;
+  const key = url.origin + url.pathname;
+  e.respondWith(caches.open(VERSION).then(async (cache) => {
+    const hit = await cache.match(req, { ignoreSearch: true });
+    const refresh = fetch(req).then((res) => { if (res && res.ok) cache.put(key, res.clone()); return res; });
+    if (hit) { e.waitUntil(refresh.catch(() => {})); return hit; }
+    return refresh.catch(() => (req.mode === 'navigate' ? cache.match('index.html') : Response.error()));
+  }));
 });

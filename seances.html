@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#17251f">
 <title>Séances — J80 · Programme sportif</title>
 <link rel="stylesheet" href="css/style.css">
@@ -12,12 +12,12 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="J80">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <script src="js/pwa.js" defer></script>
 </head>
-<body>
-<header class="hero compact"><div class="wrap"><div class="eyebrow">J80 · Programme sportif · 80 jours</div><h1>Les séances détaillées</h1><p>Échauffement inclus dans le temps total. Les séries d’échauffement progressives ne comptent pas dans les séries de travail.</p></div></header>
-<nav><div class="navinner"><a href="index.html">Accueil</a><a href="planning.html">Planning</a><a href="seances.html" class="active">Séances</a><a href="progression.html">Progression</a><a href="nutrition.html">Nutrition</a><a href="recuperation.html">Récupération</a><a href="suivi.html">Bilan hebdo</a><a href="jours.html">80 jours</a><a href="charges.html">Charges</a><button class="theme-toggle" id="themeToggle" type="button" aria-label="Changer de thème">🌙</button></div></nav>
-<main>
+<body data-page="seances">
+<script src="js/layout.js"></script>
+<main id="main">
 <section id="sessions">
   
   <div class="session-grid">
@@ -35,7 +35,7 @@
         </tbody></table>
         <p><strong>Intensité :</strong> 2–3 répétitions en réserve, sans aller à l’échec.</p>
         <div class="note"><strong>À la maison :</strong> pompes adaptées, élastiques ou tractions si tu as une barre adaptée. Sans équipement de tirage, fais de préférence cette séance en salle.</div>
-      <div class="actions"><a class="btn" href="seance-a.html">Ouvrir en mode séance →</a></div>
+      <div class="actions"><a class="btn" href="seance.html?s=a">Ouvrir en mode séance →</a></div>
       </div>
     </article>
     <article class="card session">
@@ -49,7 +49,7 @@
         </tbody></table>
         <p><strong>Repère :</strong> tu dois pouvoir parler en phrases complètes. Augmente d’abord la durée, puis l’allure si tu récupères bien.</p>
         <div class="note"><strong>À la maison ou dehors :</strong> marche active, randonnée facile ou footing conversationnel. Tu n’es pas obligé de courir.</div>
-      <div class="actions"><a class="btn" href="seance-b.html">Ouvrir en mode séance →</a></div>
+      <div class="actions"><a class="btn" href="seance.html?s=b">Ouvrir en mode séance →</a></div>
       </div>
     </article>
     <article class="card session">
@@ -66,7 +66,7 @@
         </tbody></table>
         <p><strong>Intensité :</strong> garde 2–3 répétitions en réserve et privilégie la maîtrise du mouvement.</p>
         <div class="note"><strong>À la maison :</strong> squats au poids du corps, fentes arrière, ponts fessiers et dead bug. Utilise des haltères uniquement si tu maîtrises les mouvements.</div>
-      <div class="actions"><a class="btn" href="seance-c.html">Ouvrir en mode séance →</a></div>
+      <div class="actions"><a class="btn" href="seance.html?s=c">Ouvrir en mode séance →</a></div>
       </div>
     </article>
     <article class="card session">
@@ -84,14 +84,11 @@
         </tbody></table>
         <p>Effectue 2–3 tours, avec 30–60 s de repos si nécessaire.</p>
         <div class="note"><strong>Option fatigue :</strong> remplace les intervalles par 25–35 min de cardio facile et supprime le circuit.</div>
-      <div class="actions"><a class="btn" href="seance-d.html">Ouvrir en mode séance →</a></div>
+      <div class="actions"><a class="btn" href="seance.html?s=d">Ouvrir en mode séance →</a></div>
       </div>
     </article>
   </div>
 </section>
-<div class="pager"><a href="planning.html">← Planning</a><a href="progression.html">Progression →</a></div>
 </main>
-<footer><p>Programme personnel inspiré d’une approche de défi sur 80 jours. Il s’agit d’un guide général à adapter à ton état de forme, à ton matériel et à tes éventuelles contraintes médicales. Les données du suivi restent dans le navigateur utilisé pour cette page.</p></footer>
-
 </body>
 </html>

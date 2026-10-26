@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#17251f">
 <title>Accueil — J80 · Programme sportif</title>
 <link rel="stylesheet" href="css/style.css">
@@ -12,9 +12,10 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="J80">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <script src="js/pwa.js" defer></script>
 </head>
-<body>
+<body data-page="index">
 <header class="hero">
   <div class="wrap">
     <div class="eyebrow">Programme sportif personnalisé · 80 jours</div>
@@ -25,8 +26,9 @@
     </div>
   </div>
 </header>
-<nav><div class="navinner"><a href="index.html" class="active">Accueil</a><a href="planning.html">Planning</a><a href="seances.html">Séances</a><a href="progression.html">Progression</a><a href="nutrition.html">Nutrition</a><a href="recuperation.html">Récupération</a><a href="suivi.html">Bilan hebdo</a><a href="jours.html">80 jours</a><a href="charges.html">Charges</a><button class="theme-toggle" id="themeToggle" type="button" aria-label="Changer de thème">🌙</button></div></nav>
-<main>
+<script src="js/layout.js"></script>
+<main id="main">
+<section id="today" hidden aria-live="polite"></section>
 <section id="overview">
   <div class="section-head"><h2>Le programme en un coup d’œil</h2><p class="lead">Une structure stable pour progresser sans transformer chaque séance en test maximal.</p></div>
   <div class="grid">
@@ -38,12 +40,7 @@
   <div class="green-note" style="margin-top:16px"><strong>Principe clé :</strong> termine la plupart des séries avec 2 à 3 répétitions en réserve. La progression se fait si la technique, le sommeil et la récupération restent bons.</div>
 </section><section id="phases">
   <div class="section-head"><h2>Les 4 phases</h2><p class="lead">Les jours indiquent la progression sur l’ensemble des 80 jours. Ajuste le rythme si la fatigue s’accumule.</p></div>
-  <div class="phase-grid">
-    <article class="card phase"><small>Jours 1–14</small><h3>1. Reprise structurée</h3><p>Calibrer les charges, revoir la technique et stabiliser le rythme. Garde 3 à 4 répétitions en réserve si nécessaire.</p></article>
-    <article class="card phase"><small>Jours 15–35</small><h3>2. Progression</h3><p>Ajouter des répétitions puis un peu de charge lorsque toutes les séries sont propres. Installer une routine cardio régulière.</p></article>
-    <article class="card phase"><small>Jours 36–60</small><h3>3. Conditionnement</h3><p>Conserver la force et développer le cardio. Une seule séance vraiment dynamique par semaine suffit souvent.</p></article>
-    <article class="card phase"><small>Jours 61–80</small><h3>4. Consolidation</h3><p>Maintenir les acquis, réduire le volume si besoin et terminer par un bilan de forme et de récupération, sans test maximal.</p></article>
-  </div>
+  <div class="phase-grid" id="phaseGrid"></div>
 </section><section><div class="section-head"><h2>Explorer le programme</h2></div><div class="linkgrid"><a class="card linkcard" href="planning.html"><h3>Planning</h3><p class="muted">Ta semaine type : quatre séances et des jours de récupération.</p><span>Ouvrir →</span></a><a class="card linkcard" href="seances.html"><h3>Séances</h3><p class="muted">Les quatre séances A, B, C et D, avec un mode « séance en cours » pour le téléphone.</p><span>Ouvrir →</span></a><a class="card linkcard" href="progression.html"><h3>Progression</h3><p class="muted">Comment progresser sur 80 jours, sans tout augmenter en même temps.</p><span>Ouvrir →</span></a><a class="card linkcard" href="nutrition.html"><h3>Nutrition</h3><p class="muted">Des habitudes alimentaires simples et faciles à tenir.</p><span>Ouvrir →</span></a><a class="card linkcard" href="recuperation.html"><h3>Récupération</h3><p class="muted">Sommeil, fatigue, sécurité : la récupération fait partie du programme.</p><span>Ouvrir →</span></a><a class="card linkcard" href="suivi.html"><h3>Bilan hebdo</h3><p class="muted">Coche tes séances, note ta récupération, garde un historique.</p><span>Ouvrir →</span></a><a class="card linkcard" href="jours.html"><h3>80 jours</h3><p class="muted">Valide chacun des 80 jours et vois le jour en cours.</p><span>Ouvrir →</span></a><a class="card linkcard" href="charges.html"><h3>Charges</h3><p class="muted">Note tes charges par exercice et suis ta progression en courbe.</p><span>Ouvrir →</span></a></div></section><section>
   <div class="card">
     <h2>Le bilan à J80</h2>
@@ -52,9 +49,7 @@
     <div class="green-note"><strong>Conseil :</strong> commence les deux premières semaines par la technique et la régularité. N’augmente pas simultanément les charges, le volume de musculation et l’intensité du cardio.</div>
   </div>
 </section>
-<div class="pager"><span></span><a href="planning.html">Planning →</a></div>
 </main>
-<footer><p>Programme personnel inspiré d’une approche de défi sur 80 jours. Il s’agit d’un guide général à adapter à ton état de forme, à ton matériel et à tes éventuelles contraintes médicales. Les données du suivi restent dans le navigateur utilisé pour cette page.</p></footer>
-
+<script src="js/store.js"></script><script src="js/data.js"></script><script src="js/plan.js"></script><script src="js/today.js"></script>
 </body>
 </html>

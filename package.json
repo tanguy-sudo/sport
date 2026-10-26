@@ -1,0 +1,16 @@
+{
+  "name": "j80",
+  "private": true,
+  "description": "Programme J80 - PWA statique",
+  "scripts": {
+    "build": "node scripts/build-sw.js",
+    "check": "node scripts/build-sw.js --check",
+    "test": "node --test test/*.test.js",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "eslint": "^9.0.0",
+    "globals": "^15.0.0"
+  }
+}
