@@ -123,3 +123,58 @@ test('parcours complet de la séance A jusqu’à la fin', () => {
   assert.deepStrictEqual(finished, { natural: true });
   assert.strictEqual(logged, 6); // une consigne de charge par exercice
 });
+test('sessions.json : programme (A–D) et bibliothèque cohérents', () => {
+  const ids = sessions.map((s) => s.id);
+  assert.strictEqual(new Set(ids).size, ids.length, 'ids uniques');
+  assert.deepStrictEqual(sessions.filter((s) => s.group === 'plan').map((s) => s.id), ['a', 'b', 'c', 'd']);
+  assert.ok(sessions.filter((s) => s.group === 'library').length >= 8);
+  sessions.forEach((s) => {
+    ['id', 'title', 'duration', 'lead', 'body'].forEach((k) => assert.ok(s[k], `${s.id} : ${k}`));
+    assert.ok(['plan', 'library'].includes(s.group), `${s.id} : group`);
+    assert.ok(['force', 'cardio', 'mobilite'].includes(s.category), `${s.id} : category`);
+    assert.strictEqual(typeof s.home, 'boolean', `${s.id} : home`);
+    assert.ok(Array.isArray(s.tags) && s.tags.length, `${s.id} : tags`);
+    assert.ok(/^[a-z][a-z-]*$/.test(s.id), `${s.id} : id URL`);
+    assert.ok(s.exercises || s.blocks || s.circuit, `${s.id} : contenu`);
+    (s.exercises || []).forEach((e) => { assert.ok(e.name && e.sets >= 1 && e.rest >= 0 && e.reps, `${s.id} : exercice`); });
+    (s.blocks || []).forEach((b) => assert.ok(b.title && b.sec > 0, `${s.id} : bloc`));
+    assert.ok(C.buildSteps(s).length >= 3, `${s.id} : étapes`);
+  });
+});
+
+test('séances de la bibliothèque : parcours complet jusqu’à la fin', () => {
+  sessions.filter((s) => s.group === 'library').forEach((s) => {
+    const steps = C.buildSteps(s);
+    let st = C.fresh(0), now = 0, finished = null;
+    for (let i = 0; i < 500 && !finished; i++) {
+      const r = C.advance(steps, st, (now += 1000));
+      finished = r.finish; if (r.st) st = r.st;
+    }
+    assert.ok(finished, `${s.id} ne se termine pas`);
+  });
+});
+
+test('durée des blocs chronométrés cohérente avec la durée annoncée', () => {
+  const total = (id) => by(id).blocks.reduce((a, b) => a + b.sec, 0) / 60;
+  assert.ok(total('hiit') >= 18 && total('hiit') <= 21, 'hiit');
+  assert.ok(total('course') >= 38 && total('course') <= 46, 'course');
+  assert.ok(total('mobilite') >= 13 && total('mobilite') <= 16, 'mobilité');
+});
+
+test('exercices sans charge (log:false) : pas de saisie de charge', () => {
+  const steps = C.buildSteps(by('full-body-maison'));
+  assert.ok(steps.filter((s) => s.k === 'set').every((s) => s.log === false));
+  assert.ok(C.buildSteps(by('push')).filter((s) => s.k === 'set').every((s) => s.log === true));
+  assert.ok(C.buildSteps(by('full-body')).some((s) => s.ex === 'Gainage planche' && s.log === false));
+});
+
+test('sessionName : « Séance A » ou titre de la bibliothèque', () => {
+  assert.strictEqual(C.sessionName(by('a')), 'Séance A');
+  assert.strictEqual(C.sessionName(by('hiit')), 'HIIT 20 minutes');
+});
+
+test('séance express : circuit de 3 tours', () => {
+  const steps = C.buildSteps(by('express'));
+  assert.strictEqual(steps.filter((s) => s.k === 'set').length, 12);
+  assert.strictEqual(steps[0].k, 'info');
+});

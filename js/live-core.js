@@ -9,7 +9,7 @@
     const st = [];
     if (D.warmup) st.push({ k: 'info', title: 'Échauffement', text: D.warmup });
     (D.blocks || []).forEach((b) => st.push({ k: 'timer', title: b.title, sec: b.sec, detail: b.detail || '' }));
-    (D.exercises || []).forEach((e) => { for (let i = 1; i <= e.sets; i++) st.push({ k: 'set', ex: e.name, i, n: e.sets, reps: e.reps, rest: e.rest, log: true }); });
+    (D.exercises || []).forEach((e) => { for (let i = 1; i <= e.sets; i++) st.push({ k: 'set', ex: e.name, i, n: e.sets, reps: e.reps, rest: e.rest, log: e.log !== false }); });
     if (D.circuit) {
       for (let t = 1; t <= D.circuit.rounds; t++) {
         D.circuit.exercises.forEach((e, j, a) => st.push({ k: 'set', ex: e.name, sub: `Tour ${t} / ${D.circuit.rounds}`, reps: e.reps, rest: j === a.length - 1 ? 60 : 30, log: false }));
@@ -17,6 +17,9 @@
     }
     return st;
   }
+
+  // « Séance A » pour le programme, sinon le titre de la séance de la bibliothèque.
+  const sessionName = (s) => (s.letter ? `Séance ${s.letter}` : s.title);
 
   const fresh = (now) => ({ idx: 0, phase: 'work', end: 0, started: now, vals: {}, logged: {} });
   const timerEnd = (step, base) => (step.k === 'timer' ? base + step.sec * 1000 : 0);
@@ -56,6 +59,6 @@
     steps.filter((x, i) => x.k === 'set' && (i < st.idx || (i === st.idx && (st.phase === 'rest' || natural)))).length;
   const isResumable = (sv, steps, now) => !!sv && sv.idx < steps.length && now - sv.started < 6 * 36e5;
 
-  const api = { first, fmt, parseKg, validKg, buildSteps, fresh, next, advance, back, catchUp, countSets, isResumable };
+  const api = { sessionName, first, fmt, parseKg, validKg, buildSteps, fresh, next, advance, back, catchUp, countSets, isResumable };
   if (typeof module !== 'undefined') module.exports = api; else window.J80LiveCore = api;
 })();

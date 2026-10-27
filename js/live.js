@@ -36,7 +36,7 @@
     const v = st.vals[s.ex] || {}, kg = C.parseKg(v.kg);
     if (!C.validKg(kg)) return;
     const reps = parseInt(v.reps, 10) || first(s.reps) || 1, d = S.load();
-    d.loads.push({ id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), ex: s.ex, date: S.iso(new Date()), kg, sets: s.n, reps, note: 'Séance ' + D.letter });
+    d.loads.push({ id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), ex: s.ex, date: S.iso(new Date()), kg, sets: s.n, reps, note: C.sessionName(D) });
     S.save(d); st.logged[s.ex] = 1;
   }
 
@@ -67,7 +67,8 @@
   }
 
   const label = (s) => s.k === 'set' ? s.ex + (s.i ? ` · série ${s.i}/${s.n}` : ` · ${s.sub.toLowerCase()}`) : s.title;
-  const target = (r) => 'Objectif : ' + String(r).replace(/^(\d+(?:[–-]\d+)?)/, '$1 reps');
+  // « 8–10 » -> « 8–10 reps » ; « 30 s » et « 10 / côté » restent lisibles.
+  const target = (r) => 'Objectif : ' + String(r).replace(/^(\d+(?:[–-]\d+)?)(?=\s*(?:\/|$))/, '$1 reps');
   let shown = '';
 
   function render() {
@@ -129,7 +130,7 @@
     const d = S.load(), n = S.todayNum(d); let msg = '';
     if (n >= 1 && n <= 80) { d.days[n] = true; S.save(d); msg = `Jour ${n} validé automatiquement.`; }
     const main = $('liveMain'); main.textContent = '';
-    main.append(el('div', 'Bien joué', 'live-label'), el('h2', `Séance ${D.letter} terminée 🎉`, 'live-title'),
+    main.append(el('div', 'Bien joué', 'live-label'), el('h2', `${C.sessionName(D)} terminée 🎉`, 'live-title'),
       el('div', `${mins} min` + (sets ? ` · ${sets} série${sets > 1 ? 's' : ''} faite${sets > 1 ? 's' : ''}` : ''), 'live-target'));
     if (msg) main.append(el('div', msg, 'live-next'));
     const lk = el('a', 'Voir mes charges →', 'live-next'); lk.href = 'charges.html'; main.append(lk);

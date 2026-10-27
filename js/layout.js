@@ -11,8 +11,8 @@
   },
   "seances": {
     "label": "Séances",
-    "title": "Les séances détaillées",
-    "lead": "Échauffement inclus dans le temps total. Les séries d’échauffement progressives ne comptent pas dans les séries de travail."
+    "title": "Les séances",
+    "lead": "Les séances du programme et une bibliothèque d’exemples, à piocher selon ton temps, ton matériel et ton énergie."
   },
   "progression": {
     "label": "Progression",

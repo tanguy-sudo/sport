@@ -181,3 +181,7 @@ nav a { display: inline-flex; align-items: center; min-height: 44px; }
   .hero, footer { padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
   main, .navinner { padding-left: max(18px, env(safe-area-inset-left, 0px)); padding-right: max(18px, env(safe-area-inset-right, 0px)); }
 }
+/* Filtres de la liste des séances */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { border: 1px solid var(--line); background: var(--paper); color: var(--ink); border-radius: 999px; padding: 10px 16px; min-height: 44px; font-weight: 600; }
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }

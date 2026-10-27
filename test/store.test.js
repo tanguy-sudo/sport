@@ -75,9 +75,3 @@ test('save puis load conserve les données valides', () => {
   assert.strictEqual(d.startDate, '2026-01-01');
   assert.strictEqual(d.days[3], true);
 });
-
-test('sessions.json : 4 séances cohérentes', () => {
-  const all = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'sessions.json'), 'utf8'));
-  assert.deepStrictEqual(all.map((s) => s.id), ['a', 'b', 'c', 'd']);
-  all.forEach((s) => assert.ok(s.title && s.body && (s.exercises || s.blocks)));
-});

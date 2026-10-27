@@ -1,6 +1,6 @@
 // Généré par "npm run build" (scripts/build-sw.js) : ne pas éditer entre les marqueurs.
 // @generated-start
-const VERSION = 'j80-650c6de0';
+const VERSION = 'j80-7d168e44';
 const ASSETS = [
   "./",
   "charges.html",
@@ -24,6 +24,7 @@ const ASSETS = [
   "js/plan.js",
   "js/pwa.js",
   "js/seance.js",
+  "js/seances.js",
   "js/store.js",
   "js/suivi.js",
   "js/theme.js",
