@@ -590,6 +590,1092 @@
   "body": "<p>Vélo, rameur, elliptique, course sur place ou burpees adaptés : choisis un mouvement que tu maîtrises à intensité élevée.</p>\n<table><thead><tr><th>Bloc</th><th>Durée</th><th>Intensité</th></tr></thead><tbody>\n<tr><td>Échauffement</td><td>5 min</td><td>Facile</td></tr>\n<tr><td>10 × (effort + récupération)</td><td>10 min</td><td>40 s à RPE 8/10 · 20 s très facile</td></tr>\n<tr><td>Retour au calme</td><td>4 min</td><td>Très facile</td></tr>\n</tbody></table>\n<p><strong>Repère :</strong> tu ne peux dire que quelques mots pendant l’effort, mais tu gardes une bonne technique.</p>\n<div class=\"note\"><strong>À ne pas cumuler :</strong> une seule séance de ce type par semaine suffit, en laissant au moins un jour facile avant et après.</div>"
  },
  {
+  "id": "hiit-tabata",
+  "title": "HIIT Tabata × 3",
+  "duration": "≈ 21 min",
+  "category": "cardio",
+  "home": true,
+  "group": "library",
+  "tags": [
+   "Cardio",
+   "Sans matériel",
+   "Intense"
+  ],
+  "lead": "3 blocs Tabata de 4 min (8 × 20 s / 10 s), au poids du corps",
+  "blocks": [
+   {
+    "title": "Échauffement",
+    "sec": 240,
+    "detail": "Jumping jacks légers, rotations de hanches et d’épaules, squats lents"
+   },
+   {
+    "title": "Tabata 1, effort 1/8 : Squats sautés (ou squats rapides)",
+    "sec": 20,
+    "detail": "Maximum de qualité, RPE 9/10"
+   },
+   {
+    "title": "Tabata 1, repos 1/8",
+    "sec": 10,
+    "detail": "Immobile, respire"
+   },
+   {
+    "title": "Tabata 1, effort 2/8 : Fentes alternées rapides",
+    "sec": 20,
+    "detail": "Maximum de qualité, RPE 9/10"
+   },
+   {
+    "title": "Tabata 1, repos 2/8",
+    "sec": 10,
+    "detail": "Immobile, respire"
+   },
+   {
+    "title": "Tabata 1, effort 3/8 : Squats sautés (ou squats rapides)",
+    "sec": 20,
+    "detail": "Maximum de qualité, RPE 9/10"
+   },
+   {
+    "title": "Tabata 1, repos 3/8",
+    "sec": 10,
+    "detail": "Immobile, respire"
+   },
+   {
+    "title": "Tabata 1, effort 4/8 : Fentes alternées rapides",
+    "sec": 20,
+    "detail": "Maximum de qualité, RPE 9/10"
+   },
+   {
+    "title": "Tabata 1, repos 4/8",
+    "sec": 10,
+    "detail": "Immobile, respire"
+   },
+   {
+    "title": "Tabata 1, effort 5/8 : Squats sautés (ou squats rapides)",
+    "sec": 20,
+    "detail": "Maximum de qualité, RPE 9/10"
+   },
+   {
+    "title": "Tabata 1, repos 5/8",
+    "sec": 10,
+    "detail": "Immobile, respire"
+   },
+   {
+    "title": "Tabata 1, effort 6/8 : Fentes alternées rapides",
+    "sec": 20,
+    "detail": "Maximum de qualité, RPE 9/10"
+   },
+   {
+    "title": "Tabata 1, repos 6/8",
+    "sec": 10,
+    "detail": "Immobile, respire"
+   },
+   {
+    "title": "Tabata 1, effort 7/8 : Squats sautés (ou squats rapides)",
+    "sec": 20,
+    "detail": "Maximum de qualité, RPE 9/10"
+   },
+   {
+    "title": "Tabata 1, repos 7/8",
+    "sec": 10,
+    "detail": "Immobile, respire"
+   },
+   {
+    "title": "Tabata 1, effort 8/8 : Fentes alternées rapides",
+    "sec": 20,
+    "detail": "Maximum de qualité, RPE 9/10"
+   },
+   {
+    "title": "Tabata 1, repos 8/8",
+    "sec": 10,
+    "detail": "Immobile, respire"
+   },
+   {
+    "title": "Pause entre Tabata 1 et 2",
+    "sec": 60,
+    "detail": "Marche, bois quelques gorgées"
+   },
+   {
+    "title": "Tabata 2, effort 1/8 : Pompes (genoux si besoin)",
+    "sec": 20,
+    "detail": "Maximum de qualité, RPE 9/10"
+   },
+   {
+    "title": "Tabata 2, repos 1/8",
+    "sec": 10,
+    "detail": "Immobile, respire"
+   },
+   {
+    "title": "Tabata 2, effort 2/8 : Mountain climbers",
+    "sec": 20,
+    "detail": "Maximum de qualité, RPE 9/10"
+   },
+   {
+    "title": "Tabata 2, repos 2/8",
+    "sec": 10,
+    "detail": "Immobile, respire"
+   },
+   {
+    "title": "Tabata 2, effort 3/8 : Pompes (genoux si besoin)",
+    "sec": 20,
+    "detail": "Maximum de qualité, RPE 9/10"
+   },
+   {
+    "title": "Tabata 2, repos 3/8",
+    "sec": 10,
+    "detail": "Immobile, respire"
+   },
+   {
+    "title": "Tabata 2, effort 4/8 : Mountain climbers",
+    "sec": 20,
+    "detail": "Maximum de qualité, RPE 9/10"
+   },
+   {
+    "title": "Tabata 2, repos 4/8",
+    "sec": 10,
+    "detail": "Immobile, respire"
+   },
+   {
+    "title": "Tabata 2, effort 5/8 : Pompes (genoux si besoin)",
+    "sec": 20,
+    "detail": "Maximum de qualité, RPE 9/10"
+   },
+   {
+    "title": "Tabata 2, repos 5/8",
+    "sec": 10,
+    "detail": "Immobile, respire"
+   },
+   {
+    "title": "Tabata 2, effort 6/8 : Mountain climbers",
+    "sec": 20,
+    "detail": "Maximum de qualité, RPE 9/10"
+   },
+   {
+    "title": "Tabata 2, repos 6/8",
+    "sec": 10,
+    "detail": "Immobile, respire"
+   },
+   {
+    "title": "Tabata 2, effort 7/8 : Pompes (genoux si besoin)",
+    "sec": 20,
+    "detail": "Maximum de qualité, RPE 9/10"
+   },
+   {
+    "title": "Tabata 2, repos 7/8",
+    "sec": 10,
+    "detail": "Immobile, respire"
+   },
+   {
+    "title": "Tabata 2, effort 8/8 : Mountain climbers",
+    "sec": 20,
+    "detail": "Maximum de qualité, RPE 9/10"
+   },
+   {
+    "title": "Tabata 2, repos 8/8",
+    "sec": 10,
+    "detail": "Immobile, respire"
+   },
+   {
+    "title": "Pause entre Tabata 2 et 3",
+    "sec": 60,
+    "detail": "Marche, bois quelques gorgées"
+   },
+   {
+    "title": "Tabata 3, effort 1/8 : Burpees sans saut (ou sprawls)",
+    "sec": 20,
+    "detail": "Maximum de qualité, RPE 9/10"
+   },
+   {
+    "title": "Tabata 3, repos 1/8",
+    "sec": 10,
+    "detail": "Immobile, respire"
+   },
+   {
+    "title": "Tabata 3, effort 2/8 : Skaters (pas latéraux)",
+    "sec": 20,
+    "detail": "Maximum de qualité, RPE 9/10"
+   },
+   {
+    "title": "Tabata 3, repos 2/8",
+    "sec": 10,
+    "detail": "Immobile, respire"
+   },
+   {
+    "title": "Tabata 3, effort 3/8 : Burpees sans saut (ou sprawls)",
+    "sec": 20,
+    "detail": "Maximum de qualité, RPE 9/10"
+   },
+   {
+    "title": "Tabata 3, repos 3/8",
+    "sec": 10,
+    "detail": "Immobile, respire"
+   },
+   {
+    "title": "Tabata 3, effort 4/8 : Skaters (pas latéraux)",
+    "sec": 20,
+    "detail": "Maximum de qualité, RPE 9/10"
+   },
+   {
+    "title": "Tabata 3, repos 4/8",
+    "sec": 10,
+    "detail": "Immobile, respire"
+   },
+   {
+    "title": "Tabata 3, effort 5/8 : Burpees sans saut (ou sprawls)",
+    "sec": 20,
+    "detail": "Maximum de qualité, RPE 9/10"
+   },
+   {
+    "title": "Tabata 3, repos 5/8",
+    "sec": 10,
+    "detail": "Immobile, respire"
+   },
+   {
+    "title": "Tabata 3, effort 6/8 : Skaters (pas latéraux)",
+    "sec": 20,
+    "detail": "Maximum de qualité, RPE 9/10"
+   },
+   {
+    "title": "Tabata 3, repos 6/8",
+    "sec": 10,
+    "detail": "Immobile, respire"
+   },
+   {
+    "title": "Tabata 3, effort 7/8 : Burpees sans saut (ou sprawls)",
+    "sec": 20,
+    "detail": "Maximum de qualité, RPE 9/10"
+   },
+   {
+    "title": "Tabata 3, repos 7/8",
+    "sec": 10,
+    "detail": "Immobile, respire"
+   },
+   {
+    "title": "Tabata 3, effort 8/8 : Skaters (pas latéraux)",
+    "sec": 20,
+    "detail": "Maximum de qualité, RPE 9/10"
+   },
+   {
+    "title": "Tabata 3, repos 8/8",
+    "sec": 10,
+    "detail": "Immobile, respire"
+   },
+   {
+    "title": "Retour au calme",
+    "sec": 180,
+    "detail": "Marche, respiration, étirements doux des cuisses et des épaules"
+   }
+  ],
+  "body": "<p>Trois blocs Tabata, chacun avec deux exercices alternés. Aucun matériel : un peu d’espace et un tapis suffisent.</p>\n<table><thead><tr><th>Bloc</th><th>Durée</th><th>Détail</th></tr></thead><tbody>\n<tr><td>Échauffement</td><td>4 min</td><td>Jumping jacks légers, rotations de hanches et d’épaules, squats lents</td></tr>\n<tr><td>Tabata 1</td><td>4 min</td><td>8 × (20 s Squats sautés (ou squats rapides) / Fentes alternées rapides alternés, 10 s de repos)</td></tr>\n<tr><td>Tabata 2</td><td>4 min</td><td>8 × (20 s Pompes (genoux si besoin) / Mountain climbers alternés, 10 s de repos)</td></tr>\n<tr><td>Tabata 3</td><td>4 min</td><td>8 × (20 s Burpees sans saut (ou sprawls) / Skaters (pas latéraux) alternés, 10 s de repos)</td></tr>\n<tr><td>Pauses</td><td>2 min</td><td>1 min entre chaque Tabata</td></tr>\n<tr><td>Retour au calme</td><td>3 min</td><td>Marche, respiration, étirements doux des cuisses et des épaules</td></tr>\n</tbody></table>\n<div class=\"note\"><strong>À ne pas cumuler :</strong> deux séances intenses par semaine au maximum, avec au moins un jour facile entre elles. Arrête-toi en cas de vertige, de douleur thoracique ou articulaire.</div>"
+ },
+ {
+  "id": "hiit-emom",
+  "title": "EMOM 16 minutes",
+  "duration": "≈ 21 min",
+  "category": "cardio",
+  "home": true,
+  "group": "library",
+  "tags": [
+   "Cardio",
+   "Sans matériel",
+   "Chronométré"
+  ],
+  "lead": "Chaque minute, un exercice : fais les répétitions, repose-toi le reste",
+  "blocks": [
+   {
+    "title": "Échauffement",
+    "sec": 180,
+    "detail": "Marche rapide, cercles de bras et de hanches, quelques squats lents"
+   },
+   {
+    "title": "Minute 1/16 : Squats sautés",
+    "sec": 60,
+    "detail": "12 répétitions, puis repos jusqu’à la minute suivante"
+   },
+   {
+    "title": "Minute 2/16 : Pompes",
+    "sec": 60,
+    "detail": "8–12 répétitions, puis repos jusqu’à la minute suivante"
+   },
+   {
+    "title": "Minute 3/16 : Burpees",
+    "sec": 60,
+    "detail": "8 répétitions, puis repos jusqu’à la minute suivante"
+   },
+   {
+    "title": "Minute 4/16 : Mountain climbers",
+    "sec": 60,
+    "detail": "30 répétitions (15 par jambe), puis repos jusqu’à la minute suivante"
+   },
+   {
+    "title": "Minute 5/16 : Squats sautés",
+    "sec": 60,
+    "detail": "12 répétitions, puis repos jusqu’à la minute suivante"
+   },
+   {
+    "title": "Minute 6/16 : Pompes",
+    "sec": 60,
+    "detail": "8–12 répétitions, puis repos jusqu’à la minute suivante"
+   },
+   {
+    "title": "Minute 7/16 : Burpees",
+    "sec": 60,
+    "detail": "8 répétitions, puis repos jusqu’à la minute suivante"
+   },
+   {
+    "title": "Minute 8/16 : Mountain climbers",
+    "sec": 60,
+    "detail": "30 répétitions (15 par jambe), puis repos jusqu’à la minute suivante"
+   },
+   {
+    "title": "Minute 9/16 : Squats sautés",
+    "sec": 60,
+    "detail": "12 répétitions, puis repos jusqu’à la minute suivante"
+   },
+   {
+    "title": "Minute 10/16 : Pompes",
+    "sec": 60,
+    "detail": "8–12 répétitions, puis repos jusqu’à la minute suivante"
+   },
+   {
+    "title": "Minute 11/16 : Burpees",
+    "sec": 60,
+    "detail": "8 répétitions, puis repos jusqu’à la minute suivante"
+   },
+   {
+    "title": "Minute 12/16 : Mountain climbers",
+    "sec": 60,
+    "detail": "30 répétitions (15 par jambe), puis repos jusqu’à la minute suivante"
+   },
+   {
+    "title": "Minute 13/16 : Squats sautés",
+    "sec": 60,
+    "detail": "12 répétitions, puis repos jusqu’à la minute suivante"
+   },
+   {
+    "title": "Minute 14/16 : Pompes",
+    "sec": 60,
+    "detail": "8–12 répétitions, puis repos jusqu’à la minute suivante"
+   },
+   {
+    "title": "Minute 15/16 : Burpees",
+    "sec": 60,
+    "detail": "8 répétitions, puis repos jusqu’à la minute suivante"
+   },
+   {
+    "title": "Minute 16/16 : Mountain climbers",
+    "sec": 60,
+    "detail": "30 répétitions (15 par jambe), puis repos jusqu’à la minute suivante"
+   },
+   {
+    "title": "Retour au calme",
+    "sec": 120,
+    "detail": "Marche, respiration, mobilité douce"
+   }
+  ],
+  "body": "<p>EMOM = « Every Minute On the Minute ». Tu enchaînes 4 exercices, 4 tours : plus tu vas vite, plus tu te reposes.</p>\n<table><thead><tr><th>Bloc</th><th>Durée</th><th>Détail</th></tr></thead><tbody>\n<tr><td>Échauffement</td><td>3 min</td><td>Marche rapide, cercles de bras et de hanches, quelques squats lents</td></tr>\n<tr><td>Minutes 1 à 16</td><td>16 min</td><td>4 tours de : squats sautés (12) · pompes (8–12) · burpees (8) · mountain climbers (30)</td></tr>\n<tr><td>Retour au calme</td><td>2 min</td><td>Marche, respiration, mobilité douce</td></tr>\n</tbody></table>\n<div class=\"note\"><strong>Règle :</strong> si tu ne finis pas les répétitions dans la minute, réduis le nombre au tour suivant.</div>\n<div class=\"note\"><strong>À ne pas cumuler :</strong> deux séances intenses par semaine au maximum, avec au moins un jour facile entre elles. Arrête-toi en cas de vertige, de douleur thoracique ou articulaire.</div>"
+ },
+ {
+  "id": "hiit-30-30",
+  "title": "HIIT 30 / 30 sans matériel",
+  "duration": "≈ 20 min",
+  "category": "cardio",
+  "home": true,
+  "group": "library",
+  "tags": [
+   "Cardio",
+   "Sans matériel",
+   "Débutant"
+  ],
+  "lead": "12 efforts de 30 s, 30 s de repos : le format le plus simple",
+  "blocks": [
+   {
+    "title": "Échauffement",
+    "sec": 240,
+    "detail": "Marche rapide, jumping jacks légers, rotations des articulations"
+   },
+   {
+    "title": "Tour 1, effort 1/6 : Jumping jacks",
+    "sec": 30,
+    "detail": "RPE 8/10, garde la technique"
+   },
+   {
+    "title": "Tour 1, repos 1/6",
+    "sec": 30,
+    "detail": "Marche sur place"
+   },
+   {
+    "title": "Tour 1, effort 2/6 : Squats rapides",
+    "sec": 30,
+    "detail": "RPE 8/10, garde la technique"
+   },
+   {
+    "title": "Tour 1, repos 2/6",
+    "sec": 30,
+    "detail": "Marche sur place"
+   },
+   {
+    "title": "Tour 1, effort 3/6 : Montées de genoux",
+    "sec": 30,
+    "detail": "RPE 8/10, garde la technique"
+   },
+   {
+    "title": "Tour 1, repos 3/6",
+    "sec": 30,
+    "detail": "Marche sur place"
+   },
+   {
+    "title": "Tour 1, effort 4/6 : Fentes alternées",
+    "sec": 30,
+    "detail": "RPE 8/10, garde la technique"
+   },
+   {
+    "title": "Tour 1, repos 4/6",
+    "sec": 30,
+    "detail": "Marche sur place"
+   },
+   {
+    "title": "Tour 1, effort 5/6 : Mountain climbers",
+    "sec": 30,
+    "detail": "RPE 8/10, garde la technique"
+   },
+   {
+    "title": "Tour 1, repos 5/6",
+    "sec": 30,
+    "detail": "Marche sur place"
+   },
+   {
+    "title": "Tour 1, effort 6/6 : Skaters",
+    "sec": 30,
+    "detail": "RPE 8/10, garde la technique"
+   },
+   {
+    "title": "Tour 1, repos 6/6",
+    "sec": 30,
+    "detail": "Marche sur place"
+   },
+   {
+    "title": "Pause entre les tours",
+    "sec": 60,
+    "detail": "Respire, bois"
+   },
+   {
+    "title": "Tour 2, effort 1/6 : Jumping jacks",
+    "sec": 30,
+    "detail": "RPE 8/10, garde la technique"
+   },
+   {
+    "title": "Tour 2, repos 1/6",
+    "sec": 30,
+    "detail": "Marche sur place"
+   },
+   {
+    "title": "Tour 2, effort 2/6 : Squats rapides",
+    "sec": 30,
+    "detail": "RPE 8/10, garde la technique"
+   },
+   {
+    "title": "Tour 2, repos 2/6",
+    "sec": 30,
+    "detail": "Marche sur place"
+   },
+   {
+    "title": "Tour 2, effort 3/6 : Montées de genoux",
+    "sec": 30,
+    "detail": "RPE 8/10, garde la technique"
+   },
+   {
+    "title": "Tour 2, repos 3/6",
+    "sec": 30,
+    "detail": "Marche sur place"
+   },
+   {
+    "title": "Tour 2, effort 4/6 : Fentes alternées",
+    "sec": 30,
+    "detail": "RPE 8/10, garde la technique"
+   },
+   {
+    "title": "Tour 2, repos 4/6",
+    "sec": 30,
+    "detail": "Marche sur place"
+   },
+   {
+    "title": "Tour 2, effort 5/6 : Mountain climbers",
+    "sec": 30,
+    "detail": "RPE 8/10, garde la technique"
+   },
+   {
+    "title": "Tour 2, repos 5/6",
+    "sec": 30,
+    "detail": "Marche sur place"
+   },
+   {
+    "title": "Tour 2, effort 6/6 : Skaters",
+    "sec": 30,
+    "detail": "RPE 8/10, garde la technique"
+   },
+   {
+    "title": "Tour 2, repos 6/6",
+    "sec": 30,
+    "detail": "Marche sur place"
+   },
+   {
+    "title": "Retour au calme",
+    "sec": 180,
+    "detail": "Marche lente, étirements doux"
+   }
+  ],
+  "body": "<p>Six exercices, deux tours, 30 s d’effort pour 30 s de repos. Idéal pour débuter en HIIT ou reprendre.</p>\n<table><thead><tr><th>Bloc</th><th>Durée</th><th>Détail</th></tr></thead><tbody>\n<tr><td>Échauffement</td><td>4 min</td><td>Marche rapide, jumping jacks légers, rotations des articulations</td></tr>\n<tr><td>Tour 1</td><td>6 min</td><td>Jumping jacks · squats rapides · montées de genoux · fentes alternées · mountain climbers · skaters (30 s / 30 s)</td></tr>\n<tr><td>Pause</td><td>1 min</td><td>Récupération</td></tr>\n<tr><td>Tour 2</td><td>6 min</td><td>Mêmes exercices</td></tr>\n<tr><td>Retour au calme</td><td>3 min</td><td>Marche lente, étirements doux</td></tr>\n</tbody></table>\n<div class=\"note\"><strong>À ne pas cumuler :</strong> deux séances intenses par semaine au maximum, avec au moins un jour facile entre elles. Arrête-toi en cas de vertige, de douleur thoracique ou articulaire.</div>"
+ },
+ {
+  "id": "hiit-sans-impact",
+  "title": "HIIT sans impact (appartement)",
+  "duration": "≈ 20 min",
+  "category": "cardio",
+  "home": true,
+  "group": "library",
+  "tags": [
+   "Cardio",
+   "Sans matériel",
+   "Silencieux",
+   "Articulations"
+  ],
+  "lead": "12 efforts de 40 s, sans saut : silencieux et doux pour les genoux",
+  "blocks": [
+   {
+    "title": "Échauffement",
+    "sec": 240,
+    "detail": "Marche sur place, cercles de hanches, squats lents, rotations d’épaules"
+   },
+   {
+    "title": "Tour 1, effort 1/6 : Squats avec montée de bras",
+    "sec": 40,
+    "detail": "RPE 7–8/10, sans sauter ni taper les pieds"
+   },
+   {
+    "title": "Tour 1, repos 1/6",
+    "sec": 20,
+    "detail": "Respire, secoue les membres"
+   },
+   {
+    "title": "Tour 1, effort 2/6 : Pompes inclinées (mains sur une chaise)",
+    "sec": 40,
+    "detail": "RPE 7–8/10, sans sauter ni taper les pieds"
+   },
+   {
+    "title": "Tour 1, repos 2/6",
+    "sec": 20,
+    "detail": "Respire, secoue les membres"
+   },
+   {
+    "title": "Tour 1, effort 3/6 : Fentes arrière alternées",
+    "sec": 40,
+    "detail": "RPE 7–8/10, sans sauter ni taper les pieds"
+   },
+   {
+    "title": "Tour 1, repos 3/6",
+    "sec": 20,
+    "detail": "Respire, secoue les membres"
+   },
+   {
+    "title": "Tour 1, effort 4/6 : Planche avec toucher d’épaule",
+    "sec": 40,
+    "detail": "RPE 7–8/10, sans sauter ni taper les pieds"
+   },
+   {
+    "title": "Tour 1, repos 4/6",
+    "sec": 20,
+    "detail": "Respire, secoue les membres"
+   },
+   {
+    "title": "Tour 1, effort 5/6 : Pont fessier dynamique",
+    "sec": 40,
+    "detail": "RPE 7–8/10, sans sauter ni taper les pieds"
+   },
+   {
+    "title": "Tour 1, repos 5/6",
+    "sec": 20,
+    "detail": "Respire, secoue les membres"
+   },
+   {
+    "title": "Tour 1, effort 6/6 : Mountain climbers lents",
+    "sec": 40,
+    "detail": "RPE 7–8/10, sans sauter ni taper les pieds"
+   },
+   {
+    "title": "Tour 1, repos 6/6",
+    "sec": 20,
+    "detail": "Respire, secoue les membres"
+   },
+   {
+    "title": "Pause entre les tours",
+    "sec": 60,
+    "detail": "Marche, bois"
+   },
+   {
+    "title": "Tour 2, effort 1/6 : Squats avec montée de bras",
+    "sec": 40,
+    "detail": "RPE 7–8/10, sans sauter ni taper les pieds"
+   },
+   {
+    "title": "Tour 2, repos 1/6",
+    "sec": 20,
+    "detail": "Respire, secoue les membres"
+   },
+   {
+    "title": "Tour 2, effort 2/6 : Pompes inclinées (mains sur une chaise)",
+    "sec": 40,
+    "detail": "RPE 7–8/10, sans sauter ni taper les pieds"
+   },
+   {
+    "title": "Tour 2, repos 2/6",
+    "sec": 20,
+    "detail": "Respire, secoue les membres"
+   },
+   {
+    "title": "Tour 2, effort 3/6 : Fentes arrière alternées",
+    "sec": 40,
+    "detail": "RPE 7–8/10, sans sauter ni taper les pieds"
+   },
+   {
+    "title": "Tour 2, repos 3/6",
+    "sec": 20,
+    "detail": "Respire, secoue les membres"
+   },
+   {
+    "title": "Tour 2, effort 4/6 : Planche avec toucher d’épaule",
+    "sec": 40,
+    "detail": "RPE 7–8/10, sans sauter ni taper les pieds"
+   },
+   {
+    "title": "Tour 2, repos 4/6",
+    "sec": 20,
+    "detail": "Respire, secoue les membres"
+   },
+   {
+    "title": "Tour 2, effort 5/6 : Pont fessier dynamique",
+    "sec": 40,
+    "detail": "RPE 7–8/10, sans sauter ni taper les pieds"
+   },
+   {
+    "title": "Tour 2, repos 5/6",
+    "sec": 20,
+    "detail": "Respire, secoue les membres"
+   },
+   {
+    "title": "Tour 2, effort 6/6 : Mountain climbers lents",
+    "sec": 40,
+    "detail": "RPE 7–8/10, sans sauter ni taper les pieds"
+   },
+   {
+    "title": "Tour 2, repos 6/6",
+    "sec": 20,
+    "detail": "Respire, secoue les membres"
+   },
+   {
+    "title": "Retour au calme",
+    "sec": 180,
+    "detail": "Étirements doux, respiration"
+   }
+  ],
+  "body": "<p>Tout est contrôlé, rien ne saute ni ne tape le sol : parfait en appartement ou si tes genoux, chevilles ou dos sont sensibles.</p>\n<table><thead><tr><th>Bloc</th><th>Durée</th><th>Détail</th></tr></thead><tbody>\n<tr><td>Échauffement</td><td>4 min</td><td>Marche sur place, cercles de hanches, squats lents, rotations d’épaules</td></tr>\n<tr><td>Tour 1</td><td>6 min</td><td>Squats avec montée de bras · pompes inclinées · fentes arrière · planche avec toucher d’épaule · pont fessier · mountain climbers lents (40 s / 20 s)</td></tr>\n<tr><td>Pause</td><td>1 min</td><td>Récupération</td></tr>\n<tr><td>Tour 2</td><td>6 min</td><td>Mêmes exercices</td></tr>\n<tr><td>Retour au calme</td><td>3 min</td><td>Étirements doux, respiration</td></tr>\n</tbody></table>\n<div class=\"note\"><strong>À ne pas cumuler :</strong> deux séances intenses par semaine au maximum, avec au moins un jour facile entre elles. Arrête-toi en cas de vertige, de douleur thoracique ou articulaire.</div>"
+ },
+ {
+  "id": "hiit-halteres",
+  "title": "HIIT haltères (1 ou 2 charges)",
+  "duration": "≈ 21 min",
+  "category": "cardio",
+  "home": true,
+  "group": "library",
+  "tags": [
+   "Cardio",
+   "Haltères",
+   "Force"
+  ],
+  "lead": "4 mouvements, 3 tours, 40 s d’effort / 20 s de repos",
+  "blocks": [
+   {
+    "title": "Échauffement",
+    "sec": 240,
+    "detail": "Cercles d’épaules et de hanches, squats sans charge, 2 séries légères de swing"
+   },
+   {
+    "title": "Tour 1, effort 1/4 : Goblet squat",
+    "sec": 40,
+    "detail": "Haltère contre la poitrine. Charge modérée, RPE 8/10"
+   },
+   {
+    "title": "Tour 1, repos 1/4",
+    "sec": 20,
+    "detail": "Pose la charge, respire"
+   },
+   {
+    "title": "Tour 1, effort 2/4 : Rowing unilatéral",
+    "sec": 40,
+    "detail": "Alterne les bras à mi-série. Charge modérée, RPE 8/10"
+   },
+   {
+    "title": "Tour 1, repos 2/4",
+    "sec": 20,
+    "detail": "Pose la charge, respire"
+   },
+   {
+    "title": "Tour 1, effort 3/4 : Thruster",
+    "sec": 40,
+    "detail": "Squat puis développé en un mouvement. Charge modérée, RPE 8/10"
+   },
+   {
+    "title": "Tour 1, repos 3/4",
+    "sec": 20,
+    "detail": "Pose la charge, respire"
+   },
+   {
+    "title": "Tour 1, effort 4/4 : Swing (ou kettlebell swing)",
+    "sec": 40,
+    "detail": "Charge de hanches, dos plat. Charge modérée, RPE 8/10"
+   },
+   {
+    "title": "Tour 1, repos 4/4",
+    "sec": 20,
+    "detail": "Pose la charge, respire"
+   },
+   {
+    "title": "Pause entre les tours 1 et 2",
+    "sec": 60,
+    "detail": "Marche, bois"
+   },
+   {
+    "title": "Tour 2, effort 1/4 : Goblet squat",
+    "sec": 40,
+    "detail": "Haltère contre la poitrine. Charge modérée, RPE 8/10"
+   },
+   {
+    "title": "Tour 2, repos 1/4",
+    "sec": 20,
+    "detail": "Pose la charge, respire"
+   },
+   {
+    "title": "Tour 2, effort 2/4 : Rowing unilatéral",
+    "sec": 40,
+    "detail": "Alterne les bras à mi-série. Charge modérée, RPE 8/10"
+   },
+   {
+    "title": "Tour 2, repos 2/4",
+    "sec": 20,
+    "detail": "Pose la charge, respire"
+   },
+   {
+    "title": "Tour 2, effort 3/4 : Thruster",
+    "sec": 40,
+    "detail": "Squat puis développé en un mouvement. Charge modérée, RPE 8/10"
+   },
+   {
+    "title": "Tour 2, repos 3/4",
+    "sec": 20,
+    "detail": "Pose la charge, respire"
+   },
+   {
+    "title": "Tour 2, effort 4/4 : Swing (ou kettlebell swing)",
+    "sec": 40,
+    "detail": "Charge de hanches, dos plat. Charge modérée, RPE 8/10"
+   },
+   {
+    "title": "Tour 2, repos 4/4",
+    "sec": 20,
+    "detail": "Pose la charge, respire"
+   },
+   {
+    "title": "Pause entre les tours 2 et 3",
+    "sec": 60,
+    "detail": "Marche, bois"
+   },
+   {
+    "title": "Tour 3, effort 1/4 : Goblet squat",
+    "sec": 40,
+    "detail": "Haltère contre la poitrine. Charge modérée, RPE 8/10"
+   },
+   {
+    "title": "Tour 3, repos 1/4",
+    "sec": 20,
+    "detail": "Pose la charge, respire"
+   },
+   {
+    "title": "Tour 3, effort 2/4 : Rowing unilatéral",
+    "sec": 40,
+    "detail": "Alterne les bras à mi-série. Charge modérée, RPE 8/10"
+   },
+   {
+    "title": "Tour 3, repos 2/4",
+    "sec": 20,
+    "detail": "Pose la charge, respire"
+   },
+   {
+    "title": "Tour 3, effort 3/4 : Thruster",
+    "sec": 40,
+    "detail": "Squat puis développé en un mouvement. Charge modérée, RPE 8/10"
+   },
+   {
+    "title": "Tour 3, repos 3/4",
+    "sec": 20,
+    "detail": "Pose la charge, respire"
+   },
+   {
+    "title": "Tour 3, effort 4/4 : Swing (ou kettlebell swing)",
+    "sec": 40,
+    "detail": "Charge de hanches, dos plat. Charge modérée, RPE 8/10"
+   },
+   {
+    "title": "Tour 3, repos 4/4",
+    "sec": 20,
+    "detail": "Pose la charge, respire"
+   },
+   {
+    "title": "Retour au calme",
+    "sec": 180,
+    "detail": "Marche, étirements, respiration"
+   }
+  ],
+  "body": "<p>Un haltère (ou une kettlebell) suffit. Les mouvements sont composés pour faire travailler tout le corps.</p>\n<table><thead><tr><th>Bloc</th><th>Durée</th><th>Détail</th></tr></thead><tbody>\n<tr><td>Échauffement</td><td>4 min</td><td>Cercles d’épaules et de hanches, squats sans charge, 2 séries légères de swing</td></tr>\n<tr><td>3 tours</td><td>12 min</td><td>Goblet squat · rowing unilatéral · thruster · swing (40 s / 20 s)</td></tr>\n<tr><td>Pauses</td><td>2 min</td><td>1 min entre chaque tour</td></tr>\n<tr><td>Retour au calme</td><td>3 min</td><td>Marche, étirements, respiration</td></tr>\n</tbody></table>\n<div class=\"note\"><strong>Charge :</strong> choisis un poids avec lequel tu pourrais faire 15 à 20 répétitions. La technique prime sur la vitesse.</div>\n<div class=\"note\"><strong>À ne pas cumuler :</strong> deux séances intenses par semaine au maximum, avec au moins un jour facile entre elles. Arrête-toi en cas de vertige, de douleur thoracique ou articulaire.</div>"
+ },
+ {
+  "id": "hiit-velo-rameur",
+  "title": "HIIT vélo ou rameur",
+  "duration": "≈ 25 min",
+  "category": "cardio",
+  "home": false,
+  "group": "library",
+  "tags": [
+   "Cardio",
+   "Machine",
+   "Sprints"
+  ],
+  "lead": "8 sprints de 30 s, 90 s de récupération",
+  "blocks": [
+   {
+    "title": "Échauffement",
+    "sec": 300,
+    "detail": "Allure facile, 3 petites accélérations de 10 s"
+   },
+   {
+    "title": "Sprint 1/8",
+    "sec": 30,
+    "detail": "RPE 9/10, résistance moyenne, cadence haute"
+   },
+   {
+    "title": "Récupération 1/8",
+    "sec": 90,
+    "detail": "Très facile, respiration calme"
+   },
+   {
+    "title": "Sprint 2/8",
+    "sec": 30,
+    "detail": "RPE 9/10, résistance moyenne, cadence haute"
+   },
+   {
+    "title": "Récupération 2/8",
+    "sec": 90,
+    "detail": "Très facile, respiration calme"
+   },
+   {
+    "title": "Sprint 3/8",
+    "sec": 30,
+    "detail": "RPE 9/10, résistance moyenne, cadence haute"
+   },
+   {
+    "title": "Récupération 3/8",
+    "sec": 90,
+    "detail": "Très facile, respiration calme"
+   },
+   {
+    "title": "Sprint 4/8",
+    "sec": 30,
+    "detail": "RPE 9/10, résistance moyenne, cadence haute"
+   },
+   {
+    "title": "Récupération 4/8",
+    "sec": 90,
+    "detail": "Très facile, respiration calme"
+   },
+   {
+    "title": "Sprint 5/8",
+    "sec": 30,
+    "detail": "RPE 9/10, résistance moyenne, cadence haute"
+   },
+   {
+    "title": "Récupération 5/8",
+    "sec": 90,
+    "detail": "Très facile, respiration calme"
+   },
+   {
+    "title": "Sprint 6/8",
+    "sec": 30,
+    "detail": "RPE 9/10, résistance moyenne, cadence haute"
+   },
+   {
+    "title": "Récupération 6/8",
+    "sec": 90,
+    "detail": "Très facile, respiration calme"
+   },
+   {
+    "title": "Sprint 7/8",
+    "sec": 30,
+    "detail": "RPE 9/10, résistance moyenne, cadence haute"
+   },
+   {
+    "title": "Récupération 7/8",
+    "sec": 90,
+    "detail": "Très facile, respiration calme"
+   },
+   {
+    "title": "Sprint 8/8",
+    "sec": 30,
+    "detail": "RPE 9/10, résistance moyenne, cadence haute"
+   },
+   {
+    "title": "Récupération 8/8",
+    "sec": 90,
+    "detail": "Très facile, respiration calme"
+   },
+   {
+    "title": "Retour au calme",
+    "sec": 240,
+    "detail": "Allure très facile, respiration calme"
+   }
+  ],
+  "body": "<p>Sur vélo, vélo elliptique ou rameur. Les sprints sont courts mais francs : récupère vraiment entre chacun.</p>\n<table><thead><tr><th>Bloc</th><th>Durée</th><th>Détail</th></tr></thead><tbody>\n<tr><td>Échauffement</td><td>5 min</td><td>Allure facile, 3 petites accélérations de 10 s</td></tr>\n<tr><td>8 × (sprint + récupération)</td><td>16 min</td><td>30 s à RPE 9/10 · 90 s très facile</td></tr>\n<tr><td>Retour au calme</td><td>4 min</td><td>Allure très facile, respiration calme</td></tr>\n</tbody></table>\n<div class=\"note\"><strong>À ne pas cumuler :</strong> deux séances intenses par semaine au maximum, avec au moins un jour facile entre elles. Arrête-toi en cas de vertige, de douleur thoracique ou articulaire.</div>"
+ },
+ {
+  "id": "hiit-pyramide",
+  "title": "HIIT pyramide en extérieur",
+  "duration": "≈ 32 min",
+  "category": "cardio",
+  "home": false,
+  "group": "library",
+  "tags": [
+   "Cardio",
+   "Course",
+   "Sans matériel",
+   "Extérieur"
+  ],
+  "lead": "Pyramide 30–60–90–60–30 s, deux fois, en courant dehors",
+  "blocks": [
+   {
+    "title": "Échauffement",
+    "sec": 420,
+    "detail": "Footing facile, 3 lignes droites progressives de 15 s"
+   },
+   {
+    "title": "Effort 1/5 : 30 s",
+    "sec": 30,
+    "detail": "Allure rapide mais tenable, RPE 8/10"
+   },
+   {
+    "title": "Récupération 1/5",
+    "sec": 30,
+    "detail": "Marche ou trot très lent"
+   },
+   {
+    "title": "Effort 2/5 : 60 s",
+    "sec": 60,
+    "detail": "Allure rapide mais tenable, RPE 8/10"
+   },
+   {
+    "title": "Récupération 2/5",
+    "sec": 60,
+    "detail": "Marche ou trot très lent"
+   },
+   {
+    "title": "Effort 3/5 : 90 s",
+    "sec": 90,
+    "detail": "Allure rapide mais tenable, RPE 8/10"
+   },
+   {
+    "title": "Récupération 3/5",
+    "sec": 90,
+    "detail": "Marche ou trot très lent"
+   },
+   {
+    "title": "Effort 4/5 : 60 s",
+    "sec": 60,
+    "detail": "Allure rapide mais tenable, RPE 8/10"
+   },
+   {
+    "title": "Récupération 4/5",
+    "sec": 60,
+    "detail": "Marche ou trot très lent"
+   },
+   {
+    "title": "Effort 5/5 : 30 s",
+    "sec": 30,
+    "detail": "Allure rapide mais tenable, RPE 8/10"
+   },
+   {
+    "title": "Récupération 5/5",
+    "sec": 30,
+    "detail": "Marche ou trot très lent"
+   },
+   {
+    "title": "Pause entre les pyramides",
+    "sec": 120,
+    "detail": "Marche, respiration"
+   },
+   {
+    "title": "Effort 1/5 : 30 s",
+    "sec": 30,
+    "detail": "Allure rapide mais tenable, RPE 8/10"
+   },
+   {
+    "title": "Récupération 1/5",
+    "sec": 30,
+    "detail": "Marche ou trot très lent"
+   },
+   {
+    "title": "Effort 2/5 : 60 s",
+    "sec": 60,
+    "detail": "Allure rapide mais tenable, RPE 8/10"
+   },
+   {
+    "title": "Récupération 2/5",
+    "sec": 60,
+    "detail": "Marche ou trot très lent"
+   },
+   {
+    "title": "Effort 3/5 : 90 s",
+    "sec": 90,
+    "detail": "Allure rapide mais tenable, RPE 8/10"
+   },
+   {
+    "title": "Récupération 3/5",
+    "sec": 90,
+    "detail": "Marche ou trot très lent"
+   },
+   {
+    "title": "Effort 4/5 : 60 s",
+    "sec": 60,
+    "detail": "Allure rapide mais tenable, RPE 8/10"
+   },
+   {
+    "title": "Récupération 4/5",
+    "sec": 60,
+    "detail": "Marche ou trot très lent"
+   },
+   {
+    "title": "Effort 5/5 : 30 s",
+    "sec": 30,
+    "detail": "Allure rapide mais tenable, RPE 8/10"
+   },
+   {
+    "title": "Récupération 5/5",
+    "sec": 30,
+    "detail": "Marche ou trot très lent"
+   },
+   {
+    "title": "Retour au calme",
+    "sec": 300,
+    "detail": "Marche, puis footing très lent"
+   }
+  ],
+  "body": "<p>Aucun matériel : un chemin ou un parc. Les efforts montent puis redescendent, avec une récupération égale à l’effort.</p>\n<table><thead><tr><th>Bloc</th><th>Durée</th><th>Détail</th></tr></thead><tbody>\n<tr><td>Échauffement</td><td>7 min</td><td>Footing facile, 3 lignes droites progressives de 15 s</td></tr>\n<tr><td>Pyramide 1</td><td>9 min</td><td>30 s · 60 s · 90 s · 60 s · 30 s, récupération égale à l’effort</td></tr>\n<tr><td>Pause</td><td>2 min</td><td>Marche</td></tr>\n<tr><td>Pyramide 2</td><td>9 min</td><td>Mêmes durées</td></tr>\n<tr><td>Retour au calme</td><td>5 min</td><td>Marche, puis footing très lent</td></tr>\n</tbody></table>\n<div class=\"note\"><strong>Terrain :</strong> choisis un sol stable. Sur une pente douce, les efforts sont plus faciles pour les articulations.</div>\n<div class=\"note\"><strong>À ne pas cumuler :</strong> deux séances intenses par semaine au maximum, avec au moins un jour facile entre elles. Arrête-toi en cas de vertige, de douleur thoracique ou articulaire.</div>"
+ },
+ {
   "id": "course",
   "title": "Course : fractionné",
   "duration": "40–45 min",

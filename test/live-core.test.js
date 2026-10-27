@@ -134,7 +134,7 @@ test('sessions.json : programme (A–D) et bibliothèque cohérents', () => {
     assert.ok(['force', 'cardio', 'mobilite'].includes(s.category), `${s.id} : category`);
     assert.strictEqual(typeof s.home, 'boolean', `${s.id} : home`);
     assert.ok(Array.isArray(s.tags) && s.tags.length, `${s.id} : tags`);
-    assert.ok(/^[a-z][a-z-]*$/.test(s.id), `${s.id} : id URL`);
+    assert.ok(/^[a-z][a-z0-9-]*$/.test(s.id), `${s.id} : id URL`);
     assert.ok(s.exercises || s.blocks || s.circuit, `${s.id} : contenu`);
     (s.exercises || []).forEach((e) => { assert.ok(e.name && e.sets >= 1 && e.rest >= 0 && e.reps, `${s.id} : exercice`); });
     (s.blocks || []).forEach((b) => assert.ok(b.title && b.sec > 0, `${s.id} : bloc`));
@@ -177,4 +177,17 @@ test('séance express : circuit de 3 tours', () => {
   const steps = C.buildSteps(by('express'));
   assert.strictEqual(steps.filter((s) => s.k === 'set').length, 12);
   assert.strictEqual(steps[0].k, 'info');
+});
+test('séances HIIT : durée totale des blocs cohérente avec la durée annoncée', () => {
+  const timed = sessions.filter((s) => s.group === 'library' && s.blocks);
+  assert.ok(timed.filter((s) => s.id.startsWith('hiit')).length >= 8, 'au moins 8 séances HIIT');
+  timed.forEach((s) => {
+    const nums = s.duration.match(/\d+/g).map(Number);
+    const total = s.blocks.reduce((a, b) => a + b.sec, 0) / 60;
+    assert.ok(total >= Math.min(...nums) - 3 && total <= Math.max(...nums) + 3, `${s.id} : ${total} min pour « ${s.duration} »`);
+  });
+});
+
+test('HIIT : au moins 3 séances sans matériel ni machine', () => {
+  assert.ok(sessions.filter((s) => s.id.startsWith('hiit') && s.tags.includes('Sans matériel')).length >= 3);
 });
