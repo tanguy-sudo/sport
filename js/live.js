@@ -1,5 +1,5 @@
 (() => {
-  const $ = (id) => document.getElementById(id), S = J80Store, C = J80LiveCore;
+  const $ = (id) => document.getElementById(id), S = J80Store, C = J80LiveCore, L = J80Loads;
   const D = window.J80Session;
   const KEY = 'j80-live-' + D.id, SND = 'j80-sound';
   const { first, fmt } = C;
@@ -27,22 +27,28 @@
   async function lock() { try { if ('wakeLock' in navigator) wl = await navigator.wakeLock.request('screen'); } catch (_) {} }
   function unlock() { try { if (wl) wl.release(); } catch (_) {} wl = null; }
 
-  const lastLoad = (ex) => {
-    const l = S.load().loads.filter(x => x.ex === ex).sort((a, b) => a.date.localeCompare(b.date));
-    return l.length ? l[l.length - 1] : null;
-  };
-  function logExercise(s) {
-    if (!s.log || s.i !== s.n || st.logged[s.ex]) return;
-    const v = st.vals[s.ex] || {}, kg = C.parseKg(v.kg);
+  const sk = (s) => s.ex + '#' + s.i;
+  // Séance enregistrée au fil des séries : créée au premier enregistrement, retrouvée ensuite grâce à st.wid.
+  function workout(d) {
+    let w = d.workouts.find((x) => x.id === st.wid);
+    if (!w) d.workouts.push(w = { id: st.wid, date: S.iso(new Date(st.started)), sessionId: D.id, title: D.title, exercises: [] });
+    return w;
+  }
+  // Idempotent : refaire une série (bouton Précédent) écrase la valeur précédente.
+  function logSet(s) {
+    if (!s.log) return;
+    const v = st.vals[sk(s)] || {}, kg = C.parseKg(v.kg);
     if (!C.validKg(kg)) return;
-    const reps = parseInt(v.reps, 10) || first(s.reps) || 1, d = S.load();
-    d.loads.push({ id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), ex: s.ex, date: S.iso(new Date()), kg, sets: s.n, reps, note: C.sessionName(D) });
-    S.save(d); st.logged[s.ex] = 1;
+    const reps = parseInt(v.reps, 10) || first(s.reps) || 1, d = S.load(), w = workout(d);
+    let e = w.exercises.find((x) => x.ex === s.ex);
+    if (!e) w.exercises.push(e = { ex: s.ex, sets: [] });
+    e.sets[s.i - 1] = { kg, reps };
+    S.save(d);
   }
 
   // Applique le résultat d'une transition de live-core.
   function apply(r) {
-    if (r.log) logExercise(r.log);
+    if (r.log) logSet(r.log);
     if (r.finish) return finish(r.finish.natural);
     st = r.st || r; lastBeep = -1; save(); render();
   }
@@ -53,7 +59,7 @@
     const r = C.catchUp(steps, st, Date.now());
     if (r.fired) {
       alarm(); st = r.st;
-      r.logs.forEach(logExercise);
+      r.logs.forEach(logSet);
       if (r.finish) return finish(r.finish.natural);
       lastBeep = -1; save(); render();
     }
@@ -98,9 +104,11 @@
       const last = st.idx === steps.length - 1;
       main.append(el('div', s.i ? `Série ${s.i} / ${s.n}` : s.sub, 'live-label'), el('h2', s.ex, 'live-title'), el('div', target(s.reps), 'live-target'));
       if (s.log) {
-        const v = st.vals[s.ex] || (st.vals[s.ex] = { kg: '', reps: first(s.reps) }), ll = lastLoad(s.ex);
-        if (v.kg === '' && ll) v.kg = ll.kg;
-        if (ll) main.append(el('div', `Dernière fois : ${ll.kg} kg · ${ll.sets}×${ll.reps}`, 'live-next'));
+        const prev = L.lastSets(S.load().workouts, s.ex, st.wid), pv = st.vals[s.ex + '#' + (s.i - 1)], ref = prev[s.i - 1];
+        const v = st.vals[sk(s)] || (st.vals[sk(s)] = { kg: '', reps: '' });
+        if (v.kg === '') v.kg = pv ? pv.kg : (ref || prev[prev.length - 1] || { kg: '' }).kg;
+        if (v.reps === '') v.reps = pv ? pv.reps : (ref ? ref.reps : first(s.reps));
+        if (prev.length) main.append(el('div', 'Dernière fois : ' + L.fmtSets(prev), 'live-next'));
         const grid = el('div', undefined, 'live-inputs');
         [['kg', 'Charge (kg)', '0.5', 'decimal'], ['reps', 'Reps faites', '1', 'numeric']].forEach(([key, lab, step, mode]) => {
           const f = el('div', undefined, 'field'), l = el('label', lab, 'field-label'), i = el('input');
@@ -127,17 +135,16 @@
     finished = true; clear(); unlock();
     const sets = C.countSets(steps, st, natural);
     const mins = Math.max(1, Math.round((Date.now() - st.started) / 60000));
-    const d = S.load(), n = S.todayNum(d); let msg = '';
-    if (n >= 1 && n <= 80) { d.days[n] = true; S.save(d); msg = `Jour ${n} validé automatiquement.`; }
+    const d = S.load(), w = d.workouts.find((x) => x.id === st.wid);
+    if (w) { w.minutes = mins; S.save(d); } else if (natural || sets) { workout(d).minutes = mins; S.save(d); }
     const main = $('liveMain'); main.textContent = '';
     main.append(el('div', 'Bien joué', 'live-label'), el('h2', `${C.sessionName(D)} terminée 🎉`, 'live-title'),
       el('div', `${mins} min` + (sets ? ` · ${sets} série${sets > 1 ? 's' : ''} faite${sets > 1 ? 's' : ''}` : ''), 'live-target'));
-    if (msg) main.append(el('div', msg, 'live-next'));
-    const lk = el('a', 'Voir mes charges →', 'live-next'); lk.href = 'charges.html'; main.append(lk);
+    const lk = el('a', 'Voir mon évolution →', 'live-next'); lk.href = 'charges.html'; main.append(lk);
     $('liveProg').style.width = '100%'; $('liveStep').textContent = 'Terminée';
     $('livePrimary').textContent = 'Fermer'; act.primary = () => location.reload();
     $('liveBack').parentElement.hidden = true;
-    announce(`Séance terminée en ${mins} minutes. ${msg}`);
+    announce(`Séance terminée en ${mins} minutes.`);
     main.focus({ preventScroll: true });
     if (soundOn()) { beep(660, 150); setTimeout(() => beep(880, 300), 200); }
   }
@@ -150,7 +157,7 @@
   };
   function open(state) {
     opener = document.activeElement; shown = '';
-    st = state; finished = false;
+    st = state; finished = false; if (!st.wid) st.wid = C.fresh(Date.now()).wid;
     try { ac = ac || new (window.AudioContext || window.webkitAudioContext)(); if (ac.resume) ac.resume(); } catch (_) {}
     $('live').hidden = false; document.body.classList.add('live-open'); lock();
     background().forEach((e) => { e.inert = true; });

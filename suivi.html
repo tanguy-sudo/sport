@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#17251f">
-<title>Bilan hebdo — J80 · Programme sportif</title>
+<title>Bilan hebdo — Carnet de séances</title>
 <link rel="stylesheet" href="css/style.css">
 <script src="js/theme.js"></script>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icons/icon-180.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="J80">
+<meta name="apple-mobile-web-app-title" content="Carnet">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <script src="js/pwa.js" defer></script>
 </head>
@@ -19,24 +19,14 @@
 <script src="js/layout.js"></script>
 <main id="main">
 <section id="tracker">
-  
   <div class="tracker">
     <div class="card">
-      <div class="field"><label class="field-label" for="week">Semaine du programme</label>
-        <select id="week"><option value="1">Semaine 1 — J1 à J7</option><option value="2">Semaine 2 — J8 à J14</option><option value="3-5">Semaines 3 à 5 — progression</option><option value="6-8">Semaines 6 à 8 — conditionnement</option><option value="9-11">Semaines 9 à 11 — consolidation</option><option value="12">Derniers jours — bilan final</option></select>
-      </div>
+      <div class="field"><label class="field-label" for="week">Semaine du</label><input type="date" id="week"><p class="muted small" id="weekRange"></p></div>
       <h3>Séances réalisées</h3>
-      <div class="checklist" id="workouts">
-        <label class="checkitem"><input type="checkbox" data-workout="a"><span>Séance A — Haut du corps</span></label>
-        <label class="checkitem"><input type="checkbox" data-workout="b"><span>Séance B — Cardio endurance</span></label>
-        <label class="checkitem"><input type="checkbox" data-workout="c"><span>Séance C — Bas du corps</span></label>
-        <label class="checkitem"><input type="checkbox" data-workout="d"><span>Séance D — Cardio et circuit</span></label>
-      </div>
-      <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
-      <p id="workoutCount" class="muted small">0 séance sur 4 cochée</p>
-      <div class="actions"><button class="btn secondary" id="resetChecks" type="button">Réinitialiser les cases</button></div>
-    </div>
-    <div class="card">
+      <p id="workoutCount" class="muted small" role="status" aria-live="polite"></p>
+      <div id="weekWorkouts"></div>
+      <p class="muted small">Les séances viennent de ton <a href="charges.html">journal</a>.</p>
+    </div>    <div class="card">
       <div class="field"><label class="field-label" for="sleep">Sommeil</label><select id="sleep"><option value="bon">Bon et récupérateur</option><option value="variable">Variable</option><option value="insuffisant">Insuffisant ou peu récupérateur</option></select></div>
       <div class="field"><label class="field-label" for="energy">Énergie générale</label><select id="energy"><option value="bonne">Bonne</option><option value="variable">Variable</option><option value="basse">Basse ou fatigue persistante</option></select></div>
       <div class="field"><label class="field-label" for="progression">Évolution de l’entraînement</label><select id="progression"><option value="progres">Je maîtrise mieux les exercices ou je progresse</option><option value="stable">Mes performances sont stables</option><option value="baisse">Mes performances baissent</option></select></div>
@@ -49,6 +39,6 @@
   <div class="card" style="margin-top:16px"><h3>Historique des bilans</h3><div id="history" class="muted small">Aucun bilan enregistré pour le moment.</div><div class="actions"><button class="btn secondary" id="exportHistory" type="button">Exporter l’historique (.json)</button><button class="btn secondary" id="clearHistory" type="button">Effacer l’historique</button></div></div>
 </section>
 </main>
-<script src="js/suivi.js"></script>
+<script src="js/store.js"></script><script src="js/loads-core.js"></script><script src="js/suivi.js"></script>
 </body>
 </html>

@@ -207,3 +207,10 @@ nav a { display: inline-flex; align-items: center; min-height: 44px; }
   .phase-table td:first-child { font-size: 1.05rem; color: var(--accent); }
   .phase-table td:first-child::before { display: none; }
 }
+/* Saisie des séries (charges.html) */
+.setfield { border: 0; padding: 0; margin: 0 0 16px; min-width: 0; }
+.setrow { display: grid; grid-template-columns: 5.5rem 1fr 1fr auto; gap: 10px; align-items: end; margin-bottom: 8px; }
+.setrow .field { margin: 0; }
+.setrow .btn { min-height: 44px; }
+.setnum { align-self: center; }
+@media (max-width: 800px) { .setrow { grid-template-columns: 1fr 1fr; } .setnum { grid-column: 1 / -1; } .setrow .btn { grid-column: 1 / -1; } }

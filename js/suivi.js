@@ -1,15 +1,19 @@
 (() => {
-  const $ = (id) => document.getElementById(id);
-  const checks = [...document.querySelectorAll('[data-workout]')];
+  const $ = (id) => document.getElementById(id), S = J80Store, L = J80Loads;
   const week = $('week');
   const storageKey = 'j80-program-tracker-v1';
   let history = [];
   try { history = JSON.parse(localStorage.getItem(storageKey) || '[]'); } catch (_) { history = []; }
+  const { workouts } = S.load();
+  const monday = () => L.mondayOf(week.value || S.iso(new Date()));
+  const dfr = (iso) => new Date(iso + 'T00:00').toLocaleDateString('fr-FR');
+  const plural = (n, w) => `${n} ${w}${n > 1 ? 's' : ''}`;
+  const summaryText = (st) => `${plural(st.count, 'séance')} · ${plural(st.sets, 'série')} · ${st.volume} kg de volume`;
 
   function currentRecord() {
+    const st = L.weekStats(workouts, monday());
     return {
-      week: week.value,
-      workouts: checks.map(c => ({ id: c.dataset.workout, done: c.checked })),
+      week: monday(), sessions: st.count, sets: st.sets, volume: st.volume,
       sleep: $('sleep').value,
       energy: $('energy').value,
       progression: $('progression').value,
@@ -17,10 +21,19 @@
       date: new Date().toLocaleDateString('fr-FR')
     };
   }
-  function updateChecks() {
-    const count = checks.filter(c => c.checked).length;
-    $('workoutCount').textContent = `${count} séance${count > 1 ? 's' : ''} sur 4 cochée${count > 1 ? 's' : ''}`;
-    $('progressBar').style.width = `${count / 4 * 100}%`;
+  function renderWeek() {
+    const m = monday(), st = L.weekStats(workouts, m), end = new Date(m + 'T00:00');
+    end.setDate(end.getDate() + 6);
+    $('weekRange').textContent = `Du ${dfr(m)} au ${end.toLocaleDateString('fr-FR')}.`;
+    $('workoutCount').textContent = summaryText(st);
+    const box = $('weekWorkouts'); box.textContent = '';
+    st.workouts.sort((a, b) => a.date.localeCompare(b.date)).forEach((w) => {
+      const row = document.createElement('div'), t = document.createElement('strong'), p = document.createElement('p');
+      row.className = 'loadrow'; p.className = 'muted small';
+      t.textContent = w.title;
+      p.textContent = `${dfr(w.date)}${w.exercises.length ? ' · ' + plural(w.exercises.length, 'exercice') : ''}${w.minutes ? ' · ' + w.minutes + ' min' : ''}`;
+      const info = document.createElement('div'); info.append(t, p); row.append(info); box.append(row);
+    });
   }
   function renderHistory() {
     const el = $('history');
@@ -29,9 +42,10 @@
     [...history].reverse().forEach((r) => {
       const item = document.createElement('div');
       item.style.cssText = 'padding:12px 0;border-bottom:1px solid var(--line)';
-      const done = (r.workouts || []).filter(w => w.done).length;
       const title = document.createElement('strong');
-      title.textContent = `Semaine ${r.week} · ${r.date} · ${done}/4 séances`;
+      // Anciens bilans (programme sur 80 jours) : semaine « 1 », « 3-5 », cases cochées.
+      if (/^\d{4}-\d{2}-\d{2}$/.test(r.week)) title.textContent = `Semaine du ${dfr(r.week)} · ${plural(r.sessions || 0, 'séance')}${r.volume ? ' · ' + r.volume + ' kg de volume' : ''}`;
+      else title.textContent = `Semaine ${r.week} · ${r.date} · ${(r.workouts || []).filter((w) => w.done).length} séances`;
       const detail = document.createElement('p');
       detail.className = 'muted small';
       detail.textContent = `Sommeil : ${r.sleep} · Énergie : ${r.energy} · Progression : ${r.progression}${r.notes ? ' · Notes : ' + r.notes : ''}`;
@@ -39,18 +53,17 @@
       el.appendChild(item);
     });
   }
-  checks.forEach(c => c.addEventListener('change', updateChecks));
-  $('resetChecks').addEventListener('click', () => { checks.forEach(c => c.checked = false); updateChecks(); });
+  week.value = S.iso(new Date());
+  week.addEventListener('change', renderWeek);
   $('copyReport').addEventListener('click', async () => {
     const r = currentRecord();
-    const workoutNames = {a:'Haut du corps',b:'Cardio endurance',c:'Bas du corps',d:'Cardio et circuit'};
-    const text = `BILAN J80 — Semaine ${r.week}\nDate : ${r.date}\nSéances : ${r.workouts.map(w => `${workoutNames[w.id]} : ${w.done ? 'faite' : 'non cochée'}`).join('; ')}\nSommeil : ${r.sleep}\nÉnergie : ${r.energy}\nProgression : ${r.progression}\nNotes : ${r.notes || '—'}`;
+    const text = `BILAN - Semaine du ${dfr(r.week)}\nSéances : ${plural(r.sessions, 'séance')}, ${plural(r.sets, 'série')}, ${r.volume} kg de volume\nSommeil : ${r.sleep}\nÉnergie : ${r.energy}\nProgression : ${r.progression}\nNotes : ${r.notes || '-'}`;
     try { await navigator.clipboard.writeText(text); $('feedback').textContent = 'Bilan copié dans le presse-papiers.'; }
     catch (_) { $('feedback').textContent = text; }
   });
   $('saveReport').addEventListener('click', () => {
     const r = currentRecord();
-    history = history.filter(old => !(old.week === r.week));
+    history = history.filter(old => old.week !== r.week);
     history.push(r);
     try { localStorage.setItem(storageKey, JSON.stringify(history)); $('feedback').textContent = 'Bilan enregistré dans ce navigateur.'; }
     catch (_) { $('feedback').textContent = 'Impossible d’enregistrer le bilan dans ce navigateur.'; }
@@ -67,5 +80,5 @@
       history = []; localStorage.removeItem(storageKey); renderHistory(); $('feedback').textContent = 'Historique effacé.';
     }
   });
-  updateChecks(); renderHistory();
+  renderWeek(); renderHistory();
 })();

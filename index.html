@@ -4,52 +4,45 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#17251f">
-<title>Accueil — J80 · Programme sportif</title>
+<title>Accueil - Carnet de séances</title>
 <link rel="stylesheet" href="css/style.css">
 <script src="js/theme.js"></script>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icons/icon-180.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="J80">
+<meta name="apple-mobile-web-app-title" content="Carnet">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <script src="js/pwa.js" defer></script>
-</head>
-<body data-page="index">
+</head><body data-page="index">
 <header class="hero">
   <div class="wrap">
-    <div class="eyebrow">Programme sportif personnalisé · 80 jours</div>
-    <h1>Ton défi<br>J80.</h1>
-    <p>Un plan progressif qui combine musculation, cardio, conditionnement et habitudes alimentaires durables. L’objectif : améliorer ta forme générale, soutenir tes performances et prendre soin de ta récupération.</p>
-    <div class="pills">
-      <span class="pill">4 séances / semaine</span><span class="pill">45–60 min / séance</span><span class="pill">Salle + maison</span><span class="pill">Niveau avancé adapté</span>
-    </div>
+    <div class="eyebrow">Suivi sportif</div>
+    <h1>Tes séances,<br>tes progrès.</h1>
+    <p>Lance une séance, note tes poids série par série et regarde ton évolution exercice par exercice.</p>
+    <div class="actions"><a class="btn" href="seances.html">Choisir une séance</a><a class="btn secondary" href="charges.html">Ajouter une séance passée</a></div>
   </div>
 </header>
 <script src="js/layout.js"></script>
 <main id="main">
-<section id="today" hidden aria-live="polite"></section>
-<section id="overview">
-  <div class="section-head"><h2>Le programme en un coup d’œil</h2><p class="lead">Une structure stable pour progresser sans transformer chaque séance en test maximal.</p></div>
-  <div class="grid">
-    <div class="card"><div class="stat">80</div><div class="stat-label">jours au total</div></div>
-    <div class="card"><div class="stat">4</div><div class="stat-label">séances par semaine</div></div>
-    <div class="card"><div class="stat">2 + 2</div><div class="stat-label">musculation et cardio</div></div>
-    <div class="card"><div class="stat">RPE 6–8</div><div class="stat-label">effort généralement contrôlé</div></div>
-  </div>
-  <div class="green-note" style="margin-top:16px"><strong>Principe clé :</strong> termine la plupart des séries avec 2 à 3 répétitions en réserve. La progression se fait si la technique, le sommeil et la récupération restent bons.</div>
-</section><section id="phases">
-  <div class="section-head"><h2>Les 4 phases</h2><p class="lead">Les jours indiquent la progression sur l’ensemble des 80 jours. Ajuste le rythme si la fatigue s’accumule.</p></div>
-  <div class="phase-grid" id="phaseGrid"></div>
-</section><section><div class="section-head"><h2>Explorer le programme</h2></div><div class="linkgrid"><a class="card linkcard" href="planning.html"><h3>Planning</h3><p class="muted">Ta semaine type : quatre séances et des jours de récupération.</p><span>Ouvrir →</span></a><a class="card linkcard" href="seances.html"><h3>Séances</h3><p class="muted">Les quatre séances A, B, C et D, avec un mode « séance en cours » pour le téléphone.</p><span>Ouvrir →</span></a><a class="card linkcard" href="progression.html"><h3>Progression</h3><p class="muted">Comment progresser sur 80 jours, sans tout augmenter en même temps.</p><span>Ouvrir →</span></a><a class="card linkcard" href="nutrition.html"><h3>Nutrition</h3><p class="muted">Des habitudes alimentaires simples et faciles à tenir.</p><span>Ouvrir →</span></a><a class="card linkcard" href="recuperation.html"><h3>Récupération</h3><p class="muted">Sommeil, fatigue, sécurité : la récupération fait partie du programme.</p><span>Ouvrir →</span></a><a class="card linkcard" href="suivi.html"><h3>Bilan hebdo</h3><p class="muted">Coche tes séances, note ta récupération, garde un historique.</p><span>Ouvrir →</span></a><a class="card linkcard" href="jours.html"><h3>80 jours</h3><p class="muted">Valide chacun des 80 jours et vois le jour en cours.</p><span>Ouvrir →</span></a><a class="card linkcard" href="charges.html"><h3>Charges</h3><p class="muted">Note tes charges par exercice et suis ta progression en courbe.</p><span>Ouvrir →</span></a></div></section><section>
-  <div class="card">
-    <h2>Le bilan à J80</h2>
-    <p>Évalue ta régularité, la qualité de tes mouvements, tes performances sur quelques exercices de référence, ton endurance à effort comparable, ton énergie et ta récupération.</p>
-    <p>Pas besoin d’un test maximal, d’un suivi quotidien du poids ou de te comparer à une transformation photographique. Le meilleur résultat est une condition physique améliorée et une routine que tu peux continuer après les 80 jours.</p>
-    <div class="green-note"><strong>Conseil :</strong> commence les deux premières semaines par la technique et la régularité. N’augmente pas simultanément les charges, le volume de musculation et l’intensité du cardio.</div>
+<section aria-labelledby="weekTitle">
+  <div class="section-head"><h2 id="weekTitle">Cette semaine</h2></div>
+  <div class="grid" id="weekStats" role="status"></div>
+</section>
+<section>
+  <div class="section-head"><h2>Dernières séances</h2></div>
+  <div class="card"><div id="recent" class="muted small">Aucune séance enregistrée pour le moment.</div></div>
+  <div class="actions"><a class="btn secondary" href="charges.html">Tout l'historique et les courbes</a></div>
+</section>
+<section>
+  <div class="section-head"><h2>Explorer</h2></div>
+  <div class="linkgrid">
+    <a class="card linkcard" href="seances.html"><h3>Séances</h3><p class="muted">La bibliothèque et tes propres séances, avec un mode séance pour le téléphone.</p><span>Ouvrir →</span></a>
+    <a class="card linkcard" href="charges.html"><h3>Charges</h3><p class="muted">Journal des séances, ajout manuel et courbes d'évolution.</p><span>Ouvrir →</span></a>
+    <a class="card linkcard" href="suivi.html"><h3>Bilan hebdo</h3><p class="muted">Ta semaine en chiffres, ton sommeil, ton énergie.</p><span>Ouvrir →</span></a>
   </div>
 </section>
 </main>
-<script src="js/store.js"></script><script src="js/data.js"></script><script src="js/plan.js"></script><script src="js/today.js"></script>
+<script src="js/store.js"></script><script src="js/loads-core.js"></script><script src="js/home.js"></script>
 </body>
 </html>

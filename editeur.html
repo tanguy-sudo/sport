@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#17251f">
+<title>Éditeur de séance - Carnet de séances</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/theme.js"></script>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Carnet">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script src="js/pwa.js" defer></script>
+</head><body data-page="seances" data-pager="off">
+<header class="hero compact"><div class="wrap"><div class="eyebrow">Mes séances</div><h1 id="eTitle">Nouvelle séance</h1><p>Nomme ta séance et liste tes exercices. Le mode séance les enchaînera avec les temps de repos.</p></div></header>
+<script src="js/layout.js"></script>
+<main id="main">
+<section><div class="card">
+  <div class="formgrid two">
+    <div class="field"><label class="field-label" for="title">Nom de la séance</label><input type="text" id="title" maxlength="60" placeholder="Ex. : Pectoraux et triceps"></div>
+    <div class="field"><label class="field-label" for="category">Type</label><select id="category"><option value="force">Force</option><option value="cardio">Cardio</option><option value="mobilite">Mobilité</option></select></div>
+  </div>
+  <h3>Exercices</h3>
+  <div id="rows"></div>
+  <datalist id="exList"></datalist>
+  <div class="actions"><button class="btn secondary" id="addRow" type="button">Ajouter un exercice</button></div>
+  <div class="actions"><button class="btn" id="save" type="button">Enregistrer la séance</button><a class="btn secondary" href="seances.html">Annuler</a></div>
+  <p id="feedback" class="muted small" role="status" aria-live="polite"></p>
+</div></section>
+</main>
+<script src="js/store.js"></script><script src="js/editeur.js"></script>
+</body>
+</html>

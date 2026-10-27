@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#17251f">
-<title>Séances — J80 · Programme sportif</title>
+<title>Séances — Carnet de séances</title>
 <link rel="stylesheet" href="css/style.css">
 <script src="js/theme.js"></script>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icons/icon-180.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="J80">
+<meta name="apple-mobile-web-app-title" content="Carnet">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <script src="js/pwa.js" defer></script>
 </head>
@@ -23,15 +23,21 @@
   <div class="chips" id="filters" role="group" aria-label="Filtrer les séances"></div>
   <p class="muted small" id="count" role="status" aria-live="polite"></p>
 </section>
+<section id="mine">
+  <div class="section-head"><h2>Mes séances</h2><p class="lead">Tes propres séances. Tu peux aussi dupliquer une séance existante pour l'adapter.</p></div>
+  <div class="actions"><a class="btn" href="editeur.html">Créer une séance</a></div>
+  <p class="muted small" id="mineEmpty">Aucune séance perso pour le moment.</p>
+  <div class="session-grid" id="gridMine"></div>
+</section>
 <section id="plan">
-  <div class="section-head"><h2>Programme des 80 jours</h2><p class="lead">Les quatre séances de la semaine type (A, B, C, D), suivies par le planning et le suivi des jours.</p></div>
+  <div class="section-head"><h2>Séances de base</h2><p class="lead">Quatre séances complètes : haut du corps, cardio, bas du corps, cardio et circuit.</p></div>
   <div class="session-grid" id="gridPlan"></div>
 </section>
 <section id="library">
-  <div class="section-head"><h2>Bibliothèque d’exemples</h2><p class="lead">Des séances à piocher selon ton temps, ton matériel et ton énergie. Elles ne sont pas dans le planning, mais utilisent le même mode séance.</p></div>
+  <div class="section-head"><h2>Bibliothèque d’exemples</h2><p class="lead">Des séances à piocher selon ton temps, ton matériel et ton énergie. Elles utilisent le même mode séance.</p></div>
   <div class="session-grid" id="gridLib"></div>
 </section>
 </main>
-<script src="js/data.js"></script><script src="js/live-core.js"></script><script src="js/seances.js"></script>
+<script src="js/store.js"></script><script src="js/data.js"></script><script src="js/live-core.js"></script><script src="js/seances.js"></script>
 </body>
 </html>

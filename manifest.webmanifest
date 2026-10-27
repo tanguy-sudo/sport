@@ -1,7 +1,7 @@
 {
-  "name": "J80 — Programme sportif 80 jours",
-  "short_name": "J80",
-  "description": "Programme sportif sur 80 jours : séances, suivi des jours et des charges.",
+  "name": "Carnet de séances",
+  "short_name": "Carnet",
+  "description": "Suivi sportif : séances, charges série par série et évolution.",
   "lang": "fr",
   "start_url": "./index.html",
   "scope": "./",

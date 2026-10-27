@@ -191,3 +191,13 @@ test('séances HIIT : durée totale des blocs cohérente avec la durée annoncé
 test('HIIT : au moins 3 séances sans matériel ni machine', () => {
   assert.ok(sessions.filter((s) => s.id.startsWith('hiit') && s.tags.includes('Sans matériel')).length >= 3);
 });
+test('fromCustom : séance perso utilisable par le mode séance', () => {
+  const s = C.fromCustom({ id: 'u-1', title: 'Pecs <b>', category: 'force', exercises: [{ name: 'Dév. <i>', sets: 3, reps: '8-10', rest: 90, log: true }] });
+  assert.strictEqual(s.group, 'custom');
+  assert.ok(!s.body.includes('<i>') && !s.body.includes('<b>'));
+  assert.strictEqual(C.buildSteps(s).filter((x) => x.k === 'set').length, 3);
+});
+
+test('fresh : identifiant de séance enregistrée', () => {
+  assert.ok(C.fresh(0).wid.startsWith('w'));
+});

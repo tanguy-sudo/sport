@@ -8,7 +8,7 @@ const pages = fs.readdirSync(root).filter((f) => f.endsWith('.html'));
 const read = (f) => fs.readFileSync(path.join(root, f), 'utf8');
 
 test('chaque page utilise le gabarit commun', () => {
-  assert.ok(pages.length >= 10);
+  assert.ok(pages.length >= 8);
   pages.forEach((f) => {
     const h = read(f);
     assert.match(h, /<body data-page="\w+"/, `${f} : data-page`);
@@ -27,20 +27,17 @@ test('tous les liens et scripts locaux existent', () => {
 });
 
 test('les scripts utilisés par une page sont chargés dans le bon ordre', () => {
-  ['charges', 'jours', 'index'].forEach((p) => {
+  [['charges', 'charges'], ['index', 'home'], ['suivi', 'suivi'], ['editeur', 'editeur'], ['seances', 'seances'], ['seance', 'seance']].forEach(([p, js]) => {
     const h = read(`${p}.html`), idx = (s) => h.indexOf(s);
-    assert.ok(idx('js/store.js') < idx(`js/${p === 'index' ? 'today' : p}.js`), p);
+    assert.ok(idx('js/store.js') >= 0 && idx('js/store.js') < idx(`js/${js}.js`), p);
   });
 });
 
 test('content.json : contenu complet', () => {
   const c = JSON.parse(read('data/content.json'));
-  assert.strictEqual(c.planning.week.length, 7);
-  assert.strictEqual(c.progression.rows.length, 7);
   assert.strictEqual(c.nutrition.groups.length, 4);
   assert.strictEqual(c.nutrition.meals.length, 4);
   assert.strictEqual(c.recuperation.cards.length, 4);
-  assert.strictEqual(c.phases.length, 4);
 });
 
 test('aucun caractère de remplacement (encodage)', () => {

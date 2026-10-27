@@ -21,7 +21,8 @@
   // « Séance A » pour le programme, sinon le titre de la séance de la bibliothèque.
   const sessionName = (s) => (s.letter ? `Séance ${s.letter}` : s.title);
 
-  const fresh = (now) => ({ idx: 0, phase: 'work', end: 0, started: now, vals: {}, logged: {} });
+  // wid : identifiant de la séance enregistrée au fil des séries (voir live.js).
+  const fresh = (now) => ({ idx: 0, phase: 'work', end: 0, started: now, vals: {}, wid: 'w' + now.toString(36) + Math.random().toString(36).slice(2, 6) });
   const timerEnd = (step, base) => (step.k === 'timer' ? base + step.sec * 1000 : 0);
 
   // Étape suivante (base = instant de fin théorique du minuteur écoulé, pour enchaîner sans dérive).
@@ -59,6 +60,18 @@
     steps.filter((x, i) => x.k === 'set' && (i < st.idx || (i === st.idx && (st.phase === 'rest' || natural)))).length;
   const isResumable = (sv, steps, now) => !!sv && sv.idx < steps.length && now - sv.started < 6 * 36e5;
 
-  const api = { sessionName, first, fmt, parseKg, validKg, buildSteps, fresh, next, advance, back, catchUp, countSets, isResumable };
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+  // Séance créée par l'utilisateur (store.sessions) -> même forme que data/sessions.json.
+  function fromCustom(c) {
+    const sec = c.exercises.reduce((a, e) => a + e.sets * (40 + e.rest), 0);
+    return {
+      id: c.id, title: c.title, duration: '~' + Math.max(1, Math.round(sec / 60)) + ' min', category: c.category, home: false, tags: ['Perso'], group: 'custom', custom: true,
+      lead: c.exercises.length + ' exercice' + (c.exercises.length > 1 ? 's' : '') + '.',
+      exercises: c.exercises,
+      body: '<ul>' + c.exercises.map((e) => '<li><strong>' + esc(e.name) + '</strong> : ' + e.sets + ' × ' + esc(e.reps) + ', repos ' + e.rest + ' s</li>').join('') + '</ul>',
+    };
+  }
+
+  const api = { fromCustom, sessionName, first, fmt, parseKg, validKg, buildSteps, fresh, next, advance, back, catchUp, countSets, isResumable };
   if (typeof module !== 'undefined') module.exports = api; else window.J80LiveCore = api;
 })();

@@ -1,4 +1,4 @@
-# Programme J80
+# Carnet de séances
 
 Site statique multi-pages (HTML/CSS/JS vanilla, sans framework), installable (PWA), déployé sur GitHub Pages.
 

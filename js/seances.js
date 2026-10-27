@@ -1,4 +1,4 @@
-// Liste des séances (programme + bibliothèque) avec filtres, à partir de data/sessions.json.
+// Liste des séances (de base, perso et bibliothèque) avec filtres, à partir de data/sessions.json.
 (() => {
   const $ = (id) => document.getElementById(id);
   const el = (tag, text, cls) => { const e = document.createElement(tag); if (text !== undefined) e.textContent = text; if (cls) e.className = cls; return e; };
@@ -9,7 +9,7 @@
   function card(s) {
     const a = el('article', undefined, 'card session');
     const top = el('div', undefined, 'session-top');
-    const eyebrow = el('span', `${s.letter ? 'Séance ' + s.letter : 'Bibliothèque'} · ${s.duration}`, 'eyebrow');
+    const eyebrow = el('span', `${s.letter ? 'Séance ' + s.letter : s.custom ? 'Ma séance' : 'Bibliothèque'} · ${s.duration}`, 'eyebrow');
     eyebrow.style.color = 'var(--accent)';
     top.append(eyebrow, el('h3', s.title), ...s.tags.map((t) => el('span', t, 'tag')));
     const body = el('div', undefined, 'session-body');
@@ -23,11 +23,12 @@
 
   function render() {
     let n = 0;
-    [['plan', 'gridPlan'], ['library', 'gridLib']].forEach(([group, gridId]) => {
+    [['custom', 'gridMine'], ['plan', 'gridPlan'], ['library', 'gridLib']].forEach(([group, gridId]) => {
       const list = all.filter((s) => s.group === group && matches(s, current));
       n += list.length;
       const grid = $(gridId); grid.textContent = ''; grid.append(...list.map(card));
-      grid.parentElement.hidden = !list.length;
+      grid.parentElement.hidden = !list.length && group !== 'custom';
+      if (group === 'custom') $('mineEmpty').hidden = !!list.length || current !== 'all';
     });
     $('count').textContent = `${n} séance${n > 1 ? 's' : ''}`;
     [...$('filters').children].forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.f === current)));
@@ -38,6 +39,6 @@
     b.addEventListener('click', () => { current = f; render(); });
     $('filters').append(b);
   });
-  J80Data.get('sessions').then((s) => { all = s; render(); })
+  J80Data.get('sessions').then((s) => { all = J80Store.load().sessions.map(J80LiveCore.fromCustom).concat(s); render(); })
     .catch(() => { $('count').textContent = 'Séances indisponibles hors connexion.'; });
 })();
