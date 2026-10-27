@@ -20,7 +20,7 @@
     progression(c) {
       const table = el('table', null, null, [
         el('thead', null, null, [el('tr', null, null, c.head.map((h) => el('th', h)))]),
-        el('tbody', null, null, c.rows.map((r) => el('tr', null, null, r.map((x) => el('td', x))))),
+        el('tbody', null, null, c.rows.map((r) => el('tr', null, null, r.map((x, i) => { const td = el('td', x); td.dataset.label = c.head[i]; return td; })))),
       ]);
       const rule = card([el('h3', c.ruleTitle), el('ol', null, null, c.rule.map((x) => el('li', x))), el('p', c.note, 'muted small')]);
       rule.style.marginTop = '14px';

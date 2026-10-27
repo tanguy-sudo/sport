@@ -52,7 +52,7 @@
   const hero = document.querySelector('header.hero') ? '' :
     `<header class="hero compact"><div class="wrap"><div class="eyebrow">J80 · Programme sportif · 80 jours</div><h1>${esc(me.title || '')}</h1><p>${esc(me.lead || '')}</p></div></header>`;
   const links = ORDER.map((k) => `<a href="${href(k)}"${k === id ? ' class="active" aria-current="page"' : ''}>${esc(PAGES[k].label)}</a>`).join('');
-  const nav = `<nav aria-label="Navigation principale"><div class="navinner">${links}<button class="theme-toggle" id="themeToggle" type="button" aria-label="Changer de thème">🌙</button></div></nav>`;
+  const nav = `<nav aria-label="Navigation principale"><div class="navinner"><div class="navlinks">${links}</div><button class="theme-toggle" id="themeToggle" type="button" aria-label="Changer de thème">🌙</button></div></nav>`;
 
   document.body.insertAdjacentHTML('afterbegin', '<a class="skip" href="#main">Aller au contenu</a>');
   document.currentScript.insertAdjacentHTML('beforebegin', hero + nav);
