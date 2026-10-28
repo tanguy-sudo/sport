@@ -214,3 +214,10 @@ nav a { display: inline-flex; align-items: center; min-height: 44px; }
 .setrow .btn { min-height: 44px; }
 .setnum { align-self: center; }
 @media (max-width: 800px) { .setrow { grid-template-columns: 1fr 1fr; } .setnum { grid-column: 1 / -1; } .setrow .btn { grid-column: 1 / -1; } }
+
+.exo { display:grid; grid-template-columns:1fr 1fr; gap:8px; max-width:420px; margin:0 auto; }
+.exo img { width:100%; height:auto; aspect-ratio:3 / 2; object-fit:cover; border-radius:10px; background:var(--track); }
+.live-main .exo { max-width:360px; width:100%; }
+.exo-gallery { margin-top:14px; }
+.exo-gallery summary { cursor:pointer; font-weight:700; min-height:44px; display:flex; align-items:center; }
+.exo-gallery h4 { margin:14px 0 6px; }

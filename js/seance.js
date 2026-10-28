@@ -1,6 +1,20 @@
 (() => {
   const $ = (id) => document.getElementById(id);
   const id = (new URLSearchParams(location.search).get('s') || 'a').toLowerCase();
+  // Galerie repliable : une paire d'images par exercice connu de la base d'images.
+  function gallery(s) {
+    if (!window.J80Exo) return;
+    const names = [...(s.exercises || []), ...((s.circuit && s.circuit.exercises) || [])].map((e) => e.name)
+      .concat((s.blocks || []).map((b) => J80Exo.blockName(b.title)).filter(Boolean));
+    J80Exo.ready.then(() => {
+      const figs = [...new Set(names)].map((n) => [n, J80Exo.figure(n)]).filter((x) => x[1]);
+      if (!figs.length) return;
+      const d = document.createElement('details'); d.className = 'exo-gallery';
+      const sm = document.createElement('summary'); sm.textContent = 'Voir les exercices'; d.append(sm);
+      figs.forEach(([n, f]) => { const h = document.createElement('h4'); h.textContent = n; d.append(h, f); });
+      $('sBody').after(d);
+    });
+  }
   const link = (href, text) => `<a href="${href}">${text}</a>`;
   fetch('data/sessions.json').then((r) => r.json()).then((base) => {
     const all = J80Store.load().sessions.map(J80LiveCore.fromCustom).concat(base);
@@ -24,6 +38,7 @@
     $('sLead').textContent = s.lead;
     $('sTagList').innerHTML = s.tags.map((t) => `<span class="tag">${t}</span>`).join('');
     $('sBody').innerHTML = s.body;
+    gallery(s);
     const group = all.filter((x) => x.group === s.group), gi = group.indexOf(s), p = group[gi - 1], n = group[gi + 1];
     $('sPager').innerHTML = (p ? link(`seance.html?s=${p.id}`, `← ${J80LiveCore.sessionName(p)}`) : '<span></span>')
       + link('seances.html', 'Toutes les séances')

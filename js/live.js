@@ -76,6 +76,7 @@
   // « 8–10 » -> « 8–10 reps » ; « 30 s » et « 10 / côté » restent lisibles.
   const target = (r) => 'Objectif : ' + String(r).replace(/^(\d+(?:[–-]\d+)?)(?=\s*(?:\/|$))/, '$1 reps');
   let shown = '';
+  const pic = (s) => { const f = window.J80Exo && J80Exo.forStep(s); if (f) $('liveMain').append(f); };
 
   function render() {
     const s = steps[st.idx], main = $('liveMain'), P = $('livePrimary'), A = $('liveAlt');
@@ -87,11 +88,13 @@
     if (st.phase === 'rest') {
       const n = steps[st.idx + 1];
       main.append(el('div', 'Repos', 'live-label'), el('div', fmt(s.rest), 'live-clock rest'), el('div', n ? 'À suivre : ' + label(n) : '', 'live-next'));
+      pic(n);
       main.querySelector('.live-clock').id = 'liveClock';
       P.textContent = 'Passer le repos'; act.primary = () => go(C.next(steps, st, Date.now()));
       A.textContent = '+15 s'; act.alt = () => { st.end += 15000; save(); tick(); };
     } else if (s.k === 'timer') {
       main.append(el('div', 'Bloc chronométré', 'live-label'), el('h2', s.title, 'live-title'), el('div', fmt(s.sec), 'live-clock'), el('div', s.detail, 'live-target'));
+      pic(s);
       main.querySelector('.live-clock').id = 'liveClock';
       const n = steps[st.idx + 1]; if (n) main.append(el('div', 'À suivre : ' + label(n), 'live-next'));
       P.textContent = 'Bloc suivant →'; act.primary = () => go(C.advance(steps, st, Date.now()));
@@ -103,6 +106,7 @@
     } else {
       const last = st.idx === steps.length - 1;
       main.append(el('div', s.i ? `Série ${s.i} / ${s.n}` : s.sub, 'live-label'), el('h2', s.ex, 'live-title'), el('div', target(s.reps), 'live-target'));
+      pic(s);
       if (s.log) {
         const prev = L.lastSets(S.load().workouts, s.ex, st.wid), pv = st.vals[s.ex + '#' + (s.i - 1)], ref = prev[s.i - 1];
         const v = st.vals[sk(s)] || (st.vals[sk(s)] = { kg: '', reps: '' });
