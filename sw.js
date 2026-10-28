@@ -1,6 +1,6 @@
 // Généré par "npm run build" (scripts/build-sw.js) : ne pas éditer entre les marqueurs.
 // @generated-start
-const VERSION = 'j80-be9ae13c';
+const VERSION = 'j80-1abfa5e5';
 const ASSETS = [
   "./",
   "charges.html",

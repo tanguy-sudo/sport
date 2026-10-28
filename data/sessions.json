@@ -57,7 +57,7 @@
   "id": "b",
   "letter": "B",
   "title": "Cardio endurance",
-  "duration": "45–50 min",
+  "duration": "40–45 min",
   "blocks": [
    {
     "title": "Échauffement progressif",
@@ -143,7 +143,7 @@
   "id": "d",
   "letter": "D",
   "title": "Cardio + circuit",
-  "duration": "45–55 min",
+  "duration": "40–45 min",
   "blocks": [
    {
     "title": "Échauffement",
@@ -283,7 +283,7 @@
   "noteTitle": "Rythme conseillé",
   "note": "Idéale pour 2 à 3 séances par semaine, avec au moins un jour de repos entre deux séances.",
   "group": "library",
-  "body": "<p><strong>Échauffement :</strong> 5 min de cardio facile, mobilité des épaules et des hanches, une série légère sur le premier exercice.</p>\n<table><thead><tr><th>Exercice</th><th>Séries × reps</th><th>Repos</th></tr></thead><tbody>\n<tr><td>Squat goblet ou presse à cuisses</td><td>3 × 8–10</td><td>90 s</td></tr>\n<tr><td>Développé couché avec haltères</td><td>3 × 8–10</td><td>90 s</td></tr>\n<tr><td>Tirage horizontal à la poulie</td><td>3 × 8–12</td><td>90 s</td></tr>\n<tr><td>Soulevé de terre roumain avec haltères</td><td>2 × 8–10</td><td>90 s</td></tr>\n<tr><td>Développé épaules avec haltères</td><td>2 × 10–12</td><td>75 s</td></tr>\n<tr><td>Gainage planche</td><td>2 × 30–45 s</td><td>45 s</td></tr>\n</tbody></table>\n<p><strong>Intensité :</strong> 2–3 répétitions en réserve, technique propre avant la charge.</p>\n<div class=\"note\"><strong>Rythme conseillé :</strong> Idéale pour 2 à 3 séances par semaine, avec au moins un jour de repos entre deux séances.</div>"
+  "body": "<p><strong>Échauffement :</strong> 5 min de cardio facile, mobilité des épaules et des hanches, une série légère sur le premier exercice.</p>\n<table><thead><tr><th>Exercice</th><th>Séries × reps</th><th>Repos</th></tr></thead><tbody>\n<tr><td>Squat goblet ou presse à cuisses</td><td>3 × 8–10</td><td>90 s</td></tr>\n<tr><td>Développé couché avec haltères</td><td>3 × 8–10</td><td>90 s</td></tr>\n<tr><td>Tirage horizontal à la poulie</td><td>3 × 8–12</td><td>90 s</td></tr>\n<tr><td>Soulevé de terre roumain avec haltères</td><td>2 × 8–10</td><td>90 s</td></tr>\n<tr><td>Développé épaules avec haltères</td><td>2 × 10–12</td><td>75 s</td></tr>\n<tr><td>Gainage planche</td><td>2 × 30–45 s</td><td>45 s</td></tr>\n</tbody></table>\n<p><strong>Intensité :</strong> 2–3 répétitions en réserve, technique propre avant la charge.</p>\n<div class=\"note\"><strong>Rythme conseillé :</strong> Idéale pour 2 à 3 séances par semaine, avec au moins un jour de repos entre deux séances.</div>\n<div class=\"note\"><strong>Progression :</strong> quand tu atteins le haut de la fourchette de répétitions sur toutes les séries, ajoute un peu de charge (environ 2,5 kg au haut du corps, 5 kg aux jambes). Prévois une semaine allégée toutes les 4 à 6 semaines.</div>"
  },
  {
   "id": "full-body-maison",
@@ -296,7 +296,7 @@
    "Corps entier",
    "Sans machine"
   ],
-  "lead": "6 exercices · 14 séries · poids du corps et élastique",
+  "lead": "7 exercices · 17 séries · poids du corps et élastique",
   "warmup": "4 min de marche rapide ou de montées de genoux, cercles d’épaules et de hanches.",
   "exercises": [
    {
@@ -335,8 +335,15 @@
     "log": false
    },
    {
+    "name": "Soulevé de terre à une jambe (poids du corps)",
+    "sets": 2,
+    "reps": "8 / jambe",
+    "rest": 60,
+    "log": false
+   },
+   {
     "name": "Gainage planche",
-    "sets": 1,
+    "sets": 2,
     "reps": "30–45 s",
     "rest": 45,
     "log": false
@@ -346,7 +353,7 @@
   "noteTitle": "Progresser sans matériel",
   "note": "Ajoute des répétitions, ralentis le mouvement (3 secondes en descente) ou passe à une variante à une jambe.",
   "group": "library",
-  "body": "<p><strong>Échauffement :</strong> 4 min de marche rapide ou de montées de genoux, cercles d’épaules et de hanches.</p>\n<table><thead><tr><th>Exercice</th><th>Séries × reps</th><th>Repos</th></tr></thead><tbody>\n<tr><td>Squats au poids du corps</td><td>3 × 12–15</td><td>60 s</td></tr>\n<tr><td>Pompes (adaptées si besoin)</td><td>3 × 8–12</td><td>75 s</td></tr>\n<tr><td>Rowing avec élastique ou serviette</td><td>3 × 12</td><td>60 s</td></tr>\n<tr><td>Fentes arrière</td><td>2 × 10 / jambe</td><td>60 s</td></tr>\n<tr><td>Pont fessier</td><td>2 × 15</td><td>45 s</td></tr>\n<tr><td>Gainage planche</td><td>1 × 30–45 s</td><td>45 s</td></tr>\n</tbody></table>\n<p><strong>Intensité :</strong> Termine chaque série avec 2 répétitions en réserve ; ralentis la descente pour gagner en difficulté.</p>\n<div class=\"note\"><strong>Progresser sans matériel :</strong> Ajoute des répétitions, ralentis le mouvement (3 secondes en descente) ou passe à une variante à une jambe.</div>"
+  "body": "<p><strong>Échauffement :</strong> 4 min de marche rapide ou de montées de genoux, cercles d’épaules et de hanches.</p>\n<table><thead><tr><th>Exercice</th><th>Séries × reps</th><th>Repos</th></tr></thead><tbody>\n<tr><td>Squats au poids du corps</td><td>3 × 12–15</td><td>60 s</td></tr>\n<tr><td>Pompes (adaptées si besoin)</td><td>3 × 8–12</td><td>75 s</td></tr>\n<tr><td>Rowing avec élastique ou serviette</td><td>3 × 12</td><td>60 s</td></tr>\n<tr><td>Fentes arrière</td><td>2 × 10 / jambe</td><td>60 s</td></tr>\n<tr><td>Pont fessier</td><td>2 × 15</td><td>45 s</td></tr>\n<tr><td>Soulevé de terre à une jambe (poids du corps)</td><td>2 × 8 / jambe</td><td>60 s</td></tr>\n<tr><td>Gainage planche</td><td>2 × 30–45 s</td><td>45 s</td></tr>\n</tbody></table>\n<p><strong>Intensité :</strong> Termine chaque série avec 2 répétitions en réserve ; ralentis la descente pour gagner en difficulté.</p>\n<div class=\"note\"><strong>Progresser sans matériel :</strong> Ajoute des répétitions, ralentis le mouvement (3 secondes en descente) ou passe à une variante à une jambe.</div>"
  },
  {
   "id": "push",
@@ -403,7 +410,7 @@
   "noteTitle": "Programme en 3 jours",
   "note": "À associer à la séance Pull, puis à la séance C (bas du corps) pour couvrir tout le corps sur la semaine.",
   "group": "library",
-  "body": "<p><strong>Échauffement :</strong> 5 min de cardio facile, rotations d’épaules et 2 séries légères de développé couché.</p>\n<table><thead><tr><th>Exercice</th><th>Séries × reps</th><th>Repos</th></tr></thead><tbody>\n<tr><td>Développé couché avec haltères</td><td>4 × 6–8</td><td>120 s</td></tr>\n<tr><td>Développé incliné avec haltères</td><td>3 × 8–10</td><td>90 s</td></tr>\n<tr><td>Développé épaules à la machine</td><td>3 × 8–10</td><td>90 s</td></tr>\n<tr><td>Élévations latérales</td><td>3 × 12–15</td><td>60 s</td></tr>\n<tr><td>Écarté à la poulie</td><td>2 × 12–15</td><td>60 s</td></tr>\n<tr><td>Extensions triceps à la poulie</td><td>3 × 10–12</td><td>60 s</td></tr>\n</tbody></table>\n<p><strong>Intensité :</strong> 1–3 répétitions en réserve sur les exercices principaux.</p>\n<div class=\"note\"><strong>Programme en 3 jours :</strong> À associer à la séance Pull, puis à la séance C (bas du corps) pour couvrir tout le corps sur la semaine.</div>"
+  "body": "<p><strong>Échauffement :</strong> 5 min de cardio facile, rotations d’épaules et 2 séries légères de développé couché.</p>\n<table><thead><tr><th>Exercice</th><th>Séries × reps</th><th>Repos</th></tr></thead><tbody>\n<tr><td>Développé couché avec haltères</td><td>4 × 6–8</td><td>120 s</td></tr>\n<tr><td>Développé incliné avec haltères</td><td>3 × 8–10</td><td>90 s</td></tr>\n<tr><td>Développé épaules à la machine</td><td>3 × 8–10</td><td>90 s</td></tr>\n<tr><td>Élévations latérales</td><td>3 × 12–15</td><td>60 s</td></tr>\n<tr><td>Écarté à la poulie</td><td>2 × 12–15</td><td>60 s</td></tr>\n<tr><td>Extensions triceps à la poulie</td><td>3 × 10–12</td><td>60 s</td></tr>\n</tbody></table>\n<p><strong>Intensité :</strong> 1–3 répétitions en réserve sur les exercices principaux.</p>\n<div class=\"note\"><strong>Programme en 3 jours :</strong> À associer à la séance Pull, puis à la séance C (bas du corps) pour couvrir tout le corps sur la semaine.</div>\n<div class=\"note\"><strong>Progression :</strong> quand tu atteins le haut de la fourchette de répétitions sur toutes les séries, ajoute un peu de charge (environ 2,5 kg au haut du corps, 5 kg aux jambes). Prévois une semaine allégée toutes les 4 à 6 semaines.</div>"
  },
  {
   "id": "pull",
@@ -460,7 +467,7 @@
   "noteTitle": "Associer avec",
   "note": "Séance complémentaire de Push. Garde un jour de repos entre deux séances sollicitant les mêmes muscles.",
   "group": "library",
-  "body": "<p><strong>Échauffement :</strong> 5 min de rameur ou de vélo, mobilité des omoplates et 2 séries légères de tirage vertical.</p>\n<table><thead><tr><th>Exercice</th><th>Séries × reps</th><th>Repos</th></tr></thead><tbody>\n<tr><td>Tractions assistées ou tirage vertical</td><td>4 × 6–10</td><td>120 s</td></tr>\n<tr><td>Rowing avec haltère ou barre</td><td>3 × 8–10</td><td>90 s</td></tr>\n<tr><td>Tirage horizontal à la poulie</td><td>3 × 10–12</td><td>90 s</td></tr>\n<tr><td>Face pull</td><td>3 × 12–15</td><td>60 s</td></tr>\n<tr><td>Curl biceps avec haltères</td><td>2 × 10–12</td><td>60 s</td></tr>\n<tr><td>Curl marteau</td><td>2 × 10–12</td><td>60 s</td></tr>\n</tbody></table>\n<p><strong>Intensité :</strong> Tire avec le dos, pas avec les bras : omoplates serrées, sans balancer le buste.</p>\n<div class=\"note\"><strong>Associer avec :</strong> Séance complémentaire de Push. Garde un jour de repos entre deux séances sollicitant les mêmes muscles.</div>"
+  "body": "<p><strong>Échauffement :</strong> 5 min de rameur ou de vélo, mobilité des omoplates et 2 séries légères de tirage vertical.</p>\n<table><thead><tr><th>Exercice</th><th>Séries × reps</th><th>Repos</th></tr></thead><tbody>\n<tr><td>Tractions assistées ou tirage vertical</td><td>4 × 6–10</td><td>120 s</td></tr>\n<tr><td>Rowing avec haltère ou barre</td><td>3 × 8–10</td><td>90 s</td></tr>\n<tr><td>Tirage horizontal à la poulie</td><td>3 × 10–12</td><td>90 s</td></tr>\n<tr><td>Face pull</td><td>3 × 12–15</td><td>60 s</td></tr>\n<tr><td>Curl biceps avec haltères</td><td>2 × 10–12</td><td>60 s</td></tr>\n<tr><td>Curl marteau</td><td>2 × 10–12</td><td>60 s</td></tr>\n</tbody></table>\n<p><strong>Intensité :</strong> Tire avec le dos, pas avec les bras : omoplates serrées, sans balancer le buste.</p>\n<div class=\"note\"><strong>Associer avec :</strong> Séance complémentaire de Push. Garde un jour de repos entre deux séances sollicitant les mêmes muscles.</div>\n<div class=\"note\"><strong>Progression :</strong> quand tu atteins le haut de la fourchette de répétitions sur toutes les séries, ajoute un peu de charge (environ 2,5 kg au haut du corps, 5 kg aux jambes). Prévois une semaine allégée toutes les 4 à 6 semaines.</div>"
  },
  {
   "id": "hiit",
@@ -864,7 +871,7 @@
     "detail": "Marche, respiration, étirements doux des cuisses et des épaules"
    }
   ],
-  "body": "<p>Trois blocs Tabata, chacun avec deux exercices alternés. Aucun matériel : un peu d’espace et un tapis suffisent.</p>\n<table><thead><tr><th>Bloc</th><th>Durée</th><th>Détail</th></tr></thead><tbody>\n<tr><td>Échauffement</td><td>4 min</td><td>Jumping jacks légers, rotations de hanches et d’épaules, squats lents</td></tr>\n<tr><td>Tabata 1</td><td>4 min</td><td>8 × (20 s Squats sautés (ou squats rapides) / Fentes alternées rapides alternés, 10 s de repos)</td></tr>\n<tr><td>Tabata 2</td><td>4 min</td><td>8 × (20 s Pompes (genoux si besoin) / Mountain climbers alternés, 10 s de repos)</td></tr>\n<tr><td>Tabata 3</td><td>4 min</td><td>8 × (20 s Burpees sans saut (ou sprawls) / Skaters (pas latéraux) alternés, 10 s de repos)</td></tr>\n<tr><td>Pauses</td><td>2 min</td><td>1 min entre chaque Tabata</td></tr>\n<tr><td>Retour au calme</td><td>3 min</td><td>Marche, respiration, étirements doux des cuisses et des épaules</td></tr>\n</tbody></table>\n<div class=\"note\"><strong>À ne pas cumuler :</strong> deux séances intenses par semaine au maximum, avec au moins un jour facile entre elles. Arrête-toi en cas de vertige, de douleur thoracique ou articulaire.</div>"
+  "body": "<p>Trois blocs Tabata, chacun avec deux exercices alternés. Aucun matériel : un peu d’espace et un tapis suffisent.</p>\n<table><thead><tr><th>Bloc</th><th>Durée</th><th>Détail</th></tr></thead><tbody>\n<tr><td>Échauffement</td><td>4 min</td><td>Jumping jacks légers, rotations de hanches et d’épaules, squats lents</td></tr>\n<tr><td>Tabata 1</td><td>4 min</td><td>8 × (20 s Squats sautés (ou squats rapides) / Fentes alternées rapides alternés, 10 s de repos)</td></tr>\n<tr><td>Tabata 2</td><td>4 min</td><td>8 × (20 s Pompes (genoux si besoin) / Mountain climbers alternés, 10 s de repos)</td></tr>\n<tr><td>Tabata 3</td><td>4 min</td><td>8 × (20 s Burpees sans saut (ou sprawls) / Skaters (pas latéraux) alternés, 10 s de repos)</td></tr>\n<tr><td>Pauses</td><td>2 min</td><td>1 min entre chaque Tabata</td></tr>\n<tr><td>Retour au calme</td><td>3 min</td><td>Marche, respiration, étirements doux des cuisses et des épaules</td></tr>\n</tbody></table>\n<div class=\"note\"><strong>Débutant :</strong> fais 2 Tabata au lieu de 3, et remplace les squats sautés et les burpees par leurs variantes sans impact.</div>\n<div class=\"note\"><strong>À ne pas cumuler :</strong> deux séances intenses par semaine au maximum, avec au moins un jour facile entre elles. Arrête-toi en cas de vertige, de douleur thoracique ou articulaire.</div>"
  },
  {
   "id": "hiit-emom",
@@ -1290,7 +1297,7 @@
    "Haltères",
    "Force"
   ],
-  "lead": "4 mouvements, 3 tours, 40 s d’effort / 20 s de repos",
+  "lead": "4 mouvements, 3 tours, 30 s d'effort / 30 s de repos",
   "blocks": [
    {
     "title": "Échauffement",
@@ -1299,42 +1306,42 @@
    },
    {
     "title": "Tour 1, effort 1/4 : Goblet squat",
-    "sec": 40,
+    "sec": 30,
     "detail": "Haltère contre la poitrine. Charge modérée, RPE 8/10"
    },
    {
     "title": "Tour 1, repos 1/4",
-    "sec": 20,
+    "sec": 30,
     "detail": "Pose la charge, respire"
    },
    {
     "title": "Tour 1, effort 2/4 : Rowing unilatéral",
-    "sec": 40,
+    "sec": 30,
     "detail": "Alterne les bras à mi-série. Charge modérée, RPE 8/10"
    },
    {
     "title": "Tour 1, repos 2/4",
-    "sec": 20,
+    "sec": 30,
     "detail": "Pose la charge, respire"
    },
    {
     "title": "Tour 1, effort 3/4 : Thruster",
-    "sec": 40,
+    "sec": 30,
     "detail": "Squat puis développé en un mouvement. Charge modérée, RPE 8/10"
    },
    {
     "title": "Tour 1, repos 3/4",
-    "sec": 20,
+    "sec": 30,
     "detail": "Pose la charge, respire"
    },
    {
     "title": "Tour 1, effort 4/4 : Swing (ou kettlebell swing)",
-    "sec": 40,
-    "detail": "Charge de hanches, dos plat. Charge modérée, RPE 8/10"
+    "sec": 30,
+    "detail": "Charge de hanches, dos plat. Charge modérée, RPE 8/10. Arrête la série si le dos s'arrondit."
    },
    {
     "title": "Tour 1, repos 4/4",
-    "sec": 20,
+    "sec": 30,
     "detail": "Pose la charge, respire"
    },
    {
@@ -1344,42 +1351,42 @@
    },
    {
     "title": "Tour 2, effort 1/4 : Goblet squat",
-    "sec": 40,
+    "sec": 30,
     "detail": "Haltère contre la poitrine. Charge modérée, RPE 8/10"
    },
    {
     "title": "Tour 2, repos 1/4",
-    "sec": 20,
+    "sec": 30,
     "detail": "Pose la charge, respire"
    },
    {
     "title": "Tour 2, effort 2/4 : Rowing unilatéral",
-    "sec": 40,
+    "sec": 30,
     "detail": "Alterne les bras à mi-série. Charge modérée, RPE 8/10"
    },
    {
     "title": "Tour 2, repos 2/4",
-    "sec": 20,
+    "sec": 30,
     "detail": "Pose la charge, respire"
    },
    {
     "title": "Tour 2, effort 3/4 : Thruster",
-    "sec": 40,
+    "sec": 30,
     "detail": "Squat puis développé en un mouvement. Charge modérée, RPE 8/10"
    },
    {
     "title": "Tour 2, repos 3/4",
-    "sec": 20,
+    "sec": 30,
     "detail": "Pose la charge, respire"
    },
    {
     "title": "Tour 2, effort 4/4 : Swing (ou kettlebell swing)",
-    "sec": 40,
-    "detail": "Charge de hanches, dos plat. Charge modérée, RPE 8/10"
+    "sec": 30,
+    "detail": "Charge de hanches, dos plat. Charge modérée, RPE 8/10. Arrête la série si le dos s'arrondit."
    },
    {
     "title": "Tour 2, repos 4/4",
-    "sec": 20,
+    "sec": 30,
     "detail": "Pose la charge, respire"
    },
    {
@@ -1389,42 +1396,42 @@
    },
    {
     "title": "Tour 3, effort 1/4 : Goblet squat",
-    "sec": 40,
+    "sec": 30,
     "detail": "Haltère contre la poitrine. Charge modérée, RPE 8/10"
    },
    {
     "title": "Tour 3, repos 1/4",
-    "sec": 20,
+    "sec": 30,
     "detail": "Pose la charge, respire"
    },
    {
     "title": "Tour 3, effort 2/4 : Rowing unilatéral",
-    "sec": 40,
+    "sec": 30,
     "detail": "Alterne les bras à mi-série. Charge modérée, RPE 8/10"
    },
    {
     "title": "Tour 3, repos 2/4",
-    "sec": 20,
+    "sec": 30,
     "detail": "Pose la charge, respire"
    },
    {
     "title": "Tour 3, effort 3/4 : Thruster",
-    "sec": 40,
+    "sec": 30,
     "detail": "Squat puis développé en un mouvement. Charge modérée, RPE 8/10"
    },
    {
     "title": "Tour 3, repos 3/4",
-    "sec": 20,
+    "sec": 30,
     "detail": "Pose la charge, respire"
    },
    {
     "title": "Tour 3, effort 4/4 : Swing (ou kettlebell swing)",
-    "sec": 40,
-    "detail": "Charge de hanches, dos plat. Charge modérée, RPE 8/10"
+    "sec": 30,
+    "detail": "Charge de hanches, dos plat. Charge modérée, RPE 8/10. Arrête la série si le dos s'arrondit."
    },
    {
     "title": "Tour 3, repos 4/4",
-    "sec": 20,
+    "sec": 30,
     "detail": "Pose la charge, respire"
    },
    {
@@ -1433,7 +1440,7 @@
     "detail": "Marche, étirements, respiration"
    }
   ],
-  "body": "<p>Un haltère (ou une kettlebell) suffit. Les mouvements sont composés pour faire travailler tout le corps.</p>\n<table><thead><tr><th>Bloc</th><th>Durée</th><th>Détail</th></tr></thead><tbody>\n<tr><td>Échauffement</td><td>4 min</td><td>Cercles d’épaules et de hanches, squats sans charge, 2 séries légères de swing</td></tr>\n<tr><td>3 tours</td><td>12 min</td><td>Goblet squat · rowing unilatéral · thruster · swing (40 s / 20 s)</td></tr>\n<tr><td>Pauses</td><td>2 min</td><td>1 min entre chaque tour</td></tr>\n<tr><td>Retour au calme</td><td>3 min</td><td>Marche, étirements, respiration</td></tr>\n</tbody></table>\n<div class=\"note\"><strong>Charge :</strong> choisis un poids avec lequel tu pourrais faire 15 à 20 répétitions. La technique prime sur la vitesse.</div>\n<div class=\"note\"><strong>À ne pas cumuler :</strong> deux séances intenses par semaine au maximum, avec au moins un jour facile entre elles. Arrête-toi en cas de vertige, de douleur thoracique ou articulaire.</div>"
+  "body": "<p>Un haltère (ou une kettlebell) suffit. Les mouvements sont composés pour faire travailler tout le corps.</p>\n<table><thead><tr><th>Bloc</th><th>Durée</th><th>Détail</th></tr></thead><tbody>\n<tr><td>Échauffement</td><td>4 min</td><td>Cercles d’épaules et de hanches, squats sans charge, 2 séries légères de swing</td></tr>\n<tr><td>3 tours</td><td>12 min</td><td>Goblet squat · rowing unilatéral · thruster · swing (30 s / 30 s)</td></tr>\n<tr><td>Pauses</td><td>2 min</td><td>1 min entre chaque tour</td></tr>\n<tr><td>Retour au calme</td><td>3 min</td><td>Marche, étirements, respiration</td></tr>\n</tbody></table>\n<div class=\"note\"><strong>Technique :</strong> à ce rythme, la fatigue dégrade la posture. Swing : charnière de hanche, dos plat. Si le dos s'arrondit, pose la charge et saute la série.</div>\n<div class=\"note\"><strong>Charge :</strong> choisis un poids avec lequel tu pourrais faire 15 à 20 répétitions. La technique prime sur la vitesse.</div>\n<div class=\"note\"><strong>À ne pas cumuler :</strong> deux séances intenses par semaine au maximum, avec au moins un jour facile entre elles. Arrête-toi en cas de vertige, de douleur thoracique ou articulaire.</div>"
  },
  {
   "id": "hiit-velo-rameur",
@@ -1457,7 +1464,7 @@
    {
     "title": "Sprint 1/8",
     "sec": 30,
-    "detail": "RPE 9/10, résistance moyenne, cadence haute"
+    "detail": "RPE 9/10. Vélo : résistance moyenne, cadence haute. Rameur : 28 à 32 coups par minute, amortisseur entre 5 et 7"
    },
    {
     "title": "Récupération 1/8",
@@ -1467,7 +1474,7 @@
    {
     "title": "Sprint 2/8",
     "sec": 30,
-    "detail": "RPE 9/10, résistance moyenne, cadence haute"
+    "detail": "RPE 9/10. Vélo : résistance moyenne, cadence haute. Rameur : 28 à 32 coups par minute, amortisseur entre 5 et 7"
    },
    {
     "title": "Récupération 2/8",
@@ -1477,7 +1484,7 @@
    {
     "title": "Sprint 3/8",
     "sec": 30,
-    "detail": "RPE 9/10, résistance moyenne, cadence haute"
+    "detail": "RPE 9/10. Vélo : résistance moyenne, cadence haute. Rameur : 28 à 32 coups par minute, amortisseur entre 5 et 7"
    },
    {
     "title": "Récupération 3/8",
@@ -1487,7 +1494,7 @@
    {
     "title": "Sprint 4/8",
     "sec": 30,
-    "detail": "RPE 9/10, résistance moyenne, cadence haute"
+    "detail": "RPE 9/10. Vélo : résistance moyenne, cadence haute. Rameur : 28 à 32 coups par minute, amortisseur entre 5 et 7"
    },
    {
     "title": "Récupération 4/8",
@@ -1497,7 +1504,7 @@
    {
     "title": "Sprint 5/8",
     "sec": 30,
-    "detail": "RPE 9/10, résistance moyenne, cadence haute"
+    "detail": "RPE 9/10. Vélo : résistance moyenne, cadence haute. Rameur : 28 à 32 coups par minute, amortisseur entre 5 et 7"
    },
    {
     "title": "Récupération 5/8",
@@ -1507,7 +1514,7 @@
    {
     "title": "Sprint 6/8",
     "sec": 30,
-    "detail": "RPE 9/10, résistance moyenne, cadence haute"
+    "detail": "RPE 9/10. Vélo : résistance moyenne, cadence haute. Rameur : 28 à 32 coups par minute, amortisseur entre 5 et 7"
    },
    {
     "title": "Récupération 6/8",
@@ -1517,7 +1524,7 @@
    {
     "title": "Sprint 7/8",
     "sec": 30,
-    "detail": "RPE 9/10, résistance moyenne, cadence haute"
+    "detail": "RPE 9/10. Vélo : résistance moyenne, cadence haute. Rameur : 28 à 32 coups par minute, amortisseur entre 5 et 7"
    },
    {
     "title": "Récupération 7/8",
@@ -1527,7 +1534,7 @@
    {
     "title": "Sprint 8/8",
     "sec": 30,
-    "detail": "RPE 9/10, résistance moyenne, cadence haute"
+    "detail": "RPE 9/10. Vélo : résistance moyenne, cadence haute. Rameur : 28 à 32 coups par minute, amortisseur entre 5 et 7"
    },
    {
     "title": "Récupération 8/8",
@@ -1540,7 +1547,7 @@
     "detail": "Allure très facile, respiration calme"
    }
   ],
-  "body": "<p>Sur vélo, vélo elliptique ou rameur. Les sprints sont courts mais francs : récupère vraiment entre chacun.</p>\n<table><thead><tr><th>Bloc</th><th>Durée</th><th>Détail</th></tr></thead><tbody>\n<tr><td>Échauffement</td><td>5 min</td><td>Allure facile, 3 petites accélérations de 10 s</td></tr>\n<tr><td>8 × (sprint + récupération)</td><td>16 min</td><td>30 s à RPE 9/10 · 90 s très facile</td></tr>\n<tr><td>Retour au calme</td><td>4 min</td><td>Allure très facile, respiration calme</td></tr>\n</tbody></table>\n<div class=\"note\"><strong>À ne pas cumuler :</strong> deux séances intenses par semaine au maximum, avec au moins un jour facile entre elles. Arrête-toi en cas de vertige, de douleur thoracique ou articulaire.</div>"
+  "body": "<p>Sur vélo, vélo elliptique ou rameur. Les sprints sont courts mais francs : récupère vraiment entre chacun.</p>\n<table><thead><tr><th>Bloc</th><th>Durée</th><th>Détail</th></tr></thead><tbody>\n<tr><td>Échauffement</td><td>5 min</td><td>Allure facile, 3 petites accélérations de 10 s</td></tr>\n<tr><td>8 × (sprint + récupération)</td><td>16 min</td><td>30 s à RPE 9/10 · 90 s très facile</td></tr>\n<tr><td>Retour au calme</td><td>4 min</td><td>Allure très facile, respiration calme</td></tr>\n</tbody></table>\n<div class=\"note\"><strong>Au rameur :</strong> 28 à 32 coups par minute, amortisseur entre 5 et 7 ; pousse avec les jambes avant de tirer. Reprise après une longue pause : commence par 5 sprints.</div>\n<div class=\"note\"><strong>À ne pas cumuler :</strong> deux séances intenses par semaine au maximum, avec au moins un jour facile entre elles. Arrête-toi en cas de vertige, de douleur thoracique ou articulaire.</div>"
  },
  {
   "id": "hiit-pyramide",
@@ -1760,7 +1767,7 @@
     "detail": "Marche puis étirements légers"
    }
   ],
-  "body": "<p>Séance de course à pied pour développer l’endurance et la vitesse aérobie. À faire sur un terrain plat ou sur tapis.</p>\n<table><thead><tr><th>Bloc</th><th>Durée</th><th>Intensité</th></tr></thead><tbody>\n<tr><td>Échauffement</td><td>10 min</td><td>Très facile</td></tr>\n<tr><td>6 × fraction</td><td>3 min</td><td>RPE 7–8/10 (allure 10 km environ)</td></tr>\n<tr><td>Récupération entre fractions</td><td>1 min 30</td><td>Trot très lent</td></tr>\n<tr><td>Retour au calme</td><td>5 min</td><td>Marche</td></tr>\n</tbody></table>\n<p><strong>Repère :</strong> la dernière fraction doit être aussi bien tenue que la première. Si l’allure s’effondre, ralentis dès la suivante.</p>\n<div class=\"note\"><strong>Débutant :</strong> remplace les fractions par 1 min de course et 2 min de marche, 8 à 10 fois.</div>"
+  "body": "<p>Séance de course à pied pour développer l’endurance et la vitesse aérobie. À faire sur un terrain plat ou sur tapis.</p>\n<table><thead><tr><th>Bloc</th><th>Durée</th><th>Intensité</th></tr></thead><tbody>\n<tr><td>Échauffement</td><td>10 min</td><td>Très facile</td></tr>\n<tr><td>6 × fraction</td><td>3 min</td><td>RPE 7–8/10 (allure 10 km environ)</td></tr>\n<tr><td>Récupération entre fractions</td><td>1 min 30</td><td>Trot très lent</td></tr>\n<tr><td>Retour au calme</td><td>5 min</td><td>Marche</td></tr>\n</tbody></table>\n<p><strong>Repère :</strong> la dernière fraction doit être aussi bien tenue que la première. Si l’allure s’effondre, ralentis dès la suivante.</p>\n<div class=\"note\"><strong>Reprise :</strong> commence par 4 fractions, puis 5, puis 6 sur 3 semaines.</div>\n<div class=\"note\"><strong>Débutant :</strong> remplace les fractions par 1 min de course et 2 min de marche, 8 à 10 fois.</div>"
  },
  {
   "id": "mobilite",
@@ -1829,12 +1836,12 @@
    {
     "title": "Pigeon — gauche",
     "sec": 75,
-    "detail": "Jambe pliée devant, jambe arrière tendue, buste droit puis penché"
+    "detail": "Jambe pliée devant, jambe arrière tendue, buste droit puis penché. Si le genou proteste : allongé sur le dos, cheville sur le genou opposé, tire la cuisse vers toi"
    },
    {
     "title": "Pigeon — droite",
     "sec": 75,
-    "detail": "Même posture de l’autre côté"
+    "detail": "Même posture de l’autre côté. Si le genou proteste : allongé sur le dos, cheville sur le genou opposé, tire la cuisse vers toi"
    },
    {
     "title": "Ischio-jambiers — gauche",
@@ -1890,5 +1897,700 @@
    ]
   },
   "body": "<p><strong>Échauffement :</strong> 2 min de montées de genoux et de cercles d’épaules et de hanches.</p>\n<table><thead><tr><th>Exercice</th><th>Répétitions</th></tr></thead><tbody>\n<tr><td>Squats au poids du corps</td><td>12</td></tr>\n<tr><td>Pompes (adaptées si besoin)</td><td>8–10</td></tr>\n<tr><td>Fentes arrière</td><td>8 / jambe</td></tr>\n<tr><td>Gainage planche</td><td>30 s</td></tr>\n</tbody></table>\n<p>Enchaîne les 4 exercices avec 30 s de repos, puis 1 min de repos entre les tours. Fais 3 tours.</p>\n<div class=\"note\"><strong>Journée chargée :</strong> mieux vaut 15 minutes régulières qu’une grande séance qui n’arrive jamais.</div>"
+ },
+ {
+  "id": "haut-du-corps",
+  "title": "Haut du corps",
+  "duration": "50–60 min",
+  "category": "force",
+  "home": false,
+  "tags": [
+   "Force",
+   "Haut du corps",
+   "Salle"
+  ],
+  "lead": "7 exercices · 21 séries · pectoraux, dos, épaules et bras en une séance",
+  "warmup": "5 min de rameur, rotations d'épaules et 2 séries légères de développé.",
+  "exercises": [
+   {
+    "name": "Développé couché aux haltères",
+    "sets": 4,
+    "reps": "8–10",
+    "rest": 120
+   },
+   {
+    "name": "Rowing avec haltère",
+    "sets": 4,
+    "reps": "8–10",
+    "rest": 90
+   },
+   {
+    "name": "Développé militaire aux haltères",
+    "sets": 3,
+    "reps": "8–10",
+    "rest": 90
+   },
+   {
+    "name": "Tirage vertical",
+    "sets": 3,
+    "reps": "10–12",
+    "rest": 90
+   },
+   {
+    "name": "Élévations latérales",
+    "sets": 3,
+    "reps": "12–15",
+    "rest": 60
+   },
+   {
+    "name": "Curl biceps",
+    "sets": 2,
+    "reps": "10–12",
+    "rest": 60
+   },
+   {
+    "name": "Extension triceps à la poulie",
+    "sets": 2,
+    "reps": "10–12",
+    "rest": 60
+   }
+  ],
+  "intensity": "Alterne poussée et tirage pour récupérer entre les séries.",
+  "noteTitle": "Quand l'utiliser",
+  "note": "Pour une semaine où tu ne peux t'entraîner qu'une fois le haut du corps.",
+  "group": "library",
+  "body": "<p><strong>Échauffement :</strong> 5 min de rameur, rotations d'épaules et 2 séries légères de développé.</p>\n<table><thead><tr><th>Exercice</th><th>Séries × reps</th><th>Repos</th></tr></thead><tbody>\n<tr><td>Développé couché aux haltères</td><td>4 × 8–10</td><td>120 s</td></tr>\n<tr><td>Rowing avec haltère</td><td>4 × 8–10</td><td>90 s</td></tr>\n<tr><td>Développé militaire aux haltères</td><td>3 × 8–10</td><td>90 s</td></tr>\n<tr><td>Tirage vertical</td><td>3 × 10–12</td><td>90 s</td></tr>\n<tr><td>Élévations latérales</td><td>3 × 12–15</td><td>60 s</td></tr>\n<tr><td>Curl biceps</td><td>2 × 10–12</td><td>60 s</td></tr>\n<tr><td>Extension triceps à la poulie</td><td>2 × 10–12</td><td>60 s</td></tr>\n</tbody></table>\n<p><strong>Intensité :</strong> Alterne poussée et tirage pour récupérer entre les séries.</p>\n<div class=\"note\"><strong>Quand l'utiliser :</strong> Pour une semaine où tu ne peux t'entraîner qu'une fois le haut du corps.</div>\n<div class=\"note\"><strong>Progression :</strong> quand tu atteins le haut de la fourchette de répétitions sur toutes les séries, ajoute un peu de charge (environ 2,5 kg au haut du corps, 5 kg aux jambes). Prévois une semaine allégée toutes les 4 à 6 semaines.</div>"
+ },
+ {
+  "id": "bas-du-corps",
+  "title": "Bas du corps",
+  "duration": "50–60 min",
+  "category": "force",
+  "home": false,
+  "tags": [
+   "Force",
+   "Jambes · fessiers",
+   "Salle"
+  ],
+  "lead": "7 exercices · 21 séries · quadriceps, ischio-jambiers, fessiers et mollets",
+  "warmup": "5 min de vélo, mobilité des hanches et chevilles, 2 séries légères de squat.",
+  "exercises": [
+   {
+    "name": "Squat",
+    "sets": 4,
+    "reps": "6–10",
+    "rest": 150
+   },
+   {
+    "name": "Soulevé de terre roumain",
+    "sets": 3,
+    "reps": "8–10",
+    "rest": 120
+   },
+   {
+    "name": "Hip thrust",
+    "sets": 3,
+    "reps": "8–12",
+    "rest": 90
+   },
+   {
+    "name": "Fentes marchées avec haltères",
+    "sets": 3,
+    "reps": "10 par jambe",
+    "rest": 90
+   },
+   {
+    "name": "Leg curl",
+    "sets": 3,
+    "reps": "10–12",
+    "rest": 60
+   },
+   {
+    "name": "Mollets debout",
+    "sets": 3,
+    "reps": "12–15",
+    "rest": 45
+   },
+   {
+    "name": "Gainage planche",
+    "sets": 2,
+    "reps": "30–45 s",
+    "rest": 45,
+    "log": false
+   }
+  ],
+  "intensity": "Descends sous contrôle, dos neutre, genoux dans l'axe des pieds.",
+  "noteTitle": "Récupération",
+  "note": "Laisse 48 h avant une course ou une autre séance de jambes.",
+  "group": "library",
+  "body": "<p><strong>Échauffement :</strong> 5 min de vélo, mobilité des hanches et chevilles, 2 séries légères de squat.</p>\n<table><thead><tr><th>Exercice</th><th>Séries × reps</th><th>Repos</th></tr></thead><tbody>\n<tr><td>Squat</td><td>4 × 6–10</td><td>150 s</td></tr>\n<tr><td>Soulevé de terre roumain</td><td>3 × 8–10</td><td>120 s</td></tr>\n<tr><td>Hip thrust</td><td>3 × 8–12</td><td>90 s</td></tr>\n<tr><td>Fentes marchées avec haltères</td><td>3 × 10 par jambe</td><td>90 s</td></tr>\n<tr><td>Leg curl</td><td>3 × 10–12</td><td>60 s</td></tr>\n<tr><td>Mollets debout</td><td>3 × 12–15</td><td>45 s</td></tr>\n<tr><td>Gainage planche</td><td>2 × 30–45 s</td><td>45 s</td></tr>\n</tbody></table>\n<p><strong>Intensité :</strong> Descends sous contrôle, dos neutre, genoux dans l'axe des pieds.</p>\n<div class=\"note\"><strong>Récupération :</strong> Laisse 48 h avant une course ou une autre séance de jambes.</div>\n<div class=\"note\"><strong>Progression :</strong> quand tu atteins le haut de la fourchette de répétitions sur toutes les séries, ajoute un peu de charge (environ 2,5 kg au haut du corps, 5 kg aux jambes). Prévois une semaine allégée toutes les 4 à 6 semaines.</div>"
+ },
+ {
+  "id": "dos",
+  "title": "Dos",
+  "duration": "45–55 min",
+  "category": "force",
+  "home": false,
+  "tags": [
+   "Force",
+   "Dos",
+   "Salle"
+  ],
+  "lead": "6 exercices · 20 séries · largeur et épaisseur du dos",
+  "warmup": "5 min de rameur, mobilité des omoplates, 2 séries légères de tirage.",
+  "exercises": [
+   {
+    "name": "Tractions assistées ou tirage vertical prise large",
+    "sets": 4,
+    "reps": "6–10",
+    "rest": 120
+   },
+   {
+    "name": "Rowing barre penché",
+    "sets": 4,
+    "reps": "8–10",
+    "rest": 120
+   },
+   {
+    "name": "Tirage horizontal à la poulie",
+    "sets": 3,
+    "reps": "10–12",
+    "rest": 90
+   },
+   {
+    "name": "Rowing unilatéral à l'haltère",
+    "sets": 3,
+    "reps": "10 par côté",
+    "rest": 75
+   },
+   {
+    "name": "Pull-over à la poulie haute",
+    "sets": 3,
+    "reps": "12–15",
+    "rest": 60
+   },
+   {
+    "name": "Face pull",
+    "sets": 3,
+    "reps": "15",
+    "rest": 45
+   }
+  ],
+  "intensity": "Amène les coudes vers les hanches, sans te servir de l'élan.",
+  "noteTitle": "Associer avec",
+  "note": "Enchaîne avec jambes ou pectoraux le lendemain : les biceps seront encore fatigués, évite une séance de bras.",
+  "group": "library",
+  "body": "<p><strong>Échauffement :</strong> 5 min de rameur, mobilité des omoplates, 2 séries légères de tirage.</p>\n<table><thead><tr><th>Exercice</th><th>Séries × reps</th><th>Repos</th></tr></thead><tbody>\n<tr><td>Tractions assistées ou tirage vertical prise large</td><td>4 × 6–10</td><td>120 s</td></tr>\n<tr><td>Rowing barre penché</td><td>4 × 8–10</td><td>120 s</td></tr>\n<tr><td>Tirage horizontal à la poulie</td><td>3 × 10–12</td><td>90 s</td></tr>\n<tr><td>Rowing unilatéral à l'haltère</td><td>3 × 10 par côté</td><td>75 s</td></tr>\n<tr><td>Pull-over à la poulie haute</td><td>3 × 12–15</td><td>60 s</td></tr>\n<tr><td>Face pull</td><td>3 × 15</td><td>45 s</td></tr>\n</tbody></table>\n<p><strong>Intensité :</strong> Amène les coudes vers les hanches, sans te servir de l'élan.</p>\n<div class=\"note\"><strong>Associer avec :</strong> Enchaîne avec jambes ou pectoraux le lendemain : les biceps seront encore fatigués, évite une séance de bras.</div>\n<div class=\"note\"><strong>Progression :</strong> quand tu atteins le haut de la fourchette de répétitions sur toutes les séries, ajoute un peu de charge (environ 2,5 kg au haut du corps, 5 kg aux jambes). Prévois une semaine allégée toutes les 4 à 6 semaines.</div>"
+ },
+ {
+  "id": "pectoraux",
+  "title": "Pectoraux",
+  "duration": "45–55 min",
+  "category": "force",
+  "home": false,
+  "tags": [
+   "Force",
+   "Pectoraux",
+   "Salle"
+  ],
+  "lead": "5 exercices · 16 séries · haut, milieu et bas des pectoraux",
+  "warmup": "5 min de rameur, rotations d'épaules, 2 séries légères de développé.",
+  "exercises": [
+   {
+    "name": "Développé couché à la barre",
+    "sets": 4,
+    "reps": "6–10",
+    "rest": 150
+   },
+   {
+    "name": "Développé incliné aux haltères",
+    "sets": 4,
+    "reps": "8–10",
+    "rest": 120
+   },
+   {
+    "name": "Écartés à la poulie ou aux haltères",
+    "sets": 3,
+    "reps": "12–15",
+    "rest": 60
+   },
+   {
+    "name": "Dips ou pompes lestées",
+    "sets": 3,
+    "reps": "8–12",
+    "rest": 90
+   },
+   {
+    "name": "Pompes pieds surélevés",
+    "sets": 2,
+    "reps": "10–15",
+    "rest": 60,
+    "log": false
+   }
+  ],
+  "intensity": "Omoplates serrées et plaquées au banc, descente en 2 à 3 secondes.",
+  "noteTitle": "Sécurité",
+  "note": "Utilise des pareurs ou les butées pour les charges lourdes. Les dips demandent des épaules stables : prends les pompes lestées si tu ressens une gêne à l'avant de l'épaule.",
+  "group": "library",
+  "body": "<p><strong>Échauffement :</strong> 5 min de rameur, rotations d'épaules, 2 séries légères de développé.</p>\n<table><thead><tr><th>Exercice</th><th>Séries × reps</th><th>Repos</th></tr></thead><tbody>\n<tr><td>Développé couché à la barre</td><td>4 × 6–10</td><td>150 s</td></tr>\n<tr><td>Développé incliné aux haltères</td><td>4 × 8–10</td><td>120 s</td></tr>\n<tr><td>Écartés à la poulie ou aux haltères</td><td>3 × 12–15</td><td>60 s</td></tr>\n<tr><td>Dips ou pompes lestées</td><td>3 × 8–12</td><td>90 s</td></tr>\n<tr><td>Pompes pieds surélevés</td><td>2 × 10–15</td><td>60 s</td></tr>\n</tbody></table>\n<p><strong>Intensité :</strong> Omoplates serrées et plaquées au banc, descente en 2 à 3 secondes.</p>\n<div class=\"note\"><strong>Sécurité :</strong> Utilise des pareurs ou les butées pour les charges lourdes. Les dips demandent des épaules stables : prends les pompes lestées si tu ressens une gêne à l'avant de l'épaule.</div>\n<div class=\"note\"><strong>Progression :</strong> quand tu atteins le haut de la fourchette de répétitions sur toutes les séries, ajoute un peu de charge (environ 2,5 kg au haut du corps, 5 kg aux jambes). Prévois une semaine allégée toutes les 4 à 6 semaines.</div>"
+ },
+ {
+  "id": "epaules",
+  "title": "Épaules",
+  "duration": "40–50 min",
+  "category": "force",
+  "home": false,
+  "tags": [
+   "Force",
+   "Épaules",
+   "Salle"
+  ],
+  "lead": "6 exercices · 19 séries · faisceaux avant, latéral et arrière du deltoïde",
+  "warmup": "5 min de rameur, rotations avec élastique, 2 séries légères de développé.",
+  "exercises": [
+   {
+    "name": "Développé militaire à la barre ou aux haltères",
+    "sets": 4,
+    "reps": "6–10",
+    "rest": 120
+   },
+   {
+    "name": "Élévations latérales",
+    "sets": 4,
+    "reps": "12–15",
+    "rest": 60
+   },
+   {
+    "name": "Oiseau penché",
+    "sets": 3,
+    "reps": "12–15",
+    "rest": 60
+   },
+   {
+    "name": "Rotation externe à la poulie ou avec élastique",
+    "sets": 2,
+    "reps": "15 par côté",
+    "rest": 45
+   },
+   {
+    "name": "Face pull",
+    "sets": 3,
+    "reps": "15",
+    "rest": 45
+   },
+   {
+    "name": "Shrugs aux haltères",
+    "sets": 3,
+    "reps": "12–15",
+    "rest": 60
+   }
+  ],
+  "intensity": "Charge modérée sur les élévations : monte les coudes, pas les poignets. Coude collé au corps pour la rotation externe, charge légère.",
+  "noteTitle": "À savoir",
+  "note": "Les épaules travaillent déjà dans les séances de pectoraux, de dos et de poussée : ne pas les enchaîner. Un seul développé vertical par séance protège l'articulation.",
+  "group": "library",
+  "body": "<p><strong>Échauffement :</strong> 5 min de rameur, rotations avec élastique, 2 séries légères de développé.</p>\n<table><thead><tr><th>Exercice</th><th>Séries × reps</th><th>Repos</th></tr></thead><tbody>\n<tr><td>Développé militaire à la barre ou aux haltères</td><td>4 × 6–10</td><td>120 s</td></tr>\n<tr><td>Élévations latérales</td><td>4 × 12–15</td><td>60 s</td></tr>\n<tr><td>Oiseau penché</td><td>3 × 12–15</td><td>60 s</td></tr>\n<tr><td>Rotation externe à la poulie ou avec élastique</td><td>2 × 15 par côté</td><td>45 s</td></tr>\n<tr><td>Face pull</td><td>3 × 15</td><td>45 s</td></tr>\n<tr><td>Shrugs aux haltères</td><td>3 × 12–15</td><td>60 s</td></tr>\n</tbody></table>\n<p><strong>Intensité :</strong> Charge modérée sur les élévations : monte les coudes, pas les poignets. Coude collé au corps pour la rotation externe, charge légère.</p>\n<div class=\"note\"><strong>À savoir :</strong> Les épaules travaillent déjà dans les séances de pectoraux, de dos et de poussée : ne pas les enchaîner. Un seul développé vertical par séance protège l'articulation.</div>\n<div class=\"note\"><strong>Progression :</strong> quand tu atteins le haut de la fourchette de répétitions sur toutes les séries, ajoute un peu de charge (environ 2,5 kg au haut du corps, 5 kg aux jambes). Prévois une semaine allégée toutes les 4 à 6 semaines.</div>"
+ },
+ {
+  "id": "bras",
+  "title": "Bras",
+  "duration": "40–50 min",
+  "category": "force",
+  "home": false,
+  "tags": [
+   "Force",
+   "Biceps · triceps",
+   "Salle"
+  ],
+  "lead": "6 exercices · 20 séries · biceps et triceps",
+  "warmup": "5 min de vélo, rotations de poignets et coudes, 2 séries légères de curl.",
+  "exercises": [
+   {
+    "name": "Curl barre EZ",
+    "sets": 4,
+    "reps": "8–10",
+    "rest": 75
+   },
+   {
+    "name": "Barre au front ou extension triceps aux haltères",
+    "sets": 4,
+    "reps": "8–10",
+    "rest": 75
+   },
+   {
+    "name": "Curl incliné aux haltères",
+    "sets": 3,
+    "reps": "10–12",
+    "rest": 60
+   },
+   {
+    "name": "Extension triceps à la poulie",
+    "sets": 3,
+    "reps": "10–12",
+    "rest": 60
+   },
+   {
+    "name": "Curl marteau",
+    "sets": 3,
+    "reps": "10–12",
+    "rest": 60
+   },
+   {
+    "name": "Extension triceps au-dessus de la tête",
+    "sets": 3,
+    "reps": "12",
+    "rest": 60
+   }
+  ],
+  "intensity": "Coudes fixes, mouvement complet, pas de balancement du buste.",
+  "noteTitle": "Astuce",
+  "note": "Enchaîne un exercice de biceps puis de triceps pour gagner du temps. Débutant ou coudes sensibles : 2 séries par exercice (environ 12 séries) et extension aux haltères plutôt que la barre au front.",
+  "group": "library",
+  "body": "<p><strong>Échauffement :</strong> 5 min de vélo, rotations de poignets et coudes, 2 séries légères de curl.</p>\n<table><thead><tr><th>Exercice</th><th>Séries × reps</th><th>Repos</th></tr></thead><tbody>\n<tr><td>Curl barre EZ</td><td>4 × 8–10</td><td>75 s</td></tr>\n<tr><td>Barre au front ou extension triceps aux haltères</td><td>4 × 8–10</td><td>75 s</td></tr>\n<tr><td>Curl incliné aux haltères</td><td>3 × 10–12</td><td>60 s</td></tr>\n<tr><td>Extension triceps à la poulie</td><td>3 × 10–12</td><td>60 s</td></tr>\n<tr><td>Curl marteau</td><td>3 × 10–12</td><td>60 s</td></tr>\n<tr><td>Extension triceps au-dessus de la tête</td><td>3 × 12</td><td>60 s</td></tr>\n</tbody></table>\n<p><strong>Intensité :</strong> Coudes fixes, mouvement complet, pas de balancement du buste.</p>\n<div class=\"note\"><strong>Astuce :</strong> Enchaîne un exercice de biceps puis de triceps pour gagner du temps. Débutant ou coudes sensibles : 2 séries par exercice (environ 12 séries) et extension aux haltères plutôt que la barre au front.</div>\n<div class=\"note\"><strong>Progression :</strong> quand tu atteins le haut de la fourchette de répétitions sur toutes les séries, ajoute un peu de charge (environ 2,5 kg au haut du corps, 5 kg aux jambes). Prévois une semaine allégée toutes les 4 à 6 semaines.</div>"
+ },
+ {
+  "id": "avant-bras",
+  "title": "Avant-bras et prise",
+  "duration": "25–30 min",
+  "category": "force",
+  "home": true,
+  "tags": [
+   "Force",
+   "Avant-bras",
+   "Haltères"
+  ],
+  "lead": "6 exercices · 18 séries · force de préhension et avant-bras",
+  "warmup": "3 min de mobilité de poignets et d'étirements des fléchisseurs.",
+  "exercises": [
+   {
+    "name": "Curl poignets (paume vers le haut)",
+    "sets": 3,
+    "reps": "15",
+    "rest": 60
+   },
+   {
+    "name": "Curl poignets inversé (paume vers le bas)",
+    "sets": 3,
+    "reps": "15",
+    "rest": 60
+   },
+   {
+    "name": "Curl marteau",
+    "sets": 3,
+    "reps": "10–12",
+    "rest": 60
+   },
+   {
+    "name": "Curl inversé",
+    "sets": 3,
+    "reps": "10–12",
+    "rest": 60
+   },
+   {
+    "name": "Marche du fermier",
+    "sets": 3,
+    "reps": "30 s",
+    "rest": 60
+   },
+   {
+    "name": "Suspension à la barre (ou maintien d'haltères)",
+    "sets": 3,
+    "reps": "20–40 s",
+    "rest": 60
+   }
+  ],
+  "intensity": "Garde 2 à 3 répétitions en réserve, descente lente (3 s) : les tendons s'adaptent plus lentement que les muscles.",
+  "noteTitle": "Fréquence et prudence",
+  "note": "Une à deux fois par semaine au maximum, en fin de séance de dos ou de bras. Stoppe en cas de douleur au coude (épicondylite) ou au poignet. La suspension demande une barre de traction ; sinon, maintiens un haltère à bout de bras.",
+  "group": "library",
+  "body": "<p><strong>Échauffement :</strong> 3 min de mobilité de poignets et d'étirements des fléchisseurs.</p>\n<table><thead><tr><th>Exercice</th><th>Séries × reps</th><th>Repos</th></tr></thead><tbody>\n<tr><td>Curl poignets (paume vers le haut)</td><td>3 × 15</td><td>60 s</td></tr>\n<tr><td>Curl poignets inversé (paume vers le bas)</td><td>3 × 15</td><td>60 s</td></tr>\n<tr><td>Curl marteau</td><td>3 × 10–12</td><td>60 s</td></tr>\n<tr><td>Curl inversé</td><td>3 × 10–12</td><td>60 s</td></tr>\n<tr><td>Marche du fermier</td><td>3 × 30 s</td><td>60 s</td></tr>\n<tr><td>Suspension à la barre (ou maintien d'haltères)</td><td>3 × 20–40 s</td><td>60 s</td></tr>\n</tbody></table>\n<p><strong>Intensité :</strong> Garde 2 à 3 répétitions en réserve, descente lente (3 s) : les tendons s'adaptent plus lentement que les muscles.</p>\n<div class=\"note\"><strong>Fréquence et prudence :</strong> Une à deux fois par semaine au maximum, en fin de séance de dos ou de bras. Stoppe en cas de douleur au coude (épicondylite) ou au poignet. La suspension demande une barre de traction ; sinon, maintiens un haltère à bout de bras.</div>"
+ },
+ {
+  "id": "abdos-tronc",
+  "title": "Abdos et tronc",
+  "duration": "25–30 min",
+  "home": true,
+  "tags": [
+   "Force",
+   "Tronc",
+   "Sans matériel"
+  ],
+  "lead": "6 exercices · 18 séries · gainage, anti-rotation et lombaires",
+  "warmup": "3 min de marche sur place, rotations du bassin et chat-vache.",
+  "exercises": [
+   {
+    "name": "Gainage planche",
+    "sets": 3,
+    "reps": "30–45 s",
+    "rest": 45,
+    "log": false
+   },
+   {
+    "name": "Dead bug",
+    "sets": 3,
+    "reps": "8–10 / côté",
+    "rest": 45,
+    "log": false
+   },
+   {
+    "name": "Bird-dog",
+    "sets": 3,
+    "reps": "8 / côté",
+    "rest": 45,
+    "log": false
+   },
+   {
+    "name": "Gainage latéral",
+    "sets": 3,
+    "reps": "20–30 s / côté",
+    "rest": 45,
+    "log": false
+   },
+   {
+    "name": "Pallof press (élastique)",
+    "sets": 3,
+    "reps": "10 / côté",
+    "rest": 45,
+    "log": false
+   },
+   {
+    "name": "Superman (extension lombaire)",
+    "sets": 3,
+    "reps": "10",
+    "rest": 45,
+    "log": false
+   }
+  ],
+  "intensity": "Qualité avant durée : bassin stable, respiration continue, pas de cambrure forcée.",
+  "noteTitle": "Pourquoi cet ordre",
+  "note": "Le tronc sert à stabiliser, pas seulement à se plier. Deux à trois fois par semaine suffisent, en fin de séance ou un jour de repos actif.",
+  "group": "library",
+  "category": "force",
+  "body": "<p><strong>Échauffement :</strong> 3 min de marche sur place, rotations du bassin et chat-vache.</p>\n<table><thead><tr><th>Exercice</th><th>Séries × reps</th><th>Repos</th></tr></thead><tbody>\n<tr><td>Gainage planche</td><td>3 × 30–45 s</td><td>45 s</td></tr>\n<tr><td>Dead bug</td><td>3 × 8–10 / côté</td><td>45 s</td></tr>\n<tr><td>Bird-dog</td><td>3 × 8 / côté</td><td>45 s</td></tr>\n<tr><td>Gainage latéral</td><td>3 × 20–30 s / côté</td><td>45 s</td></tr>\n<tr><td>Pallof press (élastique)</td><td>3 × 10 / côté</td><td>45 s</td></tr>\n<tr><td>Superman (extension lombaire)</td><td>3 × 10</td><td>45 s</td></tr>\n</tbody></table>\n<p><strong>Intensité :</strong> Qualité avant durée : bassin stable, respiration continue, pas de cambrure forcée.</p>\n<div class=\"note\"><strong>Pourquoi cet ordre :</strong> Le tronc sert à stabiliser, pas seulement à se plier. Deux à trois fois par semaine suffisent, en fin de séance ou un jour de repos actif.</div>"
+ },
+ {
+  "id": "fessiers-jambes-maison",
+  "title": "Jambes et fessiers à la maison",
+  "duration": "35–45 min",
+  "home": true,
+  "tags": [
+   "Force",
+   "Jambes · fessiers",
+   "Sans machine"
+  ],
+  "lead": "7 exercices · 19 séries · unilatéral au poids du corps",
+  "warmup": "4 min de marche rapide, cercles de hanches, squats lents et ponts fessiers.",
+  "exercises": [
+   {
+    "name": "Squat bulgare (pied arrière sur une chaise)",
+    "sets": 3,
+    "reps": "8–10 / jambe",
+    "rest": 75,
+    "log": false
+   },
+   {
+    "name": "Soulevé de terre à une jambe",
+    "sets": 3,
+    "reps": "8 / jambe",
+    "rest": 60,
+    "log": false
+   },
+   {
+    "name": "Pont fessier à une jambe",
+    "sets": 3,
+    "reps": "10–12 / jambe",
+    "rest": 60,
+    "log": false
+   },
+   {
+    "name": "Squat lent (3 s en descente)",
+    "sets": 3,
+    "reps": "12–15",
+    "rest": 60,
+    "log": false
+   },
+   {
+    "name": "Fentes latérales",
+    "sets": 2,
+    "reps": "10 / jambe",
+    "rest": 60,
+    "log": false
+   },
+   {
+    "name": "Abduction avec élastique (couché sur le côté)",
+    "sets": 2,
+    "reps": "15 / côté",
+    "rest": 45,
+    "log": false
+   },
+   {
+    "name": "Mollets à une jambe",
+    "sets": 3,
+    "reps": "12–15",
+    "rest": 45,
+    "log": false
+   }
+  ],
+  "intensity": "Termine avec 2 répétitions en réserve ; garde le genou dans l'axe du pied.",
+  "noteTitle": "Progresser",
+  "note": "Ajoute un sac à dos lesté, ralentis la descente, ou fais une pause d'une seconde en bas.",
+  "group": "library",
+  "category": "force",
+  "body": "<p><strong>Échauffement :</strong> 4 min de marche rapide, cercles de hanches, squats lents et ponts fessiers.</p>\n<table><thead><tr><th>Exercice</th><th>Séries × reps</th><th>Repos</th></tr></thead><tbody>\n<tr><td>Squat bulgare (pied arrière sur une chaise)</td><td>3 × 8–10 / jambe</td><td>75 s</td></tr>\n<tr><td>Soulevé de terre à une jambe</td><td>3 × 8 / jambe</td><td>60 s</td></tr>\n<tr><td>Pont fessier à une jambe</td><td>3 × 10–12 / jambe</td><td>60 s</td></tr>\n<tr><td>Squat lent (3 s en descente)</td><td>3 × 12–15</td><td>60 s</td></tr>\n<tr><td>Fentes latérales</td><td>2 × 10 / jambe</td><td>60 s</td></tr>\n<tr><td>Abduction avec élastique (couché sur le côté)</td><td>2 × 15 / côté</td><td>45 s</td></tr>\n<tr><td>Mollets à une jambe</td><td>3 × 12–15</td><td>45 s</td></tr>\n</tbody></table>\n<p><strong>Intensité :</strong> Termine avec 2 répétitions en réserve ; garde le genou dans l'axe du pied.</p>\n<div class=\"note\"><strong>Progresser :</strong> Ajoute un sac à dos lesté, ralentis la descente, ou fais une pause d'une seconde en bas.</div>"
+ },
+ {
+  "id": "haut-du-corps-maison",
+  "title": "Haut du corps à la maison",
+  "duration": "35–45 min",
+  "home": true,
+  "tags": [
+   "Force",
+   "Haut du corps",
+   "Élastique"
+  ],
+  "lead": "7 exercices · 21 séries · poids du corps et élastique",
+  "warmup": "4 min de marche rapide, cercles d'épaules et de poignets, 2 séries légères de pompes inclinées.",
+  "exercises": [
+   {
+    "name": "Pompes (adaptées si besoin)",
+    "sets": 4,
+    "reps": "8–12",
+    "rest": 75,
+    "log": false
+   },
+   {
+    "name": "Rowing avec élastique ou serviette",
+    "sets": 4,
+    "reps": "12",
+    "rest": 60,
+    "log": false
+   },
+   {
+    "name": "Pompes prise serrée",
+    "sets": 3,
+    "reps": "8–10",
+    "rest": 75,
+    "log": false
+   },
+   {
+    "name": "Développé épaules avec haltères ou élastique",
+    "sets": 3,
+    "reps": "10–12",
+    "rest": 75
+   },
+   {
+    "name": "Tirage face avec élastique",
+    "sets": 3,
+    "reps": "15",
+    "rest": 45,
+    "log": false
+   },
+   {
+    "name": "Curl avec élastique ou haltère",
+    "sets": 2,
+    "reps": "12",
+    "rest": 45
+   },
+   {
+    "name": "Y-T-W couché",
+    "sets": 2,
+    "reps": "8",
+    "rest": 45,
+    "log": false
+   }
+  ],
+  "intensity": "Autant de tirage que de poussée : ne saute pas les exercices avec l'élastique.",
+  "noteTitle": "Progresser",
+  "note": "Ralentis la descente, surélève les pieds pour les pompes ou double l'élastique.",
+  "group": "library",
+  "category": "force",
+  "body": "<p><strong>Échauffement :</strong> 4 min de marche rapide, cercles d'épaules et de poignets, 2 séries légères de pompes inclinées.</p>\n<table><thead><tr><th>Exercice</th><th>Séries × reps</th><th>Repos</th></tr></thead><tbody>\n<tr><td>Pompes (adaptées si besoin)</td><td>4 × 8–12</td><td>75 s</td></tr>\n<tr><td>Rowing avec élastique ou serviette</td><td>4 × 12</td><td>60 s</td></tr>\n<tr><td>Pompes prise serrée</td><td>3 × 8–10</td><td>75 s</td></tr>\n<tr><td>Développé épaules avec haltères ou élastique</td><td>3 × 10–12</td><td>75 s</td></tr>\n<tr><td>Tirage face avec élastique</td><td>3 × 15</td><td>45 s</td></tr>\n<tr><td>Curl avec élastique ou haltère</td><td>2 × 12</td><td>45 s</td></tr>\n<tr><td>Y-T-W couché</td><td>2 × 8</td><td>45 s</td></tr>\n</tbody></table>\n<p><strong>Intensité :</strong> Autant de tirage que de poussée : ne saute pas les exercices avec l'élastique.</p>\n<div class=\"note\"><strong>Progresser :</strong> Ralentis la descente, surélève les pieds pour les pompes ou double l'élastique.</div>"
+ },
+ {
+  "id": "etirements",
+  "title": "Étirements post-séance",
+  "duration": "≈ 9 min",
+  "category": "mobilite",
+  "home": true,
+  "group": "library",
+  "tags": [
+   "Mobilité",
+   "Récupération",
+   "Après séance"
+  ],
+  "lead": "14 postures chronométrées : jambes, dos, épaules",
+  "blocks": [
+   {
+    "title": "Quadriceps — gauche",
+    "sec": 40,
+    "detail": "Debout, talon vers la fesse, genoux joints"
+   },
+   {
+    "title": "Quadriceps — droit",
+    "sec": 40,
+    "detail": "Même étirement de l'autre côté"
+   },
+   {
+    "title": "Fessiers — gauche",
+    "sec": 40,
+    "detail": "Allongé, cheville sur le genou opposé, tire la cuisse vers toi"
+   },
+   {
+    "title": "Fessiers — droit",
+    "sec": 40,
+    "detail": "Même étirement de l'autre côté"
+   },
+   {
+    "title": "Ischio-jambiers — gauche",
+    "sec": 40,
+    "detail": "Jambe tendue devant, pointe vers toi, dos long"
+   },
+   {
+    "title": "Ischio-jambiers — droit",
+    "sec": 40,
+    "detail": "Même étirement de l'autre côté"
+   },
+   {
+    "title": "Mollets — gauche",
+    "sec": 30,
+    "detail": "Mains au mur, jambe arrière tendue, talon au sol"
+   },
+   {
+    "title": "Mollets — droit",
+    "sec": 30,
+    "detail": "Même étirement de l'autre côté"
+   },
+   {
+    "title": "Pectoraux — gauche",
+    "sec": 30,
+    "detail": "Avant-bras contre un mur, tourne légèrement le buste"
+   },
+   {
+    "title": "Pectoraux — droit",
+    "sec": 30,
+    "detail": "Même étirement de l'autre côté"
+   },
+   {
+    "title": "Triceps et épaule — gauche",
+    "sec": 30,
+    "detail": "Coude derrière la tête, pousse doucement avec l'autre main"
+   },
+   {
+    "title": "Triceps et épaule — droit",
+    "sec": 30,
+    "detail": "Même étirement de l'autre côté"
+   },
+   {
+    "title": "Posture de l'enfant",
+    "sec": 45,
+    "detail": "Fesses vers les talons, bras tendus devant, respire dans le dos"
+   },
+   {
+    "title": "Respiration finale",
+    "sec": 45,
+    "detail": "Allongé, relâche tout le corps"
+   }
+  ],
+  "body": "<p>Pour les 10 minutes qui suivent une séance de force ou de course. Aucun matériel nécessaire, à part un mur et un tapis.</p>\n<table><thead><tr><th>Zone</th><th>Mouvements</th><th>Durée</th></tr></thead><tbody>\n<tr><td>Jambes</td><td>Quadriceps, fessiers, ischio-jambiers, mollets</td><td>≈ 5 min</td></tr>\n<tr><td>Haut du corps</td><td>Pectoraux, triceps et épaule</td><td>≈ 2 min</td></tr>\n<tr><td>Dos et calme</td><td>Posture de l'enfant, respiration finale</td><td>≈ 1 min 30</td></tr>\n</tbody></table>\n<p><strong>Repère :</strong> l'étirement doit rester confortable, jamais douloureux. Respire lentement et relâche à chaque expiration.</p>\n<div class=\"note\"><strong>Quand les faire :</strong> juste après la séance, quand les muscles sont chauds.</div>"
  }
 ]
