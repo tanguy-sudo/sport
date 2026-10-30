@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#17251f">
+<title>Journal - Carnet de séances</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/theme.js"></script>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Carnet">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script src="js/pwa.js" defer></script>
+</head><body data-page="journal">
+<script src="js/layout.js"></script>
+<main id="main">
+<section><div class="card"><h3 id="formTitle">Ajouter un exercice à une séance</h3>
+  <p class="muted small">Pour une séance faite sans le mode séance. Les exercices ajoutés à la même date et au même nom de séance sont regroupés.</p>
+  <div class="formgrid two">
+    <div class="field"><label class="field-label" for="ex">Exercice</label><input type="text" id="ex" list="exList" maxlength="80" autocomplete="off" placeholder="Ex. : Développé couché"></div>
+    <div class="field"><label class="field-label" for="date">Date</label><input type="date" id="date"></div>
+  </div>
+  <div class="field"><label class="field-label" for="title">Séance (facultatif)</label><input type="text" id="title" list="titleList" maxlength="80" autocomplete="off" placeholder="Ex. : Pectoraux et triceps"></div>
+  <datalist id="exList"></datalist><datalist id="titleList"></datalist>
+  <fieldset class="setfield"><legend class="field-label">Séries</legend><div id="setRows"></div>
+    <div class="actions"><button class="btn secondary" id="addSet" type="button">Ajouter une série</button></div></fieldset>
+  <div class="actions"><button class="btn" id="addLoad" type="button">Enregistrer</button><button class="btn secondary" id="cancelEdit" type="button" hidden>Annuler la modification</button><button class="btn secondary" id="undoDelete" type="button" hidden>↶ Annuler la suppression</button></div>
+  <p id="loadFeedback" class="muted small" role="status" aria-live="polite"></p>
+</div></section>
+<section>
+  <div class="section-head"><h2>Journal</h2><p class="lead">Tes 30 dernières séances.</p></div>
+  <div class="card"><div id="history" class="muted small"></div></div>
+</section>
+<section><div class="card"><h3>Sauvegarde des données</h3><p class="muted small">Tes séances, tes séances perso et tes bilans restent dans ce navigateur. Exporte-les pour les sauvegarder ou les transférer vers un autre appareil.</p><div class="actions"><button class="btn secondary" id="exportAll" type="button">Exporter (.json)</button><button class="btn secondary" id="importAll" type="button">Importer…</button><input type="file" id="importFile" accept="application/json,.json" hidden></div><p id="backupFeedback" class="muted small" aria-live="polite"></p></div></section>
+
+
+</main>
+<script src="js/store.js"></script><script src="js/loads-core.js"></script><script src="js/journal.js"></script>
+</body>
+</html>

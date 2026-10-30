@@ -55,7 +55,7 @@
   const go = (r) => apply(r);
 
   function tick() {
-    if (finished || $('live').hidden) return;
+    if (finished || $('live').hidden || st.paused) return;
     const r = C.catchUp(steps, st, Date.now());
     if (r.fired) {
       alarm(); st = r.st;
@@ -125,6 +125,11 @@
       P.textContent = last ? 'Terminer la séance ✓' : 'Série faite ✓'; act.primary = () => go(C.advance(steps, st, Date.now()));
       A.textContent = 'Terminer'; act.alt = finishAlt;
     }
+    const paused = !!st.paused;
+    ['livePrimary', 'liveAlt', 'liveBack'].forEach((id) => { if (paused) $(id).disabled = true; });
+    $('livePause').textContent = paused ? '▶ Reprendre' : '⏸ Pause';
+    $('livePause').setAttribute('aria-pressed', paused ? 'true' : 'false');
+    if (paused) main.prepend(el('div', 'En pause', 'live-label'));
     // Accessibilité : annonce et focus uniquement lors d'un vrai changement d'étape.
     const key = `${st.idx}:${st.phase}`;
     if (key !== shown) {
@@ -136,7 +141,7 @@
   const n_ = (n) => (n ? 'À suivre : ' + label(n) : '');
 
   function finish(natural) {
-    finished = true; clear(); unlock();
+    finished = true; clear(); unlock(); $('livePause').hidden = true;
     const sets = C.countSets(steps, st, natural);
     const mins = Math.max(1, Math.round((Date.now() - st.started) / 60000));
     const d = S.load(), w = d.workouts.find((x) => x.id === st.wid);
@@ -163,7 +168,7 @@
     opener = document.activeElement; shown = '';
     st = state; finished = false; if (!st.wid) st.wid = C.fresh(Date.now()).wid;
     try { ac = ac || new (window.AudioContext || window.webkitAudioContext)(); if (ac.resume) ac.resume(); } catch (_) {}
-    $('live').hidden = false; document.body.classList.add('live-open'); lock();
+    $('live').hidden = false; $('livePause').hidden = false; document.body.classList.add('live-open'); lock();
     background().forEach((e) => { e.inert = true; });
     if (!st.end && steps[st.idx].k === 'timer' && st.phase === 'work') st.end = Date.now() + steps[st.idx].sec * 1000;
     save(); render(); tick();
@@ -184,6 +189,12 @@
     open(C.fresh(Date.now()));
   });
   $('resumeLive').addEventListener('click', () => { try { open(JSON.parse(localStorage.getItem(KEY))); } catch (_) { open(C.fresh(Date.now())); } });
+  $('livePause').addEventListener('click', () => {
+    if (finished) return;
+    st = st.paused ? C.resume(st, Date.now()) : C.pause(st, Date.now());
+    $('liveElapsed').textContent = `Durée ${fmt(Math.floor(((st.paused || Date.now()) - st.started) / 1000))}`;
+    save(); render(); announce(st.paused ? 'Séance en pause.' : 'Séance reprise.');
+  });
   $('livePrimary').addEventListener('click', () => act.primary && act.primary());
   $('liveAlt').addEventListener('click', () => act.alt && act.alt());
   $('liveBack').addEventListener('click', () => go(C.back(steps, st, Date.now())));

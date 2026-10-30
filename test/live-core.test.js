@@ -201,3 +201,15 @@ test('fromCustom : sÃ©ance perso utilisable par le mode sÃ©ance', () => {
 test('fresh : identifiant de sÃ©ance enregistrÃ©e', () => {
   assert.ok(C.fresh(0).wid.startsWith('w'));
 });
+
+test('pause puis reprise : le début et la fin du minuteur sont décalés', () => {
+  const st = { idx: 0, phase: 'work', end: 10000, started: 1000, vals: {} };
+  const p = C.pause(st, 4000);
+  assert.strictEqual(p.paused, 4000);
+  assert.strictEqual(C.pause(p, 5000).paused, 4000);
+  const r = C.resume(p, 9000);
+  assert.strictEqual(r.started, 6000);
+  assert.strictEqual(r.end, 15000);
+  assert.ok(!('paused' in r));
+  assert.strictEqual(C.resume(st, 9000), st);
+});

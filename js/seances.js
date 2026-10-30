@@ -2,8 +2,8 @@
 (() => {
   const $ = (id) => document.getElementById(id);
   const el = (tag, text, cls) => { const e = document.createElement(tag); if (text !== undefined) e.textContent = text; if (cls) e.className = cls; return e; };
-  const FILTERS = [['all', 'Toutes'], ['force', 'Force'], ['cardio', 'Cardio'], ['mobilite', 'Mobilité'], ['maison', 'À la maison']];
-  const matches = (s, f) => f === 'all' || s.category === f || (f === 'maison' && s.home);
+  const FILTERS = [['all', 'Toutes'], ['force', 'Force'], ['cardio', 'Cardio'], ['hiit', 'HIIT'], ['mobilite', 'Mobilité'], ['maison', 'À la maison']];
+  const matches = (s, f) => f === 'all' || s.category === f || (f === 'maison' && s.home) || (f === 'hiit' && s.id.startsWith('hiit'));
   let current = 'all', all = [];
 
   function card(s) {

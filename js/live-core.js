@@ -56,6 +56,13 @@
     }
     return { st, logs, finish: null, fired };
   }
+  // Pause : fige l'horloge ; à la reprise, on décale le début et la fin du minuteur de la durée écoulée.
+  const pause = (st, now) => (st.paused ? st : { ...st, paused: now });
+  function resume(st, now) {
+    if (!st.paused) return st;
+    const d = Math.max(0, now - st.paused), r = { ...st, started: st.started + d, end: st.end ? st.end + d : 0 };
+    delete r.paused; return r;
+  }
   const countSets = (steps, st, natural) =>
     steps.filter((x, i) => x.k === 'set' && (i < st.idx || (i === st.idx && (st.phase === 'rest' || natural)))).length;
   const isResumable = (sv, steps, now) => !!sv && sv.idx < steps.length && now - sv.started < 6 * 36e5;
@@ -72,6 +79,6 @@
     };
   }
 
-  const api = { fromCustom, sessionName, first, fmt, parseKg, validKg, buildSteps, fresh, next, advance, back, catchUp, countSets, isResumable };
+  const api = { fromCustom, sessionName, first, fmt, parseKg, validKg, buildSteps, fresh, next, advance, back, catchUp, pause, resume, countSets, isResumable };
   if (typeof module !== 'undefined') module.exports = api; else window.J80LiveCore = api;
 })();
