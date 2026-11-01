@@ -4,10 +4,10 @@
   // Galerie repliable : une paire d'images par exercice connu de la base d'images.
   function gallery(s) {
     if (!window.J80Exo) return;
-    const names = [...(s.exercises || []), ...((s.circuit && s.circuit.exercises) || [])].map((e) => e.name)
-      .concat((s.blocks || []).map((b) => J80Exo.blockName(b.title)).filter(Boolean));
+    const items = [...(s.exercises || []), ...((s.circuit && s.circuit.exercises) || [])].map((e) => [e.name, e.img])
+      .concat((s.blocks || []).map((b) => [J80Exo.blockName(b.title)]).filter((x) => x[0]));
     J80Exo.ready.then(() => {
-      const figs = [...new Set(names)].map((n) => [n, J80Exo.figure(n)]).filter((x) => x[1]);
+      const figs = [...new Map(items)].map(([n, img]) => [n, J80Exo.figure(n, img)]).filter((x) => x[1]);
       if (!figs.length) return;
       const d = document.createElement('details'); d.className = 'exo-gallery';
       const sm = document.createElement('summary'); sm.textContent = 'Voir les exercices'; d.append(sm);

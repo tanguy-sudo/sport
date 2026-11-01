@@ -126,7 +126,7 @@
       A.textContent = 'Terminer'; act.alt = finishAlt;
     }
     const paused = !!st.paused;
-    ['livePrimary', 'liveAlt', 'liveBack'].forEach((id) => { if (paused) $(id).disabled = true; });
+    ['livePrimary', 'liveAlt', 'liveBack'].forEach((id) => { if (paused) $(id).disabled = true; else if (id !== 'liveBack') $(id).disabled = false; });
     $('livePause').textContent = paused ? '▶ Reprendre' : '⏸ Pause';
     $('livePause').setAttribute('aria-pressed', paused ? 'true' : 'false');
     if (paused) main.prepend(el('div', 'En pause', 'live-label'));

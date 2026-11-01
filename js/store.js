@@ -50,6 +50,9 @@
     return out;
   }
 
+  // img : dossier de la base d'images ou image importée (JPEG en data URL, redimensionnée par l'éditeur).
+  const IMG = /^(?:[\w.-]{1,80}|data:image\/jpeg;base64,[A-Za-z0-9+/=]{1,150000})$/;
+
   function cleanSession(s) {
     if (!s || !/^[a-z0-9-]{1,40}$/.test(s.id || '') || !str(s.title, 60)) return null;
     const exercises = (Array.isArray(s.exercises) ? s.exercises : []).map((e) => {
@@ -57,6 +60,7 @@
       return {
         name: str(e.name, 80), sets: num(+e.sets, 1, 20) ? Math.round(+e.sets) : 3, reps: str(e.reps, 20) || '10',
         rest: num(+e.rest, 0, 600) ? Math.round(+e.rest) : 90, log: e.log !== false,
+        ...(IMG.test(e.img || '') ? { img: e.img } : {}),
       };
     }).filter((e) => e.name).slice(0, 30);
     if (!exercises.length) return null;

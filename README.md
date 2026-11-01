@@ -18,3 +18,5 @@ npm run lint    # ESLint
 ```
 
 La CI (`.github/workflows/ci.yml`) lance lint, tests et vérifie que `sw.js` est à jour. Le déploiement reste « Deploy from branch » (Settings → Pages) : chaque push sur `main` publie le site.
+
+Images des exercices : free-exercise-db (domaine public), https://github.com/yuhonas/free-exercise-db

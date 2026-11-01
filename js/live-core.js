@@ -9,7 +9,7 @@
     const st = [];
     if (D.warmup) st.push({ k: 'info', title: 'Échauffement', text: D.warmup });
     (D.blocks || []).forEach((b) => st.push({ k: 'timer', title: b.title, sec: b.sec, detail: b.detail || '' }));
-    (D.exercises || []).forEach((e) => { for (let i = 1; i <= e.sets; i++) st.push({ k: 'set', ex: e.name, i, n: e.sets, reps: e.reps, rest: e.rest, log: e.log !== false }); });
+    (D.exercises || []).forEach((e) => { for (let i = 1; i <= e.sets; i++) st.push({ k: 'set', ex: e.name, i, n: e.sets, reps: e.reps, rest: e.rest, log: e.log !== false, img: e.img }); });
     if (D.circuit) {
       for (let t = 1; t <= D.circuit.rounds; t++) {
         D.circuit.exercises.forEach((e, j, a) => st.push({ k: 'set', ex: e.name, sub: `Tour ${t} / ${D.circuit.rounds}`, reps: e.reps, rest: j === a.length - 1 ? 60 : 30, log: false }));
